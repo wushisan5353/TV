@@ -31,9 +31,9 @@ use a newer Android Gradle Plugin that has been tested with compileSdk = 34
 > Task :quickjs:preBuild UP-TO-DATE
 > Task :quickjs:preReleaseBuild UP-TO-DATE
 > Task :quickjs:mergeReleaseJniLibFolders
-> Task :quickjs:prepareReleaseArtProfile
 > Task :quickjs:mergeReleaseNativeLibs
-
+> Task :quickjs:prepareReleaseArtProfile
+> Task :quickjs:copyReleaseJniLibsProjectOnly
 > Task :app:mergeArmeabiGenericNormalReleaseArtProfile
 WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/me.jessyan/autosize/1.2.1/a44df9822e0cb91242358f070ef813714fd81c05/autosize-1.2.1.aar' contains references to both AndroidX and old support library. This seems like the library is partially migrated. Jetifier will try to rewrite the library anyway.
  Example of androidX reference: 'androidx/fragment/app/FragmentManager$FragmentLifecycleCallbacks'
@@ -43,7 +43,6 @@ WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/an
  Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
 
 > Task :quickjs:compileReleaseAidl NO-SOURCE
-> Task :quickjs:copyReleaseJniLibsProjectOnly
 > Task :quickjs:compileReleaseRenderscript NO-SOURCE
 > Task :quickjs:generateReleaseBuildConfig
 > Task :quickjs:generateReleaseResValues
@@ -52,6 +51,10 @@ WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/an
 > Task :app:mergeArmeabiGenericNormalReleaseNativeLibs
 > Task :quickjs:parseReleaseLocalResources
 > Task :quickjs:javaPreCompileRelease
+> Task :app:buildKotlinToolingMetadata
+
+> Task :app:stripArmeabiGenericNormalReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libalivc_conan.so, libalivcffmpeg.so, libavcodec.so, libavutil.so, libconceal.so, libconscrypt_jni.so, libffmpegJNI.so, libijkffmpeg.so, libijkplayer.so, libijksdl.so, libmedia3ext.so, libp2p.so, libquickjs-android-wrapper.so, librtmp-jni.so, libsaasCorePlayer.so, libsaasDownloader.so, libswresample.so, libswscale.so, libxl_stat.so, libxl_thunder_sdk.so.
 
 > Task :quickjs:processReleaseManifest
 package="com.whl.quickjs.android" found in source AndroidManifest.xml: /home/runner/work/TV/TV/src/quickjs/src/main/AndroidManifest.xml.
@@ -59,25 +62,20 @@ Setting the namespace via a source AndroidManifest.xml's package attribute is de
 Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
-> Task :app:buildKotlinToolingMetadata
-
-> Task :app:stripArmeabiGenericNormalReleaseDebugSymbols
-Unable to strip the following libraries, packaging them as they are: libalivc_conan.so, libalivcffmpeg.so, libavcodec.so, libavutil.so, libconceal.so, libconscrypt_jni.so, libffmpegJNI.so, libijkffmpeg.so, libijkplayer.so, libijksdl.so, libmedia3ext.so, libp2p.so, libquickjs-android-wrapper.so, librtmp-jni.so, libsaasCorePlayer.so, libsaasDownloader.so, libswresample.so, libswscale.so, libxl_stat.so, libxl_thunder_sdk.so.
-
-> Task :quickjs:generateReleaseRFile
-> Task :app:checkArmeabiGenericNormalReleaseDuplicateClasses
 > Task :app:extractArmeabiGenericNormalReleaseNativeSymbolTables
-> Task :quickjs:compileReleaseJavaWithJavac
+> Task :app:checkArmeabiGenericNormalReleaseDuplicateClasses
 > Task :app:mergeArmeabiGenericNormalReleaseNativeDebugMetadata NO-SOURCE
-> Task :quickjs:mergeReleaseGeneratedProguardFiles
-> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:compileArmeabiGenericNormalReleaseAidl NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors
 > Task :quickjs:packageReleaseRenderscript NO-SOURCE
 > Task :app:compileArmeabiGenericNormalReleaseRenderscript NO-SOURCE
+> Task :quickjs:generateReleaseRFile
+> Task :app:dataBindingMergeDependencyArtifactsArmeabiGenericNormalRelease
+> Task :quickjs:compileReleaseJavaWithJavac
+> Task :quickjs:mergeReleaseGeneratedProguardFiles
+> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:generateArmeabiGenericNormalReleaseResValues
 > Task :app:generateArmeabiGenericNormalReleaseResources
-> Task :app:dataBindingMergeDependencyArtifactsArmeabiGenericNormalRelease
 > Task :app:dataBindingTriggerArmeabiGenericNormalRelease
 > Task :app:generateArmeabiGenericNormalReleaseAppInfo
 > Task :app:generateArmeabiGenericNormalReleaseBuildConfig
@@ -94,10 +92,11 @@ Please instead set the namespace (or testNamespace) in the module's build.gradle
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
 > Task :app:processArmeabiGenericNormalReleaseManifest
-> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :quickjs:compileReleaseLibraryResources
-> Task :quickjs:bundleLibCompileToJarRelease
+> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
+> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :app:mergeArmeabiGenericNormalReleaseResources
+> Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:javaPreCompileArmeabiGenericNormalRelease
 > Task :app:dataBindingGenBaseClassesArmeabiGenericNormalRelease
 > Task :app:extractProguardFiles
@@ -115,13 +114,12 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 
 > Task :app:mergeArmeabiGenericNormalReleaseAssets
 Execution optimizations have been disabled for task ':app:mergeArmeabiGenericNormalReleaseAssets' to ensure correctness due to the following reasons:
-  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$936/0x00007f1998b4ca98'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
+  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$955/0x00007f9268b5dd38'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
 
 > Task :app:compressArmeabiGenericNormalReleaseAssets
 > Task :app:collectArmeabiGenericNormalReleaseDependencies
 > Task :app:sdkArmeabiGenericNormalReleaseDependencyData
 > Task :app:writeArmeabiGenericNormalReleaseAppMetadata
-> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
 > Task :app:writeArmeabiGenericNormalReleaseSigningConfigVersions
 > Task :app:processArmeabiGenericNormalReleaseResources
 > Task :app:optimizeArmeabiGenericNormalReleaseResources
@@ -164,7 +162,7 @@ See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:comman
 Execution optimizations have been disabled for 1 invalid unit(s) of work during this build to ensure correctness.
 Please consult deprecation warnings for more details.
 
-BUILD SUCCESSFUL in 4m 27s
+BUILD SUCCESSFUL in 3m 44s
 64 actionable tasks: 64 executed
 === APK LIST ===
 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
@@ -173,8 +171,8 @@ src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-gen
 + cat apk-list.txt
 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
 ++ openssl rand -hex 8
-+ PASS=6d50ae76ef0eb11a
-+ keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass 6d50ae76ef0eb11a -keypass 6d50ae76ef0eb11a -dname 'CN=TV Max, O=wushisan'
++ PASS=a140f5c28ded572b
++ keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass a140f5c28ded572b -keypass a140f5c28ded572b -dname 'CN=TV Max, O=wushisan'
 Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 3,650 days
 	for: CN=TV Max, O=wushisan
 ++ ls /usr/local/lib/android/sdk/build-tools
@@ -190,15 +188,15 @@ build-tools: 37.0.0
 + echo 'unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk'
 unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
 + /usr/local/lib/android/sdk/build-tools/37.0.0/zipalign -p -f 4 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.jks --ks-pass pass:6d50ae76ef0eb11a --key-pass pass:6d50ae76ef0eb11a --out TVMax-Box-1.3-armeabi_v7a.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-1.3-armeabi_v7a.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.jks --ks-pass pass:a140f5c28ded572b --key-pass pass:a140f5c28ded572b --out TVMax-Box-2.0-armeabi_v7a.apk aligned.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-2.0-armeabi_v7a.apk
 + head -2
 V3.0 Signer: certificate DN: CN=TV Max, O=wushisan
-V3.0 Signer: certificate SHA-256 digest: 2e17b4433166ef87a1ec50c830e0a7d3b5a974ab92b14a84f7ea82568affcbf3
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-1.3-armeabi_v7a.apk
+V3.0 Signer: certificate SHA-256 digest: a54cb0b3466841a4204e8c6f61b1efa24c81d5877ac4848537ae8465d1cffe79
++ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-2.0-armeabi_v7a.apk
 + grep -E 'package:|sdkVersion|native-code'
-package: name='com.wushisan.tvmax' versionCode='104' versionName='1.0-box4' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
+package: name='com.wushisan.tvmax' versionCode='200' versionName='2.0' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
 sdkVersion:'21'
 native-code: 'armeabi-v7a'
-+ ls -lh TVMax-Box-1.3-armeabi_v7a.apk
--rw-r--r-- 1 runner runner 27M Oct 21 12:07 TVMax-Box-1.3-armeabi_v7a.apk
++ ls -lh TVMax-Box-2.0-armeabi_v7a.apk
+-rw-r--r-- 1 runner runner 27M Oct 21 13:37 TVMax-Box-2.0-armeabi_v7a.apk

@@ -1,82 +1,199 @@
-name: TV Max Diag
+name: Build TV Max Box
 
 on:
   workflow_dispatch:
 
 jobs:
-  diag:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
-      - name: Checkout
+      - name: Checkout (this repo, for log commits)
         uses: actions/checkout@v4
 
-      - name: Download v9 APK (release tvmax-1.1)
-        run: |
-          curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-1.1/TVMax-4.0.7-armeabi_v7a.apk"
-          ls -lh tvmax.apk
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
 
-      - name: Emulator diagnostics
+      - name: Setup Python 3.10 (for Chaquo build)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Android SDK components
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-34" "build-tools;34.0.0" "build-tools;30.0.3" > /dev/null
+          ls $ANDROID_HOME/build-tools
+
+      - name: Checkout takagen99/Box base
+        uses: actions/checkout@v4
+        with:
+          repository: takagen99/Box
+          ref: 258a5fef61578869ae905ca230bdde9e99fc19a8
+          path: src
+
+      - name: Apply TV Max patches
+        env:
+          PYLOC: ${{ env.pythonLocation }}
+        run: |
+          python3 - <<'PY'
+          import pathlib, os
+          root = pathlib.Path('src')
+
+          def patch(rel, old, new, count=1):
+              p = root / rel
+              t = p.read_text(encoding='utf-8')
+              assert t.count(old) >= 1, f'anchor missing in {rel}: {old[:60]!r}'
+              p.write_text(t.replace(old, new, count), encoding='utf-8')
+              print('patched', rel)
+
+          # 1) App name + built-in default config (Laoliu: 234 sites incl. cloud-drive/magnet + lives + dark wallpaper)
+          patch('app/src/main/res/values/strings.xml',
+                '<string name="app_name">TVBox</string>',
+                '<string name="app_name">TV Max</string>')
+          patch('app/src/main/res/values/strings.xml',
+                '<string name="app_source"></string>',
+                '<string name="app_source">https://raw.liucn.cc/box/m.json</string>')
+
+          # 2) Own applicationId + fixed version
+          patch('app/build.gradle',
+                "applicationId 'com.github.tvbox.osc.tk'",
+                "applicationId 'com.wushisan.tvmax'")
+          patch('app/build.gradle',
+                'versionCode 1',
+                'versionCode 101')
+          patch('app/build.gradle',
+                'versionName "1.0.".concat(buildTime())',
+                'versionName "1.0-box1"')
+
+          # 3) Chaquo: host python path + pin pip packages (chaquo py3.8 index caps cssselect at 1.2.0)
+          pyloc = os.environ.get('PYLOC', '')
+          pybin = (pyloc + '/bin/python') if pyloc else 'python3'
+          patch('pyramid/build.gradle',
+                'buildPython("D:/Programs/Python/Python38/python.exe")',
+                'buildPython("%s")' % pybin)
+          patch('pyramid/build.gradle',
+                'install "pyquery"',
+                'install "pyquery==2.0.0"\n                install "cssselect==1.2.0"')
+          print('all patches applied, buildPython =', pybin)
+          PY
+
+      - name: Gradle build (armeabi generic python release)
+        run: |
+          cd src
+          chmod +x gradlew
+          ./gradlew :app:assembleArmeabiGenericPythonRelease --no-daemon --stacktrace 2>&1 | tee ../build-full.log | tail -40
+
+      - name: Sign APK
+        run: |
+          PASS=$(openssl rand -hex 8)
+          keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
+          BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
+          UNSIGNED=$(ls src/app/build/outputs/apk/armeabiGenericPython/release/*.apk | head -1)
+          echo "unsigned: $UNSIGNED"
+          $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.0-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.0-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.0-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-1.0-armeabi_v7a.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TVMaxBox-apk
+          path: TVMax-Box-1.0-armeabi_v7a.apk
+
+      - name: Dump build log to repo (always)
+        if: always()
+        run: |
+          if [ -f build-full.log ]; then
+            tail -n 600 build-full.log > build-log.txt
+            { echo '## Box build log tail'; echo '```'; cat build-log.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true
+            git config user.email "ci@tvmax.local" || true
+            git config user.name "tvmax-ci" || true
+            git add build-log.txt || true
+            git commit -m "ci: box build log" || true
+            git pull --rebase origin fongmi || true
+            git push origin HEAD:fongmi || true
+          fi
+
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout (this repo)
+        uses: actions/checkout@v4
+
+      - name: Download APK artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: TVMaxBox-apk
+
+      - name: Emulator smoke test
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 34
           target: google_apis
           arch: x86_64
           profile: pixel_6
-          avd-name: diag
+          avd-name: verify
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
           disable-animations: true
           script: |
-            mkdir -p diag-out
-            echo "=== install ===" > diag-out/steps.log
-            adb install -r tvmax.apk >> diag-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r tvmax.apk >> diag-out/steps.log 2>&1 || echo INSTALL_FAILED >> diag-out/steps.log
+            mkdir -p verify-out
+            echo "=== install ===" > verify-out/steps.log
+            adb install -r TVMax-Box-1.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-1.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
-            adb logcat > diag-out/logcat.txt &
+            adb logcat > verify-out/logcat.txt &
             LOGPID=$!
-            echo "=== launch 1 ===" >> diag-out/steps.log
-            adb shell am start -n com.wushisan.tvmax/com.fongmi.android.tv.ui.activity.HomeActivity >> diag-out/steps.log 2>&1 || true
-            sleep 60
-            adb exec-out screencap -p > diag-out/home1.png || true
+            echo "=== launch ===" >> verify-out/steps.log
+            adb shell am start -n com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity >> verify-out/steps.log 2>&1 || adb shell monkey -p com.wushisan.tvmax -c android.intent.category.LAUNCHER 1 >> verify-out/steps.log 2>&1 || true
+            sleep 75
+            adb exec-out screencap -p > verify-out/home1.png || true
             adb shell uiautomator dump /sdcard/home1.xml || true
-            adb pull /sdcard/home1.xml diag-out/home1.xml || true
-            echo "=== db inspect + seed douban home ===" >> diag-out/steps.log
-            adb shell am force-stop com.wushisan.tvmax || true
+            adb pull /sdcard/home1.xml verify-out/home1.xml || true
+            adb shell input keyevent 20 || true
             sleep 2
-            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv 'SELECT id,type,name,url,home FROM Config;'" > diag-out/db-before.txt 2>&1 || true
-            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv \"UPDATE Config SET home='csp_douban' WHERE type=0;\"" >> diag-out/steps.log 2>&1 || true
-            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv 'SELECT id,type,name,home FROM Config;'" > diag-out/db-after.txt 2>&1 || true
-            echo "=== launch 2 (douban home) ===" >> diag-out/steps.log
-            adb shell am start -n com.wushisan.tvmax/com.fongmi.android.tv.ui.activity.HomeActivity >> diag-out/steps.log 2>&1 || true
-            sleep 45
-            adb exec-out screencap -p > diag-out/home2.png || true
-            adb shell uiautomator dump /sdcard/home2.xml || true
-            adb pull /sdcard/home2.xml diag-out/home2.xml || true
-            echo "=== navigate to first recommendation ===" >> diag-out/steps.log
-            adb shell input keyevent 20 || true
-            sleep 1
-            adb shell input keyevent 20 || true
-            sleep 1
-            adb exec-out screencap -p > diag-out/focus.png || true
-            adb shell input keyevent 23 || true
-            sleep 25
-            adb exec-out screencap -p > diag-out/detail1.png || true
-            adb shell uiautomator dump /sdcard/detail1.xml || true
-            adb pull /sdcard/detail1.xml diag-out/detail1.xml || true
-            sleep 15
-            adb exec-out screencap -p > diag-out/detail2.png || true
-            adb shell dumpsys activity activities > diag-out/activities.txt 2>&1 || true
+            adb exec-out screencap -p > verify-out/home2.png || true
+            adb shell dumpsys activity activities > verify-out/activities.txt 2>&1 || true
             kill $LOGPID || true
-            echo "=== done ===" >> diag-out/steps.log
-            ls -lh diag-out/ >> diag-out/steps.log 2>&1 || true
+            echo "=== done ===" >> verify-out/steps.log
 
-      - name: Commit diagnostics to repo
+      - name: Commit verify output
         if: always()
         run: |
-          git config user.email "diag@ci.local"
-          git config user.name "tvmax-diag"
-          git add diag-out || true
-          git commit -m "diag: cloud emulator run" || true
+          git config user.email "ci@tvmax.local" || true
+          git config user.name "tvmax-ci" || true
+          git add verify-out || true
+          git commit -m "ci: box verify output" || true
+          git pull --rebase origin fongmi || true
           git push origin HEAD:fongmi || true
-          ls -lh diag-out || true
+          ls -lh verify-out || true
+
+  release:
+    needs: [build, verify]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download APK artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: TVMaxBox-apk
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: tvmax-box-1.0
+          name: TV Max Box 1.0 (TVBoxOSC 系换底座版)
+          body: |
+            TV Max 换底座版：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
+            - 改名 TV Max, 独立包名 com.wushisan.tvmax
+            - 内置默认配置: 老刘 (234 站, 含网盘/磁力 + 直播 + 深色壁纸源), 装上即用
+            - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
+          files: TVMax-Box-1.0-armeabi_v7a.apk

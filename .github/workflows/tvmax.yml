@@ -83,22 +83,33 @@ jobs:
 
       - name: Gradle build (armeabi generic python release)
         run: |
+          set -o pipefail
+          echo "sdk.dir=$ANDROID_HOME" > src/local.properties
+          cat src/local.properties
           cd src
           chmod +x gradlew
           ./gradlew :app:assembleArmeabiGenericPythonRelease --no-daemon --stacktrace 2>&1 | tee ../build-full.log | tail -40
+          find app/build/outputs -name '*.apk' | grep . || { echo 'NO APK PRODUCED'; exit 1; }
 
       - name: Sign APK
         run: |
+          {
+          set -x
+          find src/app/build/outputs -name '*.apk' > apk-list.txt 2>&1 || true
+          cat apk-list.txt || true
           PASS=$(openssl rand -hex 8)
           keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
           BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
-          UNSIGNED=$(ls src/app/build/outputs/apk/armeabiGenericPython/release/*.apk | head -1)
+          echo "build-tools: $BT"
+          UNSIGNED=$(grep -i 'python' apk-list.txt | grep -i 'release' | head -1)
+          if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
           $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.0-armeabi_v7a.apk aligned.apk
           $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.0-armeabi_v7a.apk | head -2
           $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.0-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
           ls -lh TVMax-Box-1.0-armeabi_v7a.apk
+          } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -109,8 +120,8 @@ jobs:
       - name: Dump build log to repo (always)
         if: always()
         run: |
-          if [ -f build-full.log ]; then
-            tail -n 600 build-full.log > build-log.txt
+          { [ -f build-full.log ] && tail -n 600 build-full.log; [ -f apk-list.txt ] && echo '=== APK LIST ===' && cat apk-list.txt; [ -f sign.log ] && echo '=== SIGN LOG ===' && cat sign.log; } > build-log.txt 2>/dev/null || true
+          if [ -s build-log.txt ]; then
             { echo '## Box build log tail'; echo '```'; cat build-log.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true
             git config user.email "ci@tvmax.local" || true
             git config user.name "tvmax-ci" || true

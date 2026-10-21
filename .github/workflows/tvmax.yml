@@ -56,14 +56,14 @@ jobs:
                 '<string name="app_name">TV Max</string>')
           patch('app/src/main/res/values/strings.xml',
                 '<string name="app_source"></string>',
-                '<string name="app_source">https://raw.liucn.cc/box/m.json</string>')
+                '<string name="app_source">https://raw.githubusercontent.com/wushisan5353/TV/fongmi/tvmax-config.json</string>')
           # values-zh overrides values on Chinese-locale devices; seed it too (empty there = no sources)
           patch('app/src/main/res/values-zh/strings.xml',
                 '<string name="app_name">TVBox</string>',
                 '<string name="app_name">TV Max</string>')
           patch('app/src/main/res/values-zh/strings.xml',
                 '<string name="app_source"></string>',
-                '<string name="app_source">https://raw.liucn.cc/box/m.json</string>')
+                '<string name="app_source">https://raw.githubusercontent.com/wushisan5353/TV/fongmi/tvmax-config.json</string>')
 
           # 2) Own applicationId + fixed version
           patch('app/build.gradle',
@@ -71,10 +71,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 103')
+                'versionCode 104')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "1.0-box3"')
+                'versionName "1.0-box4"')
 
           # 2b) Repo order: official google/mavenCentral first, aliyun mirror as fallback (mirror had a 502 outage)
           bg = root / 'build.gradle'
@@ -127,17 +127,17 @@ jobs:
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.2-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.2-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.2-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-1.2-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.3-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.3-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.3-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-1.3-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-1.2-armeabi_v7a.apk
+          path: TVMax-Box-1.3-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -179,7 +179,7 @@ jobs:
           script: |
             mkdir -p verify-out
             echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-1.2-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-1.2-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
+            adb install -r TVMax-Box-1.3-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-1.3-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
@@ -225,11 +225,11 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-1.2
-          name: TV Max Box 1.2 (TVBoxOSC 系换底座版, 纯 Java 变体)
+          tag_name: tvmax-box-1.3
+          name: TV Max Box 1.3 (自有配置版: 老刘点播 + 集成直播)
           body: |
             TV Max 换底座版：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax
             - 内置默认配置: 老刘 (234 站, 含网盘/磁力 + 直播 + 深色壁纸源), 装上即用
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-1.2-armeabi_v7a.apk
+          files: TVMax-Box-1.3-armeabi_v7a.apk

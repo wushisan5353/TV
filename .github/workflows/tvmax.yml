@@ -226,7 +226,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: tvmax-box-1.3
-          name: TV Max Box 1.3 (自有配置版: 老刘点播 + 集成直播)
+          name: "TV Max Box 1.3 (self-hosted config + lives)"
           body: |
             TV Max 换底座版：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax

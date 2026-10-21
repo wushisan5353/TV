@@ -1,0 +1,95 @@
+name: Build TV Max
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout FongMi v4.0.7 (last minSdk 21)
+        uses: actions/checkout@v4
+        with:
+          ref: f08d0740bbd8b5fc1363e3659ad49612eb043f5c
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK platform 36
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Apply TV Max patches
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          def patch(path, old, new):
+              p = pathlib.Path(path)
+              t = p.read_text(encoding='utf-8')
+              if old not in t:
+                  print(f'PATCH MISS in {path}: {old[:60]}')
+                  sys.exit(1)
+              p.write_text(t.replace(old, new, 1), encoding='utf-8')
+              print(f'patched {path}')
+
+          # 1) App name -> TV Max
+          patch('app/src/main/res/values/strings.xml',
+                '<string name="app_name">TV</string>',
+                '<string name="app_name">TV Max</string>')
+          # 2) Own applicationId + version
+          patch('app/build.gradle',
+                'applicationId "com.fongmi.android.tv"',
+                'applicationId "com.wushisan.tvmax"')
+          patch('app/build.gradle', 'versionCode 407', 'versionCode 408')
+          patch('app/build.gradle', 'versionName "4.0.7"', 'versionName "4.0.7-tvmax1"')
+          # 3) Built-in default VOD config (seeded on first launch when no config stored)
+          patch('app/src/main/java/com/fongmi/android/tv/bean/Config.java',
+                'return item == null ? create(0) : item;',
+                'return item == null ? create(0, "https://raw.liucn.cc/box/m.json", "老刘·网盘磁力") : item;')
+          PY
+
+      - name: Build leanback armeabi-v7a release
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleLeanbackArmeabi_v7aRelease --no-daemon --stacktrace
+
+      - name: Sign APK
+        run: |
+          PASS=$(openssl rand -hex 8)
+          echo "KEYPASS=$PASS" >> $GITHUB_ENV
+          keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
+          BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
+          UNSIGNED=$(ls app/build/outputs/apk/leanbackArmeabi_v7a/release/*.apk | head -1)
+          echo "unsigned: $UNSIGNED"
+          $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-4.0.7-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-4.0.7-armeabi_v7a.apk | head -3
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-4.0.7-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-4.0.7-armeabi_v7a.apk
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TVMax-apk
+          path: TVMax-4.0.7-armeabi_v7a.apk
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: tvmax-1.0
+          name: TV Max 1.0 (FongMi 4.0.7 改版)
+          body: |
+            基于 FongMi/TV v4.0.7 (minSdk 21, 兼容 Android 5.1) 的个人改版:
+            - 改名 TV Max, 独立包名 com.wushisan.tvmax
+            - 内置默认配置: 老刘 (234 站, 含网盘/磁力), 装上即用
+            - leanback 电视版, armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
+          files: TVMax-4.0.7-armeabi_v7a.apk

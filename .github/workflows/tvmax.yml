@@ -58,8 +58,8 @@ jobs:
           patch('app/build.gradle',
                 'applicationId "com.fongmi.android.tv"',
                 'applicationId "com.wushisan.tvmax"')
-          patch('app/build.gradle', 'versionCode 407', 'versionCode 408')
-          patch('app/build.gradle', 'versionName "4.0.7"', 'versionName "4.0.7-tvmax1"')
+          patch('app/build.gradle', 'versionCode 407', 'versionCode 409')
+          patch('app/build.gradle', 'versionName "4.0.7"', 'versionName "4.0.7-tvmax2"')
           # 3) Built-in default VOD config (seeded on first launch when no config stored)
           patch('app/src/main/java/com/fongmi/android/tv/bean/Config.java',
                 'return item == null ? create(0) : item;',
@@ -111,6 +111,14 @@ jobs:
                 'float sizeDown = (Setting.getSubtitleTextSize() == 0 ? 0.0533f : Setting.getSubtitleTextSize()) - 0.002f;\n        Setting.putSubtitleTextSize(sizeDown);\n        subtitleView.setFractionalTextSize(sizeDown);')
           patch(sub, '        subtitleView.setBottomPosition(0.0f);\n', '')
           print('stock-media3 adaptations applied')
+          # 5c) Layouts declare surface_type="none" and rely on the patched
+          #     PlayerView.setRender() to attach a surface at runtime. With stock
+          #     media3 there is no surface at all (audio only, black video).
+          #     Preset a SurfaceView in the three leanback layouts instead.
+          for layout in ('activity_video', 'activity_live', 'activity_cast'):
+              patch('app/src/leanback/res/layout/%s.xml' % layout,
+                    'app:surface_type="none"', 'app:surface_type="surface_view"')
+          print('surface_view preset applied')
           print('pinned chaquo requirements')
           # 6) Include in-tree local modules that upstream builds into app/libs AARs
           patch('settings.gradle',
@@ -209,8 +217,8 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-1.0
-          name: TV Max 1.0 (FongMi 4.0.7 改版)
+          tag_name: tvmax-1.1
+          name: TV Max 1.1 (FongMi 4.0.7 改版, 修无画面)
           body: |
             基于 FongMi/TV v4.0.7 (minSdk 21, 兼容 Android 5.1) 的个人改版:
             - 改名 TV Max, 独立包名 com.wushisan.tvmax

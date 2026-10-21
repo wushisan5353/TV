@@ -59,6 +59,27 @@ jobs:
           patch('app/src/main/java/com/fongmi/android/tv/bean/Config.java',
                 'return item == null ? create(0) : item;',
                 'return item == null ? create(0, "https://raw.liucn.cc/box/m.json", "老刘·网盘磁力") : item;')
+          # 4) media3 is NOT declared upstream (devs use gitignored local AARs in app/libs).
+          #    Declare the stock 1.8.0 modules (root ext media3Version) so CI can resolve them.
+          media3 = "\n".join([
+              "    implementation 'androidx.media3:media3-exoplayer:' + media3Version",
+              "    implementation 'androidx.media3:media3-exoplayer-dash:' + media3Version",
+              "    implementation 'androidx.media3:media3-exoplayer-hls:' + media3Version",
+              "    implementation 'androidx.media3:media3-exoplayer-smoothstreaming:' + media3Version",
+              "    implementation 'androidx.media3:media3-exoplayer-rtsp:' + media3Version",
+              "    implementation 'androidx.media3:media3-ui:' + media3Version",
+              "    implementation 'androidx.media3:media3-datasource-okhttp:' + media3Version",
+              "    implementation 'org.fourthline.cling:cling-core:2.1.1'"])
+          patch('app/build.gradle',
+                "    implementation 'org.fourthline.cling:cling-core:2.1.1'",
+                media3)
+          # 5) Pin python deps: pyquery latest needs cssselect>=1.5, unavailable for py3.8
+          patch('chaquo/requirements.txt', 'pyquery', 'pyquery==2.0.0')
+          p = pathlib.Path('chaquo/requirements.txt')
+          rt = p.read_text(encoding='utf-8')
+          if 'cssselect' not in rt:
+              p.write_text(rt.rstrip('\n') + '\ncssselect==1.2.0\n', encoding='utf-8')
+          print('pinned chaquo requirements')
           PY
 
       - name: Provision Gradle 8.10.2 (bypass wrapper download)

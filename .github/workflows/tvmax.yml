@@ -130,6 +130,7 @@ jobs:
               fp = pathlib.Path(f'dlna-cast/{m}/build.gradle')
               ft = fp.read_text(encoding='utf-8')
               ft = ft.replace('minSdk 24', 'minSdk 21')
+              ft = ft.replace("jvmTarget = '1.8'", "jvmTarget = '17'")
               ft = _re.sub(r"apply from: '\./publish\.gradle'\n?", '', ft)
               ft = _re.sub(r"repositories \{\s*mavenCentral\(\)\s*\}\n", '', ft)
               fp.write_text(ft, encoding='utf-8')

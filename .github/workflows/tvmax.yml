@@ -1,3 +1,6 @@
+
+Muse
+tvmax-v3.yml
 name: Build TV Max
 
 on:
@@ -61,10 +64,40 @@ jobs:
                 'return item == null ? create(0, "https://raw.liucn.cc/box/m.json", "老刘·网盘磁力") : item;')
           PY
 
-      - name: Build leanback armeabi-v7a release
+      - name: Provision Gradle 8.10.2 (bypass wrapper download)
         run: |
-          chmod +x gradlew
-          ./gradlew :app:assembleLeanbackArmeabi_v7aRelease --no-daemon --stacktrace
+          set -e
+          cd /tmp
+          curl -L --retry 5 --retry-all-errors --retry-delay 5 \
+            -o gradle-8.10.2-bin.zip \
+            https://services.gradle.org/distributions/gradle-8.10.2-bin.zip
+          EXPECTED=$(curl -sL https://services.gradle.org/distributions/gradle-8.10.2-bin.zip.sha256 | awk '{print $1}')
+          if [ -n "$EXPECTED" ]; then
+            echo "$EXPECTED  gradle-8.10.2-bin.zip" | sha256sum -c -
+          else
+            echo "WARN: could not fetch expected sha256, skipping verification"
+          fi
+          rm -rf /tmp/gradle-8.10.2
+          unzip -q -o gradle-8.10.2-bin.zip
+          /tmp/gradle-8.10.2/bin/gradle --version
+
+      - name: Build leanback armeabi-v7a release
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          /tmp/gradle-8.10.2/bin/gradle :app:assembleLeanbackArmeabi_v7aRelease --no-daemon --console=plain 2>&1 | tee build-full.log
+
+      - name: Dump build log to repo on failure
+        if: steps.build.outcome == 'failure'
+        run: |
+          tail -n 500 build-full.log > build-log.txt
+          git config user.name "tvmax-ci"
+          git config user.email "tvmax-ci@users.noreply.github.com"
+          git add build-log.txt
+          git commit -m "CI: build failure log"
+          git push origin HEAD:fongmi
+          exit 1
 
       - name: Sign APK
         run: |
@@ -97,3 +130,6 @@ jobs:
             - 内置默认配置: 老刘 (234 站, 含网盘/磁力), 装上即用
             - leanback 电视版, armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
           files: TVMax-4.0.7-armeabi_v7a.apk
+
+
+

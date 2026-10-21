@@ -1,243 +1,82 @@
-name: Build TV Max
+name: TV Max Diag
 
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  build:
-    runs-on: ubuntu-22.04
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
-      - name: Checkout FongMi v4.0.7 (last minSdk 21)
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Download v9 APK (release tvmax-1.1)
+        run: |
+          curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-1.1/TVMax-4.0.7-armeabi_v7a.apk"
+          ls -lh tvmax.apk
+
+      - name: Emulator diagnostics
+        uses: reactivecircus/android-emulator-runner@v2
         with:
-          ref: f08d0740bbd8b5fc1363e3659ad49612eb043f5c
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          avd-name: diag
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          disable-animations: true
+          script: |
+            mkdir -p diag-out
+            echo "=== install ===" > diag-out/steps.log
+            adb install -r tvmax.apk >> diag-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r tvmax.apk >> diag-out/steps.log 2>&1 || echo INSTALL_FAILED >> diag-out/steps.log
+            adb root || true
+            sleep 3
+            adb logcat -c || true
+            adb logcat > diag-out/logcat.txt &
+            LOGPID=$!
+            echo "=== launch 1 ===" >> diag-out/steps.log
+            adb shell am start -n com.wushisan.tvmax/com.fongmi.android.tv.ui.activity.HomeActivity >> diag-out/steps.log 2>&1 || true
+            sleep 60
+            adb exec-out screencap -p > diag-out/home1.png || true
+            adb shell uiautomator dump /sdcard/home1.xml || true
+            adb pull /sdcard/home1.xml diag-out/home1.xml || true
+            echo "=== db inspect + seed douban home ===" >> diag-out/steps.log
+            adb shell am force-stop com.wushisan.tvmax || true
+            sleep 2
+            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv 'SELECT id,type,name,url,home FROM Config;'" > diag-out/db-before.txt 2>&1 || true
+            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv \"UPDATE Config SET home='csp_douban' WHERE type=0;\"" >> diag-out/steps.log 2>&1 || true
+            adb shell "sqlite3 /data/data/com.wushisan.tvmax/databases/tv 'SELECT id,type,name,home FROM Config;'" > diag-out/db-after.txt 2>&1 || true
+            echo "=== launch 2 (douban home) ===" >> diag-out/steps.log
+            adb shell am start -n com.wushisan.tvmax/com.fongmi.android.tv.ui.activity.HomeActivity >> diag-out/steps.log 2>&1 || true
+            sleep 45
+            adb exec-out screencap -p > diag-out/home2.png || true
+            adb shell uiautomator dump /sdcard/home2.xml || true
+            adb pull /sdcard/home2.xml diag-out/home2.xml || true
+            echo "=== navigate to first recommendation ===" >> diag-out/steps.log
+            adb shell input keyevent 20 || true
+            sleep 1
+            adb shell input keyevent 20 || true
+            sleep 1
+            adb exec-out screencap -p > diag-out/focus.png || true
+            adb shell input keyevent 23 || true
+            sleep 25
+            adb exec-out screencap -p > diag-out/detail1.png || true
+            adb shell uiautomator dump /sdcard/detail1.xml || true
+            adb pull /sdcard/detail1.xml diag-out/detail1.xml || true
+            sleep 15
+            adb exec-out screencap -p > diag-out/detail2.png || true
+            adb shell dumpsys activity activities > diag-out/activities.txt 2>&1 || true
+            kill $LOGPID || true
+            echo "=== done ===" >> diag-out/steps.log
+            ls -lh diag-out/ >> diag-out/steps.log 2>&1 || true
 
-      - name: Setup JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
-      - name: Install SDK platform 36 (runner built-in SDK)
-        run: |
-          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
-          if [ ! -x "$SDKMANAGER" ]; then
-            SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -type f | sort -V | tail -1)
-          fi
-          echo "sdkmanager: $SDKMANAGER"
-          yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
-          "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0"
-
-      - name: Clone DLNA-Cast v2.0.0 (cast library sources)
-        run: |
-          git clone --depth 1 --branch v2.0.0 https://github.com/devin1014/DLNA-Cast.git dlna-cast
-          ls dlna-cast
-
-      - name: Apply TV Max patches
-        run: |
-          python3 - <<'PY'
-          import pathlib, sys
-
-          def patch(path, old, new):
-              p = pathlib.Path(path)
-              t = p.read_text(encoding='utf-8')
-              if old not in t:
-                  print(f'PATCH MISS in {path}: {old[:60]}')
-                  sys.exit(1)
-              p.write_text(t.replace(old, new, 1), encoding='utf-8')
-              print(f'patched {path}')
-
-          # 1) App name -> TV Max
-          patch('app/src/main/res/values/strings.xml',
-                '<string name="app_name">TV</string>',
-                '<string name="app_name">TV Max</string>')
-          # 2) Own applicationId + version
-          patch('app/build.gradle',
-                'applicationId "com.fongmi.android.tv"',
-                'applicationId "com.wushisan.tvmax"')
-          patch('app/build.gradle', 'versionCode 407', 'versionCode 409')
-          patch('app/build.gradle', 'versionName "4.0.7"', 'versionName "4.0.7-tvmax2"')
-          # 3) Built-in default VOD config (seeded on first launch when no config stored)
-          patch('app/src/main/java/com/fongmi/android/tv/bean/Config.java',
-                'return item == null ? create(0) : item;',
-                'return item == null ? create(0, "https://raw.liucn.cc/box/m.json", "老刘·网盘磁力") : item;')
-          # 4) media3 is NOT declared upstream (devs use gitignored local AARs in app/libs).
-          #    Declare the stock 1.8.0 modules (root ext media3Version) so CI can resolve them.
-          media3 = "\n".join([
-              "    implementation 'androidx.media3:media3-exoplayer:' + media3Version",
-              "    implementation 'androidx.media3:media3-exoplayer-dash:' + media3Version",
-              "    implementation 'androidx.media3:media3-exoplayer-hls:' + media3Version",
-              "    implementation 'androidx.media3:media3-exoplayer-smoothstreaming:' + media3Version",
-              "    implementation 'androidx.media3:media3-exoplayer-rtsp:' + media3Version",
-              "    implementation 'androidx.media3:media3-ui:' + media3Version",
-              "    implementation 'androidx.media3:media3-datasource-okhttp:' + media3Version",
-              "    implementation 'org.fourthline.cling:cling-core:2.1.1'"])
-          patch('app/build.gradle',
-                "    implementation 'org.fourthline.cling:cling-core:2.1.1'",
-                media3)
-          # 5) Pin python deps: pyquery latest needs cssselect>=1.5, unavailable for py3.8
-          patch('chaquo/requirements.txt', 'pyquery', 'pyquery==2.0.0')
-          p = pathlib.Path('chaquo/requirements.txt')
-          rt = p.read_text(encoding='utf-8')
-          if 'cssselect' not in rt:
-              p.write_text(rt.rstrip('\n') + '\ncssselect==1.2.0\n', encoding='utf-8')
-          # 5b) Adapt the handful of call sites that use FongMi's patched-media3 APIs
-          #     to stock media3 1.8.0 (patched AARs are not published anywhere).
-          patch('app/src/main/java/com/fongmi/android/tv/player/Players.java',
-                '        view.setRender(Setting.getRender());\n', '')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
-                '.setAudioPrefer(Setting.isAudioPrefer()).setVideoPrefer(Setting.isVideoPrefer())', '')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
-                '        if (Setting.getSubtitlePosition() != 0) exo.getSubtitleView().setBottomPosition(Setting.getSubtitlePosition());\n', '')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
-                'MimeTypes.APPLICATION_OCTET', '"application/octet-stream"')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
-                '        builder.setAds(Sniffer.getRegex(uri));\n', '')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
-                '        builder.setDecode(decode);\n', '')
-          patch('app/src/main/java/com/fongmi/android/tv/player/exo/TrackNameProvider.java',
-                'MimeTypes.AUDIO_AV3A', '"audio/av3a"')
-          sub = 'app/src/main/java/com/fongmi/android/tv/ui/dialog/SubtitleDialog.java'
-          patch(sub, 'subtitleView.addPosition(0.005f);\n        Setting.putSubtitlePosition(subtitleView.getPosition());',
-                'Setting.putSubtitlePosition(Setting.getSubtitlePosition() + 0.005f);')
-          patch(sub, 'subtitleView.subPosition(0.005f);\n        Setting.putSubtitlePosition(subtitleView.getPosition());',
-                'Setting.putSubtitlePosition(Setting.getSubtitlePosition() - 0.005f);')
-          patch(sub, 'subtitleView.addTextSize(0.002f);\n        Setting.putSubtitleTextSize(subtitleView.getTextSize());',
-                'float sizeUp = (Setting.getSubtitleTextSize() == 0 ? 0.0533f : Setting.getSubtitleTextSize()) + 0.002f;\n        Setting.putSubtitleTextSize(sizeUp);\n        subtitleView.setFractionalTextSize(sizeUp);')
-          patch(sub, 'subtitleView.subTextSize(0.002f);\n        Setting.putSubtitleTextSize(subtitleView.getTextSize());',
-                'float sizeDown = (Setting.getSubtitleTextSize() == 0 ? 0.0533f : Setting.getSubtitleTextSize()) - 0.002f;\n        Setting.putSubtitleTextSize(sizeDown);\n        subtitleView.setFractionalTextSize(sizeDown);')
-          patch(sub, '        subtitleView.setBottomPosition(0.0f);\n', '')
-          print('stock-media3 adaptations applied')
-          # 5c) Layouts declare surface_type="none" and rely on the patched
-          #     PlayerView.setRender() to attach a surface at runtime. With stock
-          #     media3 there is no surface at all (audio only, black video).
-          #     Preset a SurfaceView in the three leanback layouts instead.
-          for layout in ('activity_video', 'activity_live', 'activity_cast'):
-              patch('app/src/leanback/res/layout/%s.xml' % layout,
-                    'app:surface_type="none"', 'app:surface_type="surface_view"')
-          print('surface_view preset applied')
-          print('pinned chaquo requirements')
-          # 6) Include in-tree local modules that upstream builds into app/libs AARs
-          patch('settings.gradle',
-                "include ':quickjs'",
-                "include ':quickjs'\ninclude ':hook'\ninclude ':forcetech'\ninclude ':jianpian'\ninclude ':thunder'\ninclude ':tvbus'")
-          # 7) Register cloned DLNA-Cast modules + huawei mirror (jcenter archive for danmaku)
-          p = pathlib.Path('settings.gradle')
-          s = p.read_text(encoding='utf-8')
-          s += "\ninclude ':dlna-core', ':dlna-dmc', ':dlna-dmr'\n"
-          s += "project(':dlna-core').projectDir = new File(rootDir, 'dlna-cast/dlna-core')\n"
-          s += "project(':dlna-dmc').projectDir = new File(rootDir, 'dlna-cast/dlna-dmc')\n"
-          s += "project(':dlna-dmr').projectDir = new File(rootDir, 'dlna-cast/dlna-dmr')\n"
-          p.write_text(s, encoding='utf-8')
-          print('registered dlna modules')
-          patch('settings.gradle',
-                'maven { url "https://jitpack.io" }',
-                'maven { url "https://jitpack.io" }\n        maven { url "https://repo.huaweicloud.com/repository/maven" }')
-          # 8) Root: kotlin plugin (for DLNA modules) + kotlin_version ext they reference
-          patch('build.gradle',
-                "    id 'com.chaquo.python' version '15.0.1' apply false",
-                "    id 'com.chaquo.python' version '15.0.1' apply false\n    id 'org.jetbrains.kotlin.android' version '1.9.25' apply false")
-          patch('build.gradle',
-                "    okhttpVersion = '5.1.0'",
-                "    okhttpVersion = '5.1.0'\n    kotlin_version = '1.9.25'")
-          # 9) App deps: local modules + danmaku + nextlib ffmpeg decoder ext
-          extra = "\n".join([
-              "    implementation project(':hook')",
-              "    implementation project(':forcetech')",
-              "    implementation project(':jianpian')",
-              "    implementation project(':thunder')",
-              "    implementation project(':tvbus')",
-              "    implementation project(':dlna-dmc')",
-              "    implementation project(':dlna-dmr')",
-              "    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'",
-              "    implementation 'io.github.anilbeesetti:nextlib-media3ext:1.8.0-0.9.0'",
-              "    implementation 'org.fourthline.cling:cling-support:2.1.1'"])
-          patch('app/build.gradle',
-                "    implementation 'org.fourthline.cling:cling-support:2.1.1'",
-                extra)
-          # 10) DLNA modules: minSdk 24 -> 21; strip publish.gradle applies and
-          #     project-level repositories{} (forbidden by FAIL_ON_PROJECT_REPOS)
-          import re as _re
-          for m in ('dlna-core', 'dlna-dmc', 'dlna-dmr'):
-              fp = pathlib.Path(f'dlna-cast/{m}/build.gradle')
-              ft = fp.read_text(encoding='utf-8')
-              ft = ft.replace('minSdk 24', 'minSdk 21')
-              ft = ft.replace("jvmTarget = '1.8'", "jvmTarget = '17'")
-              ft = _re.sub(r"apply from: '\./publish\.gradle'\n?", '', ft)
-              ft = _re.sub(r"repositories \{\s*mavenCentral\(\)\s*\}\n", '', ft)
-              fp.write_text(ft, encoding='utf-8')
-              print(f'sanitized {m}')
-          PY
-
-      - name: Provision Gradle 8.10.2 (bypass wrapper download)
-        run: |
-          set -e
-          cd /tmp
-          curl -L --retry 5 --retry-all-errors --retry-delay 5 \
-            -o gradle-8.10.2-bin.zip \
-            https://services.gradle.org/distributions/gradle-8.10.2-bin.zip
-          EXPECTED=$(curl -sL https://services.gradle.org/distributions/gradle-8.10.2-bin.zip.sha256 | awk '{print $1}')
-          if [ -n "$EXPECTED" ]; then
-            echo "$EXPECTED  gradle-8.10.2-bin.zip" | sha256sum -c -
-          else
-            echo "WARN: could not fetch expected sha256, skipping verification"
-          fi
-          rm -rf /tmp/gradle-8.10.2
-          unzip -q -o gradle-8.10.2-bin.zip
-          /tmp/gradle-8.10.2/bin/gradle --version
-
-      - name: Build leanback armeabi-v7a release
-        run: |
-          set -o pipefail
-          /tmp/gradle-8.10.2/bin/gradle :app:assembleLeanbackArmeabi_v7aRelease --no-daemon --console=plain 2>&1 | tee build-full.log
-
-      - name: Sign APK
-        run: |
-          PASS=$(openssl rand -hex 8)
-          echo "KEYPASS=$PASS" >> $GITHUB_ENV
-          keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
-          BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
-          UNSIGNED=$(ls app/build/outputs/apk/leanbackArmeabi_v7a/release/*.apk | head -1)
-          echo "unsigned: $UNSIGNED"
-          $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-4.0.7-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-4.0.7-armeabi_v7a.apk | head -3
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-4.0.7-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-4.0.7-armeabi_v7a.apk
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: TVMax-apk
-          path: TVMax-4.0.7-armeabi_v7a.apk
-
-      - name: Publish release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: tvmax-1.1
-          name: TV Max 1.1 (FongMi 4.0.7 改版, 修无画面)
-          body: |
-            基于 FongMi/TV v4.0.7 (minSdk 21, 兼容 Android 5.1) 的个人改版:
-            - 改名 TV Max, 独立包名 com.wushisan.tvmax
-            - 内置默认配置: 老刘 (234 站, 含网盘/磁力), 装上即用
-            - leanback 电视版, armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-4.0.7-armeabi_v7a.apk
-
-      - name: Dump build log to repo (always, never blocks)
+      - name: Commit diagnostics to repo
         if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -f build-full.log ]; then
-            tail -n 500 build-full.log > build-log.txt
-            { echo '## Build log tail'; echo '```'; cat build-log.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true
-            SHA=$(gh api "repos/${{ github.repository }}/contents/build-log.txt?ref=fongmi" --jq .sha 2>/dev/null || echo "")
-            if [ -n "$SHA" ]; then SHAARG="-f sha=$SHA"; else SHAARG=""; fi
-            gh api "repos/${{ github.repository }}/contents/build-log.txt" -X PUT \
-              -f message="CI: build log" \
-              -f content="$(base64 -w0 build-log.txt)" \
-              -f branch="fongmi" $SHAARG || echo "WARN: log upload failed (token permission?)"
-          fi
+          git config user.email "diag@ci.local"
+          git config user.name "tvmax-diag"
+          git add diag-out || true
+          git commit -m "diag: cloud emulator run" || true
+          git push origin HEAD:fongmi || true
+          ls -lh diag-out || true

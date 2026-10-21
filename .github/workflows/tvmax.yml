@@ -71,10 +71,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 201')
+                'versionCode 202')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "2.1"')
+                'versionName "2.2"')
 
           # 2a) First-run presets (App.java putDefault seeds): Douban home feed, Exo player, no window preview
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
@@ -106,6 +106,26 @@ jobs:
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
                 'putDefault(HawkConfig.THEME_SELECT, 0);',
                 'putDefault(HawkConfig.THEME_SELECT, 7);')
+
+          # 2d) 2.2: upgrade migration + home card polish + wallpaper picker
+          patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
+                'putDefault(HawkConfig.DOH_URL, 0);',
+                'putDefault(HawkConfig.DOH_URL, 0);\n\n        // TV Max: one-time 2.2 migration so upgrade installs also get the new defaults\n        if (!Hawk.contains("tvmax_22_migrated")) {\n            Hawk.put(HawkConfig.THEME_SELECT, 7);\n            Hawk.put(HawkConfig.HOME_REC, 0);\n            Hawk.put(HawkConfig.PLAY_TYPE, 2);\n            Hawk.put(HawkConfig.LIVE_PLAYER_TYPE, 2);\n            Hawk.put(HawkConfig.SHOW_PREVIEW, false);\n            Hawk.put("tvmax_22_migrated", true);\n        }')
+          patch('app/src/main/res/drawable/shape_thumb_radius.xml',
+                'android:radius="14px"',
+                'android:radius="30px"', 2)
+          patch('app/src/main/res/drawable/shape_thumb_radius.xml',
+                'android:width="2mm"',
+                'android:width="1.2mm"')
+          patch('app/src/main/res/drawable/shape_thumb_bottom_name.xml',
+                '    <corners\n        android:bottomLeftRadius="@dimen/vs_14"\n        android:bottomRightRadius="@dimen/vs_14" />\n    <solid android:color="@color/color_000000_60" />',
+                '    <corners\n        android:bottomLeftRadius="@dimen/vs_20"\n        android:bottomRightRadius="@dimen/vs_20" />\n    <gradient\n        android:angle="270"\n        android:startColor="#00000000"\n        android:endColor="#CC000000"\n        android:type="linear" />')
+          patch('app/src/main/res/layout/item_grid.xml',
+                'android:scaleType="fitXY"',
+                'android:scaleType="centerCrop"')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java',
+                '        findViewById(R.id.llWp).setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                FastClickCheckUtil.check(v);\n                if (!ApiConfig.get().wallpaper.isEmpty())\n                    Toast.makeText(mContext, getString(R.string.mn_wall_load), Toast.LENGTH_SHORT).show();\n                OkGo.<File>get(ApiConfig.get().wallpaper).execute(new FileCallback(requireActivity().getFilesDir().getAbsolutePath(), "wp") {\n                    @Override\n                    public void onSuccess(Response<File> response) {\n                        ((BaseActivity) requireActivity()).changeWallpaper(true);\n                    }\n\n                    @Override\n                    public void onError(Response<File> response) {\n                        super.onError(response);\n                    }\n\n                    @Override\n                    public void downloadProgress(Progress progress) {\n                        super.downloadProgress(progress);\n                    }\n                });\n            }\n        });',
+                '        findViewById(R.id.llWp).setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                FastClickCheckUtil.check(v);\n                final String[] wpNames = {"云端推荐", "近黑", "深海军蓝", "深空灰紫", "暗酒红", "墨绿"};\n                final String[] wpUrls = {ApiConfig.get().wallpaper,\n                        "https://raw.githubusercontent.com/wushisan5353/TV/fongmi/wp-black.jpg",\n                        "https://raw.githubusercontent.com/wushisan5353/TV/fongmi/wp-navy.jpg",\n                        "https://raw.githubusercontent.com/wushisan5353/TV/fongmi/wp-violet.jpg",\n                        "https://raw.githubusercontent.com/wushisan5353/TV/fongmi/wp-wine.jpg",\n                        "https://raw.githubusercontent.com/wushisan5353/TV/fongmi/wp-fern.jpg"};\n                ArrayList<Integer> types = new ArrayList<>();\n                for (int i = 0; i < wpNames.length; i++) types.add(i);\n                SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);\n                dialog.setTip("选择壁纸");\n                dialog.setAdapter(null, new SelectDialogAdapter.SelectDialogInterface<Integer>() {\n                    @Override\n                    public void click(Integer value, int pos) {\n                        String url = wpUrls[value];\n                        if (url == null || url.isEmpty()) return;\n                        Toast.makeText(mContext, getString(R.string.mn_wall_load), Toast.LENGTH_SHORT).show();\n                        OkGo.<File>get(url).execute(new FileCallback(requireActivity().getFilesDir().getAbsolutePath(), "wp") {\n                            @Override\n                            public void onSuccess(Response<File> response) {\n                                ((BaseActivity) requireActivity()).changeWallpaper(true);\n                            }\n\n                            @Override\n                            public void onError(Response<File> response) {\n                                super.onError(response);\n                            }\n                        });\n                    }\n\n                    @Override\n                    public String getDisplay(Integer val) {\n                        return wpNames[val];\n                    }\n                }, new DiffUtil.ItemCallback<Integer>() {\n                    @Override\n                    public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {\n                        return oldItem.intValue() == newItem.intValue();\n                    }\n\n                    @Override\n                    public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {\n                        return oldItem.intValue() == newItem.intValue();\n                    }\n                }, types, 0);\n                dialog.show();\n            }\n        });')
 
           # 2b) Repo order: official google/mavenCentral first, aliyun mirror as fallback (mirror had a 502 outage)
           bg = root / 'build.gradle'
@@ -158,17 +178,17 @@ jobs:
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.1-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.1-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.1-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-2.1-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.2-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.2-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.2-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-2.2-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-2.1-armeabi_v7a.apk
+          path: TVMax-Box-2.2-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -210,7 +230,7 @@ jobs:
           script: |
             mkdir -p verify-out
             echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-2.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
+            adb install -r TVMax-Box-2.2-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.2-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
@@ -256,13 +276,14 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-2.1
-          name: "TV Max Box 2.1"
+          tag_name: tvmax-box-2.2
+          name: "TV Max Box 2.2"
           body: |
             TV Max 2.0：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax, 版本号 2.0
             - 内置默认配置: 自托管云端配置 (240+ 站, 每周自动维护: 同步/验活/加新站), 直播单源分组列表 (央视卫视/港澳台/欧洲/国际等 3000+ 频道), 深色壁纸
             - 开箱预设: 默认豆瓣首页推荐, 播放器 Exo + 硬解, 关闭窗口预览 (针对老电视性能优化)
             - 新增 Apple TV 主题 (系统蓝强调色, 已设为默认, 设置-主题里可切换其余 7 款)
+            - 2.2: 首页海报卡打磨 (大圆角/渐变片名条/居中裁剪); 壁纸改为内置图库选择 (6 款); 升级安装自动应用新默认 (一次性迁移)
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-2.1-armeabi_v7a.apk
+          files: TVMax-Box-2.2-armeabi_v7a.apk

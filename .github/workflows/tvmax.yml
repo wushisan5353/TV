@@ -69,6 +69,15 @@ jobs:
                 'versionName "1.0.".concat(buildTime())',
                 'versionName "1.0-box2"')
 
+          # 2b) Repo order: official google/mavenCentral first, aliyun mirror as fallback (mirror had a 502 outage)
+          bg = root / 'build.gradle'
+          bt = bg.read_text(encoding='utf-8')
+          old_repo = 'repositories {\n        maven { url "https://maven.aliyun.com/repository/public" }'
+          new_repo = 'repositories {\n        google()\n        mavenCentral()\n        maven { url "https://maven.aliyun.com/repository/public" }'
+          assert bt.count(old_repo) == 2, f'repo anchor count={bt.count(old_repo)}'
+          bg.write_text(bt.replace(old_repo, new_repo), encoding='utf-8')
+          print('patched build.gradle repo order')
+
           # 3) Chaquo: host python path + pin pip packages (chaquo py3.8 index caps cssselect at 1.2.0)
           pyloc = os.environ.get('PYLOC', '')
           pybin = (pyloc + '/bin/python') if pyloc else 'python3'
@@ -80,6 +89,12 @@ jobs:
                 'install "pyquery==2.0.0"\n                install "cssselect==1.2.0"')
           print('all patches applied, buildPython =', pybin)
           PY
+
+      - name: Use colorful cube icon (from FongMi build, user pick)
+        run: |
+          curl -sL --retry 3 -o src/app/src/main/res/drawable/app_icon.png "https://raw.githubusercontent.com/FongMi/TV/f08d0740/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+          python3 -c "from PIL import Image; im=Image.open('src/app/src/main/res/drawable/app_icon.png'); print('icon:', im.size)" 2>/dev/null || file src/app/src/main/res/drawable/app_icon.png
+          test -s src/app/src/main/res/drawable/app_icon.png
 
       - name: Gradle build (armeabi generic python release)
         run: |

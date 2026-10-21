@@ -64,10 +64,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 101')
+                'versionCode 102')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "1.0-box1"')
+                'versionName "1.0-box2"')
 
           # 3) Chaquo: host python path + pin pip packages (chaquo py3.8 index caps cssselect at 1.2.0)
           pyloc = os.environ.get('PYLOC', '')
@@ -88,7 +88,7 @@ jobs:
           cat src/local.properties
           cd src
           chmod +x gradlew
-          ./gradlew :app:assembleArmeabiGenericPythonRelease --no-daemon --stacktrace 2>&1 | tee ../build-full.log | tail -40
+          ./gradlew :app:assembleArmeabiGenericNormalRelease --no-daemon --stacktrace 2>&1 | tee ../build-full.log | tail -40
           find app/build/outputs -name '*.apk' | grep . || { echo 'NO APK PRODUCED'; exit 1; }
 
       - name: Sign APK
@@ -101,21 +101,21 @@ jobs:
           keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
           BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
           echo "build-tools: $BT"
-          UNSIGNED=$(grep -i 'python' apk-list.txt | grep -i 'release' | head -1)
+          UNSIGNED=$(grep -i 'release' apk-list.txt | head -1)
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.0-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.0-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.0-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-1.0-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-1.1-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-1.1-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-1.1-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-1.1-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-1.0-armeabi_v7a.apk
+          path: TVMax-Box-1.1-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -133,7 +133,7 @@ jobs:
 
   verify:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     timeout-minutes: 60
     steps:
       - name: Checkout (this repo)
@@ -149,7 +149,7 @@ jobs:
         with:
           api-level: 34
           target: google_apis
-          arch: x86_64
+          arch: arm64-v8a
           profile: pixel_6
           avd-name: verify
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
@@ -157,7 +157,7 @@ jobs:
           script: |
             mkdir -p verify-out
             echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-1.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-1.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
+            adb install -r TVMax-Box-1.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-1.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
@@ -173,6 +173,9 @@ jobs:
             sleep 2
             adb exec-out screencap -p > verify-out/home2.png || true
             adb shell dumpsys activity activities > verify-out/activities.txt 2>&1 || true
+            adb logcat -b crash -d > verify-out/crash.txt 2>&1 || true
+            adb shell getprop ro.product.cpu.abilist > verify-out/abilist.txt 2>&1 || true
+            adb shell pm list packages | grep tvmax > verify-out/pkg.txt 2>&1 || true
             kill $LOGPID || true
             echo "=== done ===" >> verify-out/steps.log
 
@@ -200,11 +203,11 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-1.0
-          name: TV Max Box 1.0 (TVBoxOSC 系换底座版)
+          tag_name: tvmax-box-1.1
+          name: TV Max Box 1.1 (TVBoxOSC 系换底座版, 纯 Java 变体)
           body: |
             TV Max 换底座版：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax
             - 内置默认配置: 老刘 (234 站, 含网盘/磁力 + 直播 + 深色壁纸源), 装上即用
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-1.0-armeabi_v7a.apk
+          files: TVMax-Box-1.1-armeabi_v7a.apk

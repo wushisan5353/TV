@@ -31,6 +31,11 @@ jobs:
           yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
           "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0"
 
+      - name: Clone DLNA-Cast v2.0.0 (cast library sources)
+        run: |
+          git clone --depth 1 --branch v2.0.0 https://github.com/devin1014/DLNA-Cast.git dlna-cast
+          ls dlna-cast
+
       - name: Apply TV Max patches
         run: |
           python3 - <<'PY'
@@ -80,6 +85,55 @@ jobs:
           if 'cssselect' not in rt:
               p.write_text(rt.rstrip('\n') + '\ncssselect==1.2.0\n', encoding='utf-8')
           print('pinned chaquo requirements')
+          # 6) Include in-tree local modules that upstream builds into app/libs AARs
+          patch('settings.gradle',
+                "include ':quickjs'",
+                "include ':quickjs'\ninclude ':hook'\ninclude ':forcetech'\ninclude ':jianpian'\ninclude ':thunder'\ninclude ':tvbus'")
+          # 7) Register cloned DLNA-Cast modules + huawei mirror (jcenter archive for danmaku)
+          p = pathlib.Path('settings.gradle')
+          s = p.read_text(encoding='utf-8')
+          s += "\ninclude ':dlna-core', ':dlna-dmc', ':dlna-dmr'\n"
+          s += "project(':dlna-core').projectDir = new File(rootDir, 'dlna-cast/dlna-core')\n"
+          s += "project(':dlna-dmc').projectDir = new File(rootDir, 'dlna-cast/dlna-dmc')\n"
+          s += "project(':dlna-dmr').projectDir = new File(rootDir, 'dlna-cast/dlna-dmr')\n"
+          p.write_text(s, encoding='utf-8')
+          print('registered dlna modules')
+          patch('settings.gradle',
+                'maven { url "https://jitpack.io" }',
+                'maven { url "https://jitpack.io" }\n        maven { url "https://repo.huaweicloud.com/repository/maven" }')
+          # 8) Root: kotlin plugin (for DLNA modules) + kotlin_version ext they reference
+          patch('build.gradle',
+                "    id 'com.chaquo.python' version '15.0.1' apply false",
+                "    id 'com.chaquo.python' version '15.0.1' apply false\n    id 'org.jetbrains.kotlin.android' version '1.9.25' apply false")
+          patch('build.gradle',
+                "    okhttpVersion = '5.1.0'",
+                "    okhttpVersion = '5.1.0'\n    kotlin_version = '1.9.25'")
+          # 9) App deps: local modules + danmaku + nextlib ffmpeg decoder ext
+          extra = "\n".join([
+              "    implementation project(':hook')",
+              "    implementation project(':forcetech')",
+              "    implementation project(':jianpian')",
+              "    implementation project(':thunder')",
+              "    implementation project(':tvbus')",
+              "    implementation project(':dlna-dmc')",
+              "    implementation project(':dlna-dmr')",
+              "    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'",
+              "    implementation 'io.github.anilbeesetti:nextlib-media3ext:1.8.0-0.9.0'",
+              "    implementation 'org.fourthline.cling:cling-support:2.1.1'"])
+          patch('app/build.gradle',
+                "    implementation 'org.fourthline.cling:cling-support:2.1.1'",
+                extra)
+          # 10) DLNA modules: minSdk 24 -> 21; strip publish.gradle applies and
+          #     project-level repositories{} (forbidden by FAIL_ON_PROJECT_REPOS)
+          import re as _re
+          for m in ('dlna-core', 'dlna-dmc', 'dlna-dmr'):
+              fp = pathlib.Path(f'dlna-cast/{m}/build.gradle')
+              ft = fp.read_text(encoding='utf-8')
+              ft = ft.replace('minSdk 24', 'minSdk 21')
+              ft = _re.sub(r"apply from: '\./publish\.gradle'\n?", '', ft)
+              ft = _re.sub(r"repositories \{\s*mavenCentral\(\)\s*\}\n", '', ft)
+              fp.write_text(ft, encoding='utf-8')
+              print(f'sanitized {m}')
           PY
 
       - name: Provision Gradle 8.10.2 (bypass wrapper download)

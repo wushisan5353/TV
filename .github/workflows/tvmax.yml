@@ -84,6 +84,33 @@ jobs:
           rt = p.read_text(encoding='utf-8')
           if 'cssselect' not in rt:
               p.write_text(rt.rstrip('\n') + '\ncssselect==1.2.0\n', encoding='utf-8')
+          # 5b) Adapt the handful of call sites that use FongMi's patched-media3 APIs
+          #     to stock media3 1.8.0 (patched AARs are not published anywhere).
+          patch('app/src/main/java/com/fongmi/android/tv/player/Players.java',
+                '        view.setRender(Setting.getRender());\n', '')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
+                '.setAudioPrefer(Setting.isAudioPrefer()).setVideoPrefer(Setting.isVideoPrefer())', '')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
+                '        if (Setting.getSubtitlePosition() != 0) exo.getSubtitleView().setBottomPosition(Setting.getSubtitlePosition());\n', '')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
+                'MimeTypes.APPLICATION_OCTET', '"application/octet-stream"')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
+                '        builder.setAds(Sniffer.getRegex(uri));\n', '')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/ExoUtil.java',
+                '        builder.setDecode(decode);\n', '')
+          patch('app/src/main/java/com/fongmi/android/tv/player/exo/TrackNameProvider.java',
+                'MimeTypes.AUDIO_AV3A', '"audio/av3a"')
+          sub = 'app/src/main/java/com/fongmi/android/tv/ui/dialog/SubtitleDialog.java'
+          patch(sub, 'subtitleView.addPosition(0.005f);\n        Setting.putSubtitlePosition(subtitleView.getPosition());',
+                'Setting.putSubtitlePosition(Setting.getSubtitlePosition() + 0.005f);')
+          patch(sub, 'subtitleView.subPosition(0.005f);\n        Setting.putSubtitlePosition(subtitleView.getPosition());',
+                'Setting.putSubtitlePosition(Setting.getSubtitlePosition() - 0.005f);')
+          patch(sub, 'subtitleView.addTextSize(0.002f);\n        Setting.putSubtitleTextSize(subtitleView.getTextSize());',
+                'float sizeUp = (Setting.getSubtitleTextSize() == 0 ? 0.0533f : Setting.getSubtitleTextSize()) + 0.002f;\n        Setting.putSubtitleTextSize(sizeUp);\n        subtitleView.setFractionalTextSize(sizeUp);')
+          patch(sub, 'subtitleView.subTextSize(0.002f);\n        Setting.putSubtitleTextSize(subtitleView.getTextSize());',
+                'float sizeDown = (Setting.getSubtitleTextSize() == 0 ? 0.0533f : Setting.getSubtitleTextSize()) - 0.002f;\n        Setting.putSubtitleTextSize(sizeDown);\n        subtitleView.setFractionalTextSize(sizeDown);')
+          patch(sub, '        subtitleView.setBottomPosition(0.0f);\n', '')
+          print('stock-media3 adaptations applied')
           print('pinned chaquo requirements')
           # 6) Include in-tree local modules that upstream builds into app/libs AARs
           patch('settings.gradle',

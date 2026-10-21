@@ -42,15 +42,15 @@ WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/an
  Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
 
 > Task :quickjs:compileReleaseAidl NO-SOURCE
-> Task :quickjs:compileReleaseRenderscript NO-SOURCE
 > Task :quickjs:copyReleaseJniLibsProjectOnly
+> Task :quickjs:compileReleaseRenderscript NO-SOURCE
 > Task :quickjs:generateReleaseBuildConfig
 > Task :quickjs:generateReleaseResValues
 > Task :quickjs:generateReleaseResources
 > Task :quickjs:packageReleaseResources
 > Task :app:mergeArmeabiGenericNormalReleaseNativeLibs
-> Task :quickjs:javaPreCompileRelease
 > Task :quickjs:parseReleaseLocalResources
+> Task :quickjs:javaPreCompileRelease
 > Task :app:buildKotlinToolingMetadata
 
 > Task :app:stripArmeabiGenericNormalReleaseDebugSymbols
@@ -62,8 +62,8 @@ Setting the namespace via a source AndroidManifest.xml's package attribute is de
 Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
-> Task :app:extractArmeabiGenericNormalReleaseNativeSymbolTables
 > Task :app:checkArmeabiGenericNormalReleaseDuplicateClasses
+> Task :app:extractArmeabiGenericNormalReleaseNativeSymbolTables
 > Task :app:mergeArmeabiGenericNormalReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:compileArmeabiGenericNormalReleaseAidl NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors
@@ -94,8 +94,8 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :app:processArmeabiGenericNormalReleaseManifest
 > Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :quickjs:compileReleaseLibraryResources
-> Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:mergeArmeabiGenericNormalReleaseResources
+> Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:javaPreCompileArmeabiGenericNormalRelease
 > Task :app:dataBindingGenBaseClassesArmeabiGenericNormalRelease
 > Task :app:processArmeabiGenericNormalReleaseManifestForPackage
@@ -114,7 +114,7 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 
 > Task :app:mergeArmeabiGenericNormalReleaseAssets
 Execution optimizations have been disabled for task ':app:mergeArmeabiGenericNormalReleaseAssets' to ensure correctness due to the following reasons:
-  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$937/0x00007fbe00b55540'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
+  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$950/0x00007f6e847926b0'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
 
 > Task :app:compressArmeabiGenericNormalReleaseAssets
 > Task :app:collectArmeabiGenericNormalReleaseDependencies
@@ -162,7 +162,7 @@ See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:comman
 Execution optimizations have been disabled for 1 invalid unit(s) of work during this build to ensure correctness.
 Please consult deprecation warnings for more details.
 
-BUILD SUCCESSFUL in 4m 48s
+BUILD SUCCESSFUL in 4m 11s
 64 actionable tasks: 64 executed
 === APK LIST ===
 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
@@ -171,8 +171,8 @@ src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-gen
 + cat apk-list.txt
 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
 ++ openssl rand -hex 8
-+ PASS=32fe603310184b8d
-+ keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass 32fe603310184b8d -keypass 32fe603310184b8d -dname 'CN=TV Max, O=wushisan'
++ PASS=2ec9100db8823116
++ keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass 2ec9100db8823116 -keypass 2ec9100db8823116 -dname 'CN=TV Max, O=wushisan'
 Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 3,650 days
 	for: CN=TV Max, O=wushisan
 ++ ls /usr/local/lib/android/sdk/build-tools
@@ -188,15 +188,15 @@ build-tools: 37.0.0
 + echo 'unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk'
 unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
 + /usr/local/lib/android/sdk/build-tools/37.0.0/zipalign -p -f 4 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.jks --ks-pass pass:32fe603310184b8d --key-pass pass:32fe603310184b8d --out TVMax-Box-2.1-armeabi_v7a.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-2.1-armeabi_v7a.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.jks --ks-pass pass:2ec9100db8823116 --key-pass pass:2ec9100db8823116 --out TVMax-Box-2.2-armeabi_v7a.apk aligned.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-2.2-armeabi_v7a.apk
 + head -2
 V3.0 Signer: certificate DN: CN=TV Max, O=wushisan
-V3.0 Signer: certificate SHA-256 digest: 324c0539e3687ccbad5daf6fc7def2cbc41c4d15294fef39be351eeb7f6a3402
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-2.1-armeabi_v7a.apk
+V3.0 Signer: certificate SHA-256 digest: 356af75d1081426bed6780b65a3e53483fdefe62ae9e740e05d83c2ae8c302ae
++ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-2.2-armeabi_v7a.apk
 + grep -E 'package:|sdkVersion|native-code'
-package: name='com.wushisan.tvmax' versionCode='201' versionName='2.1' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
+package: name='com.wushisan.tvmax' versionCode='202' versionName='2.2' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
 sdkVersion:'21'
 native-code: 'armeabi-v7a'
-+ ls -lh TVMax-Box-2.1-armeabi_v7a.apk
--rw-r--r-- 1 runner runner 27M Oct 21 13:43 TVMax-Box-2.1-armeabi_v7a.apk
++ ls -lh TVMax-Box-2.2-armeabi_v7a.apk
+-rw-r--r-- 1 runner runner 27M Oct 21 14:23 TVMax-Box-2.2-armeabi_v7a.apk

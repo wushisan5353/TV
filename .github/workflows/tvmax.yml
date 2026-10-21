@@ -79,25 +79,9 @@ jobs:
           /tmp/gradle-8.10.2/bin/gradle --version
 
       - name: Build leanback armeabi-v7a release
-        id: build
-        continue-on-error: true
         run: |
           set -o pipefail
           /tmp/gradle-8.10.2/bin/gradle :app:assembleLeanbackArmeabi_v7aRelease --no-daemon --console=plain 2>&1 | tee build-full.log
-
-      - name: Dump build log to repo on failure
-        if: steps.build.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          tail -n 500 build-full.log > build-log.txt
-          SHA=$(gh api "repos/${{ github.repository }}/contents/build-log.txt?ref=fongmi" --jq .sha 2>/dev/null || echo "")
-          if [ -n "$SHA" ]; then SHAARG="-f sha=$SHA"; else SHAARG=""; fi
-          gh api "repos/${{ github.repository }}/contents/build-log.txt" -X PUT \
-            -f message="CI: build failure log" \
-            -f content="$(base64 -w0 build-log.txt)" \
-            -f branch="fongmi" $SHAARG
-          exit 1
 
       - name: Sign APK
         run: |
@@ -130,3 +114,19 @@ jobs:
             - 内置默认配置: 老刘 (234 站, 含网盘/磁力), 装上即用
             - leanback 电视版, armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
           files: TVMax-4.0.7-armeabi_v7a.apk
+
+      - name: Dump build log to repo (always, never blocks)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f build-full.log ]; then
+            tail -n 500 build-full.log > build-log.txt
+            { echo '## Build log tail'; echo '```'; cat build-log.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true
+            SHA=$(gh api "repos/${{ github.repository }}/contents/build-log.txt?ref=fongmi" --jq .sha 2>/dev/null || echo "")
+            if [ -n "$SHA" ]; then SHAARG="-f sha=$SHA"; else SHAARG=""; fi
+            gh api "repos/${{ github.repository }}/contents/build-log.txt" -X PUT \
+              -f message="CI: build log" \
+              -f content="$(base64 -w0 build-log.txt)" \
+              -f branch="fongmi" $SHAARG || echo "WARN: log upload failed (token permission?)"
+          fi

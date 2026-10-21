@@ -71,10 +71,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 200')
+                'versionCode 201')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "2.0"')
+                'versionName "2.1"')
 
           # 2a) First-run presets (App.java putDefault seeds): Douban home feed, Exo player, no window preview
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
@@ -89,6 +89,23 @@ jobs:
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
                 'putDefault(HawkConfig.IJK_CODEC,',
                 'putDefault(HawkConfig.LIVE_PLAYER_TYPE, 2);                  // live player: Exo\n        putDefault(HawkConfig.IJK_CODEC,')
+
+          # 2c) Apple TV theme (index 7): accent ramp in styles.xml + wiring in BaseActivity/settings/App seed
+          patch('app/src/main/res/values/styles.xml',
+                '</style>\n\n    <!-- 自定义dialog样式 -->',
+                '</style>\n\n    <style name="AppleTheme" parent="AppTheme.NoActionBar">\n        <item name="color_theme">#0A84FF</item>\n        <item name="color_theme_80">#CC0A84FF</item>\n        <item name="color_theme_70">#B30A84FF</item>\n        <item name="color_theme_60">#990A84FF</item>\n        <item name="color_theme_50">#800A84FF</item>\n        <item name="color_theme_40">#660A84FF</item>\n        <item name="color_theme_dark_70">#B3054A8C</item>\n    </style>\n\n    <!-- 自定义dialog样式 -->')
+          patch('app/src/main/java/com/github/tvbox/osc/base/BaseActivity.java',
+                '        } else if (Hawk.get(HawkConfig.THEME_SELECT, 0) == 5) {\n            setTheme(R.style.YagamiTheme);\n        } else {\n            setTheme(R.style.SakuraTheme);\n        }',
+                '        } else if (Hawk.get(HawkConfig.THEME_SELECT, 0) == 5) {\n            setTheme(R.style.YagamiTheme);\n        } else if (Hawk.get(HawkConfig.THEME_SELECT, 0) == 6) {\n            setTheme(R.style.SakuraTheme);\n        } else {\n            setTheme(R.style.AppleTheme);\n        }')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java',
+                '                types.add(6);',
+                '                types.add(6);\n                types.add(7);')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java',
+                '        } else if (type == 5) {\n            return "八神";\n        } else {\n            return "樱花";\n        }',
+                '        } else if (type == 5) {\n            return "八神";\n        } else if (type == 6) {\n            return "樱花";\n        } else {\n            return "Apple TV";\n        }')
+          patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
+                'putDefault(HawkConfig.THEME_SELECT, 0);',
+                'putDefault(HawkConfig.THEME_SELECT, 7);')
 
           # 2b) Repo order: official google/mavenCentral first, aliyun mirror as fallback (mirror had a 502 outage)
           bg = root / 'build.gradle'
@@ -141,17 +158,17 @@ jobs:
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.0-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.0-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.0-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-2.0-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.1-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.1-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.1-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-2.1-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-2.0-armeabi_v7a.apk
+          path: TVMax-Box-2.1-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -193,7 +210,7 @@ jobs:
           script: |
             mkdir -p verify-out
             echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-2.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.0-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
+            adb install -r TVMax-Box-2.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.1-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
@@ -239,12 +256,13 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-2.0
-          name: "TV Max Box 2.0"
+          tag_name: tvmax-box-2.1
+          name: "TV Max Box 2.1"
           body: |
             TV Max 2.0：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax, 版本号 2.0
             - 内置默认配置: 自托管云端配置 (240+ 站, 每周自动维护: 同步/验活/加新站), 直播单源分组列表 (央视卫视/港澳台/欧洲/国际等 3000+ 频道), 深色壁纸
             - 开箱预设: 默认豆瓣首页推荐, 播放器 Exo + 硬解, 关闭窗口预览 (针对老电视性能优化)
+            - 新增 Apple TV 主题 (系统蓝强调色, 已设为默认, 设置-主题里可切换其余 7 款)
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-2.0-armeabi_v7a.apk
+          files: TVMax-Box-2.1-armeabi_v7a.apk

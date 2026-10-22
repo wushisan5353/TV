@@ -113,4 +113,9 @@ jobs:
           git config user.email "github-actions@github.com"
           git add deep-out
           git commit -m "emulator deep test results" || echo "nothing to commit"
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin fongmi || true
+            git push origin HEAD:fongmi && break
+            echo "push retry $i"
+            sleep 5
+          done

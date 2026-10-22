@@ -43,8 +43,8 @@ WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/an
  Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
 
 > Task :quickjs:compileReleaseAidl NO-SOURCE
-> Task :quickjs:compileReleaseRenderscript NO-SOURCE
 > Task :quickjs:copyReleaseJniLibsProjectOnly
+> Task :quickjs:compileReleaseRenderscript NO-SOURCE
 > Task :quickjs:generateReleaseBuildConfig
 > Task :quickjs:generateReleaseResValues
 > Task :quickjs:generateReleaseResources
@@ -74,9 +74,9 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :app:dataBindingMergeDependencyArtifactsArmeabiGenericNormalRelease
 > Task :quickjs:compileReleaseJavaWithJavac
 > Task :quickjs:mergeReleaseGeneratedProguardFiles
+> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:generateArmeabiGenericNormalReleaseResValues
 > Task :app:generateArmeabiGenericNormalReleaseResources
-> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:dataBindingTriggerArmeabiGenericNormalRelease
 > Task :app:generateArmeabiGenericNormalReleaseAppInfo
 > Task :app:generateArmeabiGenericNormalReleaseBuildConfig
@@ -101,9 +101,9 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :app:dataBindingGenBaseClassesArmeabiGenericNormalRelease
 > Task :app:extractProguardFiles
 > Task :app:processArmeabiGenericNormalReleaseJavaRes NO-SOURCE
-> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
 > Task :quickjs:processReleaseJavaRes NO-SOURCE
 > Task :quickjs:bundleLibResRelease NO-SOURCE
+> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
 > Task :quickjs:bundleLibRuntimeToJarRelease
 > Task :app:mergeArmeabiGenericNormalReleaseShaders
 > Task :app:compileArmeabiGenericNormalReleaseShaders NO-SOURCE
@@ -115,7 +115,7 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 
 > Task :app:mergeArmeabiGenericNormalReleaseAssets
 Execution optimizations have been disabled for task ':app:mergeArmeabiGenericNormalReleaseAssets' to ensure correctness due to the following reasons:
-  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$941/0x00007f6d54b4d778'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
+  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$951/0x00007ff1bcb55d38'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
 
 > Task :app:compressArmeabiGenericNormalReleaseAssets
 > Task :app:collectArmeabiGenericNormalReleaseDependencies

@@ -33,6 +33,7 @@ use a newer Android Gradle Plugin that has been tested with compileSdk = 34
 > Task :quickjs:mergeReleaseJniLibFolders
 > Task :quickjs:prepareReleaseArtProfile
 > Task :quickjs:mergeReleaseNativeLibs
+
 > Task :app:mergeArmeabiGenericNormalReleaseArtProfile
 WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/me.jessyan/autosize/1.2.1/a44df9822e0cb91242358f070ef813714fd81c05/autosize-1.2.1.aar' contains references to both AndroidX and old support library. This seems like the library is partially migrated. Jetifier will try to rewrite the library anyway.
  Example of androidX reference: 'androidx/fragment/app/FragmentManager$FragmentLifecycleCallbacks'
@@ -41,9 +42,9 @@ WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/an
  Example of androidX reference: 'androidx/media3/ui/PlayerNotificationManager'
  Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
 
-> Task :quickjs:copyReleaseJniLibsProjectOnly
 > Task :quickjs:compileReleaseAidl NO-SOURCE
 > Task :quickjs:compileReleaseRenderscript NO-SOURCE
+> Task :quickjs:copyReleaseJniLibsProjectOnly
 > Task :quickjs:generateReleaseBuildConfig
 > Task :quickjs:generateReleaseResValues
 > Task :quickjs:generateReleaseResources
@@ -62,8 +63,8 @@ Setting the namespace via a source AndroidManifest.xml's package attribute is de
 Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
-> Task :app:checkArmeabiGenericNormalReleaseDuplicateClasses
 > Task :app:extractArmeabiGenericNormalReleaseNativeSymbolTables
+> Task :app:checkArmeabiGenericNormalReleaseDuplicateClasses
 > Task :app:mergeArmeabiGenericNormalReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:compileArmeabiGenericNormalReleaseAidl NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors
@@ -74,8 +75,8 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :quickjs:compileReleaseJavaWithJavac
 > Task :quickjs:mergeReleaseGeneratedProguardFiles
 > Task :app:generateArmeabiGenericNormalReleaseResValues
-> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:generateArmeabiGenericNormalReleaseResources
+> Task :quickjs:exportReleaseConsumerProguardFiles
 > Task :app:dataBindingTriggerArmeabiGenericNormalRelease
 > Task :app:generateArmeabiGenericNormalReleaseAppInfo
 > Task :app:generateArmeabiGenericNormalReleaseBuildConfig
@@ -91,8 +92,8 @@ Setting the namespace via a source AndroidManifest.xml's package attribute is de
 Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
-> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :app:processArmeabiGenericNormalReleaseManifest
+> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :quickjs:compileReleaseLibraryResources
 > Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:mergeArmeabiGenericNormalReleaseResources
@@ -100,6 +101,7 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :app:dataBindingGenBaseClassesArmeabiGenericNormalRelease
 > Task :app:extractProguardFiles
 > Task :app:processArmeabiGenericNormalReleaseJavaRes NO-SOURCE
+> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
 > Task :quickjs:processReleaseJavaRes NO-SOURCE
 > Task :quickjs:bundleLibResRelease NO-SOURCE
 > Task :quickjs:bundleLibRuntimeToJarRelease
@@ -113,14 +115,13 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 
 > Task :app:mergeArmeabiGenericNormalReleaseAssets
 Execution optimizations have been disabled for task ':app:mergeArmeabiGenericNormalReleaseAssets' to ensure correctness due to the following reasons:
-  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$941/0x00007f2838b5a4b8'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
+  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$941/0x00007f6d54b4d778'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
 
 > Task :app:compressArmeabiGenericNormalReleaseAssets
 > Task :app:collectArmeabiGenericNormalReleaseDependencies
 > Task :app:sdkArmeabiGenericNormalReleaseDependencyData
 > Task :app:writeArmeabiGenericNormalReleaseAppMetadata
 > Task :app:writeArmeabiGenericNormalReleaseSigningConfigVersions
-> Task :app:processArmeabiGenericNormalReleaseManifestForPackage
 > Task :app:processArmeabiGenericNormalReleaseResources
 > Task :app:optimizeArmeabiGenericNormalReleaseResources
 > Task :app:kaptGenerateStubsArmeabiGenericNormalReleaseKotlin
@@ -147,56 +148,3 @@ Note: Recompile with -Xlint:unchecked for details.
 > Task :app:minifyArmeabiGenericNormalReleaseWithR8
 WARNING:/home/runner/work/TV/TV/src/app/proguard-rules.pro:25:1-18: R8: Option -repackageclasses overrides -flattenpackagehierarchy
 WARNING:/home/runner/work/TV/TV/src/app/proguard-rules.pro:28:1-27: R8: Ignoring option: -useuniqueclassmembernames
-
-> Task :app:compileArmeabiGenericNormalReleaseArtProfile
-> Task :app:packageArmeabiGenericNormalRelease
-> Task :app:createArmeabiGenericNormalReleaseApkListingFileRedirect
-> Task :app:assembleArmeabiGenericNormalRelease
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:command_line_warnings
-
-Execution optimizations have been disabled for 1 invalid unit(s) of work during this build to ensure correctness.
-Please consult deprecation warnings for more details.
-
-BUILD SUCCESSFUL in 3m 25s
-64 actionable tasks: 64 executed
-=== APK LIST ===
-src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
-=== SIGN LOG ===
-+ find src/app/build/outputs -name '*.apk'
-+ cat apk-list.txt
-src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
-++ openssl rand -hex 8
-+ PASS=378d36b0cb79853c
-+ keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass 378d36b0cb79853c -keypass 378d36b0cb79853c -dname 'CN=TV Max, O=wushisan'
-Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 3,650 days
-	for: CN=TV Max, O=wushisan
-++ ls /usr/local/lib/android/sdk/build-tools
-++ sort -V
-++ tail -1
-+ BT=37.0.0
-+ echo 'build-tools: 37.0.0'
-build-tools: 37.0.0
-++ grep -i release apk-list.txt
-++ head -1
-+ UNSIGNED=src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
-+ '[' -z src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk ']'
-+ echo 'unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk'
-unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/zipalign -p -f 4 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.jks --ks-pass pass:378d36b0cb79853c --key-pass pass:378d36b0cb79853c --out TVMax-Box-2.4-armeabi_v7a.apk aligned.apk
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-2.4-armeabi_v7a.apk
-+ head -2
-V3.0 Signer: certificate DN: CN=TV Max, O=wushisan
-V3.0 Signer: certificate SHA-256 digest: 021265d3f388152507907fcd8a1d2ea2bca1edb569a81edbe3dbdccf822e307d
-+ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-2.4-armeabi_v7a.apk
-+ grep -E 'package:|sdkVersion|native-code'
-package: name='com.wushisan.tvmax' versionCode='204' versionName='2.4' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
-sdkVersion:'21'
-native-code: 'armeabi-v7a'
-+ ls -lh TVMax-Box-2.4-armeabi_v7a.apk
--rw-r--r-- 1 runner runner 27M Oct 22 02:47 TVMax-Box-2.4-armeabi_v7a.apk

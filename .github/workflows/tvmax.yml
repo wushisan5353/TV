@@ -71,10 +71,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 203')
+                'versionCode 204')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "2.3"')
+                'versionName "2.4"')
 
           # 2a) First-run presets (App.java putDefault seeds): Douban home feed, Exo player, no window preview
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
@@ -145,7 +145,7 @@ jobs:
           patch('pyramid/build.gradle',
                 'install "pyquery"',
                 'install "pyquery==2.0.0"\n                install "cssselect==1.2.0"')
-          # 2e) 2.3: wallpaper gallery +4, theme-synced text colors, tvOS focus motion
+          # 2e) 2.3/2.4: wallpaper gallery +4, settings text follows theme, tvOS focus motion
           patch('app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java',
                 'final String[] wpNames = {"云端推荐", "近黑", "深海军蓝", "深空灰紫", "暗酒红", "墨绿"};',
                 'final String[] wpNames = {"云端推荐", "近黑", "深海军蓝", "深空灰紫", "暗酒红", "墨绿", "城市夜航", "海洋", "云海", "雾岭"};')
@@ -155,15 +155,6 @@ jobs:
           patch('app/src/main/res/layout/fragment_model.xml',
                 'android:textColor="@android:color/white"',
                 'android:textColor="?attr/color_theme"', 77)
-          patch('app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java',
-                'textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_FFFFFF_70));',
-                'textView.setTextColor(HomeActivity.this.getThemeColor());')
-          patch('app/src/main/res/layout/item_home_sort.xml',
-                'android:textColor="@color/color_FFFFFF_70"',
-                'android:textColor="?attr/color_theme"')
-          patch('app/src/main/res/layout/activity_home.xml',
-                'android:textColor="@color/font_home_selector"',
-                'android:textColor="?attr/color_theme"')
           patch('app/src/main/java/com/github/tvbox/osc/ui/fragment/GridFragment.java',
                 'import android.view.animation.BounceInterpolator;',
                 'import android.view.animation.BounceInterpolator;\nimport android.view.animation.DecelerateInterpolator;')
@@ -209,17 +200,17 @@ jobs:
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.3-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.3-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.3-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-2.3-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.4-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.4-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.4-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-2.4-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-2.3-armeabi_v7a.apk
+          path: TVMax-Box-2.4-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -261,7 +252,7 @@ jobs:
           script: |
             mkdir -p verify-out
             echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-2.3-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.3-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
+            adb install -r TVMax-Box-2.4-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.4-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
             adb root || true
             sleep 3
             adb logcat -c || true
@@ -307,8 +298,8 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-2.3
-          name: "TV Max Box 2.3"
+          tag_name: tvmax-box-2.4
+          name: "TV Max Box 2.4"
           body: |
             TV Max 2.0：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax, 版本号 2.0
@@ -317,5 +308,6 @@ jobs:
             - 新增 Apple TV 主题 (系统蓝强调色, 已设为默认, 设置-主题里可切换其余 7 款)
             - 2.2: 首页海报卡打磨 (大圆角/渐变片名条/居中裁剪); 壁纸改为内置图库选择 (6 款); 升级安装自动应用新默认 (一次性迁移)
             - 2.3: 壁纸图库扩到 10 款 (新增城市夜航/海洋/云海/雾岭); 设置与首页文字颜色随主题同步; 海报焦点动画改顺滑放大
+            - 2.4: 首页文字颜色改回中性白 (整排主题色太跳); 设置页文字随主题同步保留
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-2.3-armeabi_v7a.apk
+          files: TVMax-Box-2.4-armeabi_v7a.apk

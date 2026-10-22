@@ -1,36 +1,20 @@
 === launch ===
-shot 01-home
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== Test A: category -> poster -> detail ===
-tap "热门电影" at 235,95
-shot 02-category
-tap poster at 375,230
+=== site switch ===
+site found: 量子
+shot 01-site-home
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 06:16 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.8
+=== search chain ===
+tap "搜索" at 431,185
+tap "全局搜索" at 194,42
+shot 02-results
+top results: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
+result texts: 搜索数据源 | √ 全局搜索 | 默认源: 🅱️┃量子┃资源 | 📺︎┃电视┃点播 | 👽玩偶哥哥┃4K弹幕 | 🦋米搜┃搜索 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
 shot 03-detail
-top after open card: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
-detail texts: 全局搜索 | 请输入要搜索的内容 | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D | E | F | G | H | I | J
-back to: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== Test B: MENU site switch + playback ===
-shot 04-sitedialog
-dialog batch 0 done
-dialog batch 1 done
-dialog batch 2 done
-dialog batch 3 done
-api site found: 量子
-shot 05-site-home
-top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-site home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 06:05 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故
-tap category tab "🅱️┃量子┃资源"
-shot 06-site-category
-tap site poster at 375,300
-shot 07-detail
-top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-tap_text MISS: 播放
-tap_text MISS: 第01集
-tap_text MISS: 第1集
-play attempted: True
-shot 08-player
-top player: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
-player texts: 全局搜索 | 请输入要搜索的内容 | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
+detail texts: 搜索数据源 | √ 全局搜索 | 默认源: 🅱️┃量子┃资源 | 📺︎┃电视┃点播 | 👽玩偶哥哥┃4K弹幕 | 🦋米搜┃搜索 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线 | 📺┃热播┃多线 | 👻┃可可┃多线
+detail NOT opened; stop chain (no blind fallback)
 shouldInterceptRequest lines: 0
 crash buffer bytes: 0
 === DONE ===

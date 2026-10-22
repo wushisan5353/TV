@@ -1,0 +1,63 @@
+name: Emulator Probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe environment and redroid
+        run: |
+          set +e
+          mkdir -p probe-out
+          LOG=probe-out/report.txt
+          {
+            echo "=== uname ==="; uname -a
+            echo "=== kvm ==="; ls -l /dev/kvm || echo NO_KVM
+            echo "=== install binder module ==="
+            sudo apt-get update -qq && sudo apt-get install -y -qq linux-modules-extra-$(uname -r)
+            sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" && echo BINDER_OK || echo BINDER_FAIL
+            echo "=== start redroid ==="
+            docker run -d --privileged -p 5555:5555 --name redroid redroid/redroid:11.0.0-latest androidboot.redroid_gpu_mode=guest
+            docker ps
+            sudo apt-get install -y -qq android-tools-adb > /dev/null 2>&1
+            adb connect localhost:5555
+            for i in $(seq 1 40); do
+              B=$(adb -s localhost:5555 shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+              echo "boot try $i: $B"
+              [ "$B" = "1" ] && break
+              sleep 10
+            done
+            echo "=== abilist ==="
+            adb -s localhost:5555 shell getprop ro.product.cpu.abilist
+            echo "=== download release apk ==="
+            curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-box-2.4/TVMax-Box-2.4-armeabi_v7a.apk"
+            ls -l tvmax.apk
+            echo "=== install ==="
+            adb -s localhost:5555 install -r tvmax.apk && echo INSTALL_OK || echo INSTALL_FAIL
+            adb -s localhost:5555 logcat -c
+            echo "=== launch ==="
+            adb -s localhost:5555 shell am start -n com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+            sleep 45
+            adb -s localhost:5555 exec-out screencap -p > probe-out/probe-home.png
+            echo "=== top activity ==="
+            adb -s localhost:5555 shell dumpsys activity activities | head -30
+            echo "=== crash buffer ==="
+            adb -s localhost:5555 logcat -b crash -d
+          } 2>&1 | tee -a $LOG
+          docker logs redroid > probe-out/redroid.log 2>&1 || true
+          ls -lh probe-out/
+      - name: Commit probe output
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add probe-out
+          git commit -m "emulator probe results" || echo "nothing to commit"
+          git push

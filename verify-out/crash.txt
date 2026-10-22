@@ -1,0 +1,18 @@
+--------- beginning of crash
+10-22 02:50:14.216  5277  5277 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x2bb50 in tid 5277 (.wushisan.tvmax), pid 5277 (.wushisan.tvmax)
+10-22 02:50:14.566  5309  5309 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+10-22 02:50:14.567  5309  5309 F DEBUG   : Build fingerprint: 'google/sdk_gphone_x86_64/generic_x86_64_arm64:11/RSR1.240422.006/12134477:userdebug/dev-keys'
+10-22 02:50:14.567  5309  5309 F DEBUG   : Revision: '0'
+10-22 02:50:14.567  5309  5309 F DEBUG   : ABI: 'x86'
+10-22 02:50:14.567  5309  5309 F DEBUG   : Timestamp: 2026-10-22 02:50:14+0000
+10-22 02:50:14.567  5309  5309 F DEBUG   : pid: 5277, tid: 5277, name: .wushisan.tvmax  >>> com.wushisan.tvmax <<<
+10-22 02:50:14.567  5309  5309 F DEBUG   : uid: 10167
+10-22 02:50:14.567  5309  5309 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x2bb50
+10-22 02:50:14.567  5309  5309 F DEBUG   :     eax 0002bb50  ebx de3b0674  ecx 0000a11c  edx de1f6334
+10-22 02:50:14.567  5309  5309 F DEBUG   :     edi ec62a030  esi bb48a11c
+10-22 02:50:14.567  5309  5309 F DEBUG   :     ebp ffd6e978  esp ffd6e910  eip de250f70
+10-22 02:50:14.933  5309  5309 F DEBUG   : backtrace:
+10-22 02:50:14.933  5309  5309 F DEBUG   :       #00 pc 000caf70  /system/lib/libndk_translation.so (ndk_translation::ExecuteGuest(ndk_translation::ProcessState*)+288) (BuildId: f4a12f5fb73388e407c9dd736c9a4224)
+10-22 02:50:14.933  5309  5309 F DEBUG   :       #01 pc 000cb19e  /system/lib/libndk_translation.so (ndk_translation::(anonymous namespace)::RunGuestCall(unsigned int, int, int, unsigned int*)+254) (BuildId: f4a12f5fb73388e407c9dd736c9a4224)
+10-22 02:50:14.933  5309  5309 F DEBUG   :       #02 pc 000cb2fa  /system/lib/libndk_translation.so (ndk_translation::RunGuestCall(unsigned int, ndk_translation::GuestArgumentBuffer*)+42) (BuildId: f4a12f5fb73388e407c9dd736c9a4224)
+10-22 02:50:14.933  5309  5309 F DEBUG   :       #03 pc 0000024b  <anonymous:be768000>

@@ -1,0 +1,23 @@
+=== launch ===
+home: True
+shot 01-home
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+=== Test A: detail via recommendation card ===
+shot 02-detail
+top after open card: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
+detail texts sample: 全局搜索 | 请输入要搜索的内容 | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D | E | F
+back to: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+=== Test B: site switch + playback ===
+tap "🌕┃豆瓣┃热播" at 348,42
+shot 03-sitedialog
+api site found in dialog: None
+=== Test C: back home for jar-site attempt ===
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+webview-related logcat lines: 14
+WV: 10-22 05:31:34.183   274   315 I ActivityManager: Start proc 1919:com.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a
+WV: 10-22 05:31:34.193  1919  1919 I cr_WebViewApkApp: version=125.0.6422.113 (642211301) minSdkVersion=26 isBundle=false processName=com.android.webview:sandboxed_
+WV: 10-22 05:31:34.206   274   315 I ActivityManager: Start proc 1956:com.android.webview:webview_service/u0a97 for service {com.android.webview/org.chromium.androi
+WV: 10-22 05:31:34.208  1956  1956 W webview_servic: Using default instruction set features for ARM CPU variant (generic) using conservative defaults
+WV: 10-22 05:31:34.222  1956  1956 I webview_servic: The ClassLoaderContext is a special shared library.
+crash buffer bytes: 0
+=== DONE ===

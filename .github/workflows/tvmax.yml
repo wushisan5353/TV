@@ -71,10 +71,10 @@ jobs:
                 "applicationId 'com.wushisan.tvmax'")
           patch('app/build.gradle',
                 'versionCode 1',
-                'versionCode 204')
+                'versionCode 205')
           patch('app/build.gradle',
                 'versionName "1.0.".concat(buildTime())',
-                'versionName "2.4"')
+                'versionName "2.5"')
 
           # 2a) First-run presets (App.java putDefault seeds): Douban home feed, Exo player, no window preview
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
@@ -89,6 +89,11 @@ jobs:
           patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
                 'putDefault(HawkConfig.IJK_CODEC,',
                 'putDefault(HawkConfig.LIVE_PLAYER_TYPE, 2);                  // live player: Exo\n        putDefault(HawkConfig.IJK_CODEC,')
+
+          # 2f) 2.5: fast search mode default on (categorized source-list results, keshimax-style)
+          patch('app/src/main/java/com/github/tvbox/osc/base/App.java',
+                'putDefault(HawkConfig.HOME_NUM, 4);',
+                'putDefault(HawkConfig.HOME_NUM, 4);\n        putDefault(HawkConfig.FAST_SEARCH_MODE, true);')
 
           # 2c) Apple TV theme (index 7): accent ramp in styles.xml + wiring in BaseActivity/settings/App seed
           patch('app/src/main/res/values/styles.xml',
@@ -192,25 +197,25 @@ jobs:
           set -x
           find src/app/build/outputs -name '*.apk' > apk-list.txt 2>&1 || true
           cat apk-list.txt || true
-          PASS=$(openssl rand -hex 8)
-          keytool -genkeypair -keystore tvmax.jks -alias tvmax -keyalg RSA -keysize 2048 -validity 3650 -storepass "$PASS" -keypass "$PASS" -dname "CN=TV Max, O=wushisan"
+          echo "${{ secrets.TVMAX_KEYSTORE_B64 }}" | base64 -d > tvmax.p12
+          PASS="${{ secrets.TVMAX_KEYSTORE_PASS }}"
           BT=$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
           echo "build-tools: $BT"
           UNSIGNED=$(grep -i 'release' apk-list.txt | head -1)
           if [ -z "$UNSIGNED" ]; then UNSIGNED=$(head -1 apk-list.txt); fi
           echo "unsigned: $UNSIGNED"
           $ANDROID_HOME/build-tools/$BT/zipalign -p -f 4 "$UNSIGNED" aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.jks --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.4-armeabi_v7a.apk aligned.apk
-          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.4-armeabi_v7a.apk | head -2
-          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.4-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
-          ls -lh TVMax-Box-2.4-armeabi_v7a.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner sign --ks tvmax.p12 --ks-type PKCS12 --ks-pass "pass:$PASS" --key-pass "pass:$PASS" --out TVMax-Box-2.5-armeabi_v7a.apk aligned.apk
+          $ANDROID_HOME/build-tools/$BT/apksigner verify --print-certs TVMax-Box-2.5-armeabi_v7a.apk | head -2
+          $ANDROID_HOME/build-tools/$BT/aapt dump badging TVMax-Box-2.5-armeabi_v7a.apk | grep -E "package:|sdkVersion|native-code" || true
+          ls -lh TVMax-Box-2.5-armeabi_v7a.apk
           } 2>&1 | tee sign.log
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: TVMaxBox-apk
-          path: TVMax-Box-2.4-armeabi_v7a.apk
+          path: TVMax-Box-2.5-armeabi_v7a.apk
 
       - name: Dump build log to repo (always)
         if: always()
@@ -228,73 +233,76 @@ jobs:
 
   verify:
     needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
     steps:
       - name: Checkout (this repo)
         uses: actions/checkout@v4
-
-      - name: Enable KVM
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
 
       - name: Download APK artifact
         uses: actions/download-artifact@v4
         with:
           name: TVMaxBox-apk
 
-      - name: Emulator smoke test
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          target: google_apis
-          arch: x86_64
-          profile: pixel_6
-          avd-name: verify
-          emulator-boot-timeout: 1200
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -memory 2048
-          disable-animations: true
-          script: |
-            mkdir -p verify-out
-            echo "=== install ===" > verify-out/steps.log
-            adb install -r TVMax-Box-2.4-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || adb install --abi armeabi-v7a -r TVMax-Box-2.4-armeabi_v7a.apk >> verify-out/steps.log 2>&1 || echo INSTALL_FAILED >> verify-out/steps.log
-            adb root || true
-            sleep 3
-            adb logcat -c || true
-            adb logcat > verify-out/logcat.txt &
-            LOGPID=$!
-            echo "=== launch ===" >> verify-out/steps.log
-            adb shell am start -n com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity >> verify-out/steps.log 2>&1 || adb shell monkey -p com.wushisan.tvmax -c android.intent.category.LAUNCHER 1 >> verify-out/steps.log 2>&1 || true
-            sleep 75
-            adb exec-out screencap -p > verify-out/home1.png || true
-            adb shell uiautomator dump /sdcard/home1.xml || true
-            adb pull /sdcard/home1.xml verify-out/home1.xml || true
-            adb shell input keyevent 20 || true
-            sleep 2
-            adb exec-out screencap -p > verify-out/home2.png || true
-            adb shell dumpsys activity activities > verify-out/activities.txt 2>&1 || true
-            adb logcat -b crash -d > verify-out/crash.txt 2>&1 || true
-            adb shell getprop ro.product.cpu.abilist > verify-out/abilist.txt 2>&1 || true
-            adb shell pm list packages | grep tvmax > verify-out/pkg.txt 2>&1 || true
-            kill $LOGPID || true
-            echo "=== done ===" >> verify-out/steps.log
+      - name: redroid gate (native install + launch + crash check)
+        run: |
+          mkdir -p verify-out
+          exec > >(tee -a verify-out/runlog.txt) 2>&1
+          set +e
+          uname -a
+          sudo apt-get update -qq
+          sudo apt-get install -y android-tools-adb
+          if ! command -v adb; then echo "GATE_FAIL adb missing"; exit 1; fi
+          BINDER=""
+          if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=direct; fi
+          if [ -z "$BINDER" ]; then
+            sudo apt-get install -y linux-modules-extra-$(uname -r) || sudo apt-get install -y linux-modules-extra-azure || sudo apt-get install -y linux-modules-extra || true
+            if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=after-install; fi
+          fi
+          if [ -n "$BINDER" ]; then echo "BINDER_OK via $BINDER"; else echo "GATE_FAIL binder"; exit 1; fi
+          docker run -d --privileged -p 5555:5555 --name redroid redroid/redroid:11.0.0-latest androidboot.redroid_gpu_mode=guest
+          docker ps
+          adb connect localhost:5555
+          BOOT=""
+          for i in $(seq 1 40); do
+            B=$(adb -s localhost:5555 shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            echo "boot try $i: $B"
+            if [ "$B" = "1" ]; then BOOT=ok; break; fi
+            sleep 10
+          done
+          if [ "$BOOT" != "ok" ]; then echo "GATE_FAIL boot"; exit 1; fi
+          adb -s localhost:5555 shell getprop ro.product.cpu.abilist
+          adb -s localhost:5555 install -r TVMax-Box-2.5-armeabi_v7a.apk && echo INSTALL_OK || { echo "GATE_FAIL install"; exit 1; }
+          adb -s localhost:5555 logcat -c
+          adb -s localhost:5555 shell am start -n com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+          sleep 45
+          adb -s localhost:5555 exec-out screencap -p > verify-out/home.png
+          adb -s localhost:5555 shell dumpsys activity activities > verify-out/activities.txt 2>&1
+          adb -s localhost:5555 logcat -b crash -d > verify-out/crash.txt 2>&1
+          adb -s localhost:5555 shell uiautomator dump /sdcard/home.xml
+          adb -s localhost:5555 pull /sdcard/home.xml verify-out/home.xml || true
+          ls -lh verify-out/
+          grep -q "HomeActivity" verify-out/activities.txt || { echo "GATE_FAIL top activity"; exit 1; }
+          if grep -q "com.wushisan.tvmax" verify-out/crash.txt; then echo "GATE_FAIL crash mentions tvmax"; exit 1; fi
+          echo GATE_PASS
 
       - name: Commit verify output
         if: always()
         run: |
-          git config user.email "ci@tvmax.local" || true
-          git config user.name "tvmax-ci" || true
-          git add verify-out || true
-          git commit -m "ci: box verify output" || true
-          git pull --rebase origin fongmi || true
-          git push origin HEAD:fongmi || true
-          ls -lh verify-out || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add verify-out
+          git commit -m "redroid gate output" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin fongmi || true
+            git push origin HEAD:fongmi && break
+            echo "push retry $i"
+            sleep 5
+          done
 
   release:
     needs: [build, verify]
-    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    if: ${{ !cancelled() && needs.build.result == 'success' && needs.verify.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifact
@@ -305,8 +313,8 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: tvmax-box-2.4
-          name: "TV Max Box 2.4"
+          tag_name: tvmax-box-2.5
+          name: "TV Max Box 2.5"
           body: |
             TV Max 2.0：基于 takagen99/Box (TVBoxOSC 系, minSdk 21, 兼容 Android 5.1)
             - 改名 TV Max, 独立包名 com.wushisan.tvmax, 版本号 2.0
@@ -316,5 +324,6 @@ jobs:
             - 2.2: 首页海报卡打磨 (大圆角/渐变片名条/居中裁剪); 壁纸改为内置图库选择 (6 款); 升级安装自动应用新默认 (一次性迁移)
             - 2.3: 壁纸图库扩到 10 款 (新增城市夜航/海洋/云海/雾岭); 设置与首页文字颜色随主题同步; 海报焦点动画改顺滑放大
             - 2.4: 首页文字颜色改回中性白 (整排主题色太跳); 设置页文字随主题同步保留
+            - 2.5: 搜索默认进分类结果页 (左侧按源筛选的可视式布局, 设置里可关回); 固定签名 (本版需最后卸载装一次, 此后可直接覆盖安装); 发布验证改为 ARM 云端真机级把关
             - armeabi-v7a (32 位), 适配暴风 TV (Amlogic T962 / Android 5.1 / 2G 内存)
-          files: TVMax-Box-2.4-armeabi_v7a.apk
+          files: TVMax-Box-2.5-armeabi_v7a.apk

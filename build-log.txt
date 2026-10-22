@@ -80,11 +80,12 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 > Task :app:dataBindingTriggerArmeabiGenericNormalRelease
 > Task :app:generateArmeabiGenericNormalReleaseAppInfo
 > Task :app:generateArmeabiGenericNormalReleaseBuildConfig
+> Task :quickjs:writeReleaseAarMetadata
 > Task :app:mapArmeabiGenericNormalReleaseSourceSetPaths
 > Task :app:createArmeabiGenericNormalReleaseCompatibleScreenManifests
+> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :app:extractDeepLinksArmeabiGenericNormalRelease
 > Task :quickjs:extractDeepLinksRelease
-> Task :quickjs:writeReleaseAarMetadata
 
 > Task :app:processArmeabiGenericNormalReleaseMainManifest
 package="com.github.tvbox.osc" found in source AndroidManifest.xml: /home/runner/work/TV/TV/src/app/src/main/AndroidManifest.xml.
@@ -93,12 +94,11 @@ Please instead set the namespace (or testNamespace) in the module's build.gradle
 This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
 
 > Task :app:processArmeabiGenericNormalReleaseManifest
-> Task :app:checkArmeabiGenericNormalReleaseAarMetadata
 > Task :quickjs:compileReleaseLibraryResources
-> Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:mergeArmeabiGenericNormalReleaseResources
-> Task :app:javaPreCompileArmeabiGenericNormalRelease
+> Task :quickjs:bundleLibCompileToJarRelease
 > Task :app:dataBindingGenBaseClassesArmeabiGenericNormalRelease
+> Task :app:javaPreCompileArmeabiGenericNormalRelease
 > Task :app:extractProguardFiles
 > Task :app:processArmeabiGenericNormalReleaseJavaRes NO-SOURCE
 > Task :quickjs:processReleaseJavaRes NO-SOURCE
@@ -115,7 +115,7 @@ This migration can be done automatically using the AGP Upgrade Assistant, please
 
 > Task :app:mergeArmeabiGenericNormalReleaseAssets
 Execution optimizations have been disabled for task ':app:mergeArmeabiGenericNormalReleaseAssets' to ensure correctness due to the following reasons:
-  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$951/0x00007ff1bcb55d38'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
+  - Additional action of task ':app:mergeArmeabiGenericNormalReleaseAssets' was implemented by the Java lambda 'com.yanzhenjie.andserver.plugin.AndServerPlugin$$Lambda$939/0x00007fa250b5c268'. Reason: Using Java lambdas is not supported as task inputs. Please refer to https://docs.gradle.org/7.5/userguide/validation_problems.html#implementation_unknown for more details about this problem.
 
 > Task :app:compressArmeabiGenericNormalReleaseAssets
 > Task :app:collectArmeabiGenericNormalReleaseDependencies
@@ -148,3 +148,54 @@ Note: Recompile with -Xlint:unchecked for details.
 > Task :app:minifyArmeabiGenericNormalReleaseWithR8
 WARNING:/home/runner/work/TV/TV/src/app/proguard-rules.pro:25:1-18: R8: Option -repackageclasses overrides -flattenpackagehierarchy
 WARNING:/home/runner/work/TV/TV/src/app/proguard-rules.pro:28:1-27: R8: Ignoring option: -useuniqueclassmembernames
+
+> Task :app:compileArmeabiGenericNormalReleaseArtProfile
+> Task :app:packageArmeabiGenericNormalRelease
+> Task :app:createArmeabiGenericNormalReleaseApkListingFileRedirect
+> Task :app:assembleArmeabiGenericNormalRelease
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:command_line_warnings
+
+Execution optimizations have been disabled for 1 invalid unit(s) of work during this build to ensure correctness.
+Please consult deprecation warnings for more details.
+
+BUILD SUCCESSFUL in 4m 45s
+64 actionable tasks: 64 executed
+=== APK LIST ===
+src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
+=== SIGN LOG ===
++ find src/app/build/outputs -name '*.apk'
++ cat apk-list.txt
+src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
++ base64 -d
++ echo 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
++ PASS=7d62c98ebd34c1de9bfdcb8534a9ecd4
+++ sort -V
+++ ls /usr/local/lib/android/sdk/build-tools
+++ tail -1
++ BT=37.0.0
++ echo 'build-tools: 37.0.0'
+build-tools: 37.0.0
+++ grep -i release apk-list.txt
+++ head -1
++ UNSIGNED=src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
++ '[' -z src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk ']'
++ echo 'unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk'
+unsigned: src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/zipalign -p -f 4 src/app/build/outputs/apk/armeabiGenericNormal/release/TVBox_release-armeabi-generic-java.apk aligned.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner sign --ks tvmax.p12 --ks-type PKCS12 --ks-pass pass:7d62c98ebd34c1de9bfdcb8534a9ecd4 --key-pass pass:7d62c98ebd34c1de9bfdcb8534a9ecd4 --out TVMax-Box-3.1-armeabi_v7a.apk aligned.apk
++ /usr/local/lib/android/sdk/build-tools/37.0.0/apksigner verify --print-certs TVMax-Box-3.1-armeabi_v7a.apk
++ head -2
+V3.0 Signer: certificate DN: O=wushisan, CN=TV Max
+V3.0 Signer: certificate SHA-256 digest: b0c4c826c12aba299ab10afbb80bc712cb7f2d215272a3d9b4ca2c2b07786fa9
++ /usr/local/lib/android/sdk/build-tools/37.0.0/aapt dump badging TVMax-Box-3.1-armeabi_v7a.apk
++ grep -E 'package:|sdkVersion|native-code'
+package: name='com.wushisan.tvmax' versionCode='301' versionName='3.1' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
+sdkVersion:'21'
+native-code: 'armeabi-v7a'
++ ls -lh TVMax-Box-3.1-armeabi_v7a.apk
+-rw-r--r-- 1 runner runner 27M Oct 22 10:58 TVMax-Box-3.1-armeabi_v7a.apk

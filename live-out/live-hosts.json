@@ -1,4 +1,300 @@
 {
+ "219.159.147.195:9901": {
+  "status": 206,
+  "alive": true,
+  "dns_dead": false,
+  "count": 17,
+  "groups": [
+   "央视全频道",
+   "央视卫视"
+  ]
+ },
+ "123.189.36.39:9901": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "央视全频道"
+  ]
+ },
+ "124.165.251.82:85": {
+  "status": 206,
+  "alive": true,
+  "dns_dead": false,
+  "count": 3,
+  "groups": [
+   "央视全频道",
+   "央视卫视"
+  ]
+ },
+ "jxcbn.ws-cdn.gitv.tv": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "央视全频道"
+  ]
+ },
+ "ali-m-l.cztv.com": {
+  "status": 206,
+  "alive": true,
+  "dns_dead": false,
+  "count": 39,
+  "groups": [
+   "SAO0",
+   "央视全频道",
+   "央视卫视"
+  ]
+ },
+ "gmxw.7766.org:808": {
+  "status": 206,
+  "alive": true,
+  "dns_dead": false,
+  "count": 6,
+  "groups": [
+   "央视全频道",
+   "央视卫视"
+  ]
+ },
+ "live.264788.xyz": {
+  "status": 200,
+  "alive": true,
+  "dns_dead": false,
+  "count": 13,
+  "groups": [
+   "央视全频道",
+   "央视卫视"
+  ]
+ },
+ "27.222.3.214": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "央视全频道"
+  ]
+ },
+ "ott.mobaibox.com": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "央视全频道"
+  ]
+ },
+ "[2409:8087:8:21::18]:6610": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 54,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a01:df::4077]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 3,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:5e01:34::20]:6610": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 4,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a01:df::7005]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 17,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:5e01:34::21]:6610": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 8,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4020]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 3,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4007]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 3,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:5e01:34::22]:6610": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:5e01:34::23]:6610": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 2,
+  "groups": [
+   "IPv6直播",
+   "SAO0"
+  ]
+ },
+ "[2409:8087:1a0b:df::4008]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4005]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 4,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4001]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 3,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4006]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4014]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 2,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4018]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4002]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a0b:df::4004]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:4c0a:22:1::11]:6410": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 15,
+  "groups": [
+   "IPv6直播",
+   "SAO0"
+  ]
+ },
+ "[2409:8087:5e00:24::1e]:6060": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 9,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a01:df::405f]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:5e00:24::1f]:6060": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 4,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a01:df::4035]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
+ "[2409:8087:1a01:df::4025]:80": {
+  "status": null,
+  "alive": false,
+  "dns_dead": false,
+  "count": 1,
+  "groups": [
+   "IPv6直播"
+  ]
+ },
  "222.169.85.8:9901": {
   "status": null,
   "alive": false,
@@ -8,58 +304,11 @@
    "央视卫视"
   ]
  },
- "gmxw.7766.org:808": {
-  "status": 206,
-  "alive": true,
-  "dns_dead": false,
-  "count": 4,
-  "groups": [
-   "央视卫视"
-  ]
- },
  "223.78.65.165:9901": {
-  "status": null,
-  "alive": false,
-  "dns_dead": false,
-  "count": 1,
-  "groups": [
-   "央视卫视"
-  ]
- },
- "124.165.251.82:85": {
   "status": 206,
   "alive": true,
   "dns_dead": false,
   "count": 1,
-  "groups": [
-   "央视卫视"
-  ]
- },
- "ali-m-l.cztv.com": {
-  "status": 206,
-  "alive": true,
-  "dns_dead": false,
-  "count": 46,
-  "groups": [
-   "IPv6直播",
-   "SAO0",
-   "央视卫视"
-  ]
- },
- "219.159.147.195:9901": {
-  "status": null,
-  "alive": false,
-  "dns_dead": false,
-  "count": 7,
-  "groups": [
-   "央视卫视"
-  ]
- },
- "live.264788.xyz": {
-  "status": 200,
-  "alive": true,
-  "dns_dead": false,
-  "count": 12,
   "groups": [
    "央视卫视"
   ]
@@ -68,9 +317,8 @@
   "status": 200,
   "alive": true,
   "dns_dead": false,
-  "count": 9,
+  "count": 3,
   "groups": [
-   "IPv6直播",
    "央视卫视"
   ]
  },
@@ -229,8 +477,8 @@
   ]
  },
  "183.237.95.108:9901": {
-  "status": 206,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -482,8 +730,8 @@
   ]
  },
  "play.scrstv.com.cn": {
-  "status": 200,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -734,8 +982,8 @@
   ]
  },
  "1yp7hc5p.live.sxmty.com": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -932,8 +1180,8 @@
   ]
  },
  "ali-vl.cztv.com": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -950,8 +1198,8 @@
   ]
  },
  "hzcm-live.media.hugd.com": {
-  "status": 200,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 3,
   "groups": [
@@ -1121,8 +1369,8 @@
   ]
  },
  "zjtv-wshls.homecdn.com": {
-  "status": 206,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -1148,8 +1396,8 @@
   ]
  },
  "tpc.x3322.net:9901": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -1615,15 +1863,6 @@
    "SAO0"
   ]
  },
- "[2409:8087:4c0a:22:1::11]:6410": {
-  "status": null,
-  "alive": false,
-  "dns_dead": false,
-  "count": 1,
-  "groups": [
-   "SAO0"
-  ]
- },
  "nhkwlive-ojp.akamaized.net": {
   "status": null,
   "alive": false,
@@ -2047,15 +2286,6 @@
    "SAO0"
   ]
  },
- "[2409:8087:5e01:34::23]:6610": {
-  "status": null,
-  "alive": false,
-  "dns_dead": false,
-  "count": 1,
-  "groups": [
-   "SAO0"
-  ]
- },
  "103.172.187.30:12000": {
   "status": 200,
   "alive": true,
@@ -2265,8 +2495,8 @@
   ]
  },
  "111.59.139.85:11888": {
-  "status": 206,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 3,
   "groups": [
@@ -2355,7 +2585,7 @@
   ]
  },
  "mobile.ccdntech.com": {
-  "status": 206,
+  "status": 200,
   "alive": true,
   "dns_dead": false,
   "count": 1,
@@ -2977,8 +3207,8 @@
   ]
  },
  "5a0e89631aa14.streamlock.net": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -3160,8 +3390,8 @@
   ]
  },
  "tvsen7.aynascope.net": {
-  "status": null,
-  "alive": false,
+  "status": 200,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -3808,7 +4038,7 @@
   ]
  },
  "daserste-live.ard-mcdn.de": {
-  "status": 206,
+  "status": 200,
   "alive": true,
   "dns_dead": false,
   "count": 1,
@@ -3826,8 +4056,8 @@
   ]
  },
  "sdn-global-live-streaming-packager-cache.3qsdn.com": {
-  "status": 200,
-  "alive": true,
+  "status": 404,
+  "alive": false,
   "dns_dead": false,
   "count": 5,
   "groups": [
@@ -3961,8 +4191,8 @@
   ]
  },
  "sparhandytv.cdn.ses-ps.com": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -4492,8 +4722,8 @@
   ]
  },
  "euvia.cdn.ses-ps.com": {
-  "status": null,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -5899,8 +6129,8 @@
   ]
  },
  "5dcabf026b188.streamlock.net": {
-  "status": 404,
-  "alive": false,
+  "status": 200,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -6331,7 +6561,7 @@
   ]
  },
  "di-yx2saj20.vo.lswcdn.net": {
-  "status": 403,
+  "status": 404,
   "alive": false,
   "dns_dead": false,
   "count": 2,
@@ -6970,8 +7200,8 @@
   ]
  },
  "play.cdn.enetres.net": {
-  "status": 401,
-  "alive": false,
+  "status": 200,
+  "alive": true,
   "dns_dead": false,
   "count": 2,
   "groups": [
@@ -7051,8 +7281,8 @@
   ]
  },
  "secure5.todostreaming.es": {
-  "status": 404,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -7348,8 +7578,8 @@
   ]
  },
  "interalmeria.tv": {
-  "status": 404,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -7411,8 +7641,8 @@
   ]
  },
  "cloud2.streaminglivehd.com:1936": {
-  "status": 404,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 2,
   "groups": [
@@ -7564,8 +7794,8 @@
   ]
  },
  "broadcasting.parlamentodenavarra.es": {
-  "status": 404,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -8150,8 +8380,8 @@
   ]
  },
  "46.149.191.219:9100": {
-  "status": 200,
-  "alive": true,
+  "status": null,
+  "alive": false,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -8852,8 +9082,8 @@
   ]
  },
  "zfmzoetermeer.nl": {
-  "status": 404,
-  "alive": false,
+  "status": 206,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -9348,8 +9578,8 @@
   ]
  },
  "mdc.ott.alticeusa.net": {
-  "status": 408,
-  "alive": false,
+  "status": 200,
+  "alive": true,
   "dns_dead": false,
   "count": 12,
   "groups": [
@@ -9600,8 +9830,8 @@
   ]
  },
  "158.69.24.53:8080": {
-  "status": 206,
-  "alive": true,
+  "status": 404,
+  "alive": false,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -9780,7 +10010,7 @@
   ]
  },
  "freem3u.xyz": {
-  "status": 200,
+  "status": 206,
   "alive": true,
   "dns_dead": false,
   "count": 1,
@@ -9906,8 +10136,8 @@
   ]
  },
  "mediaworks.dema.mil.kr:1935": {
-  "status": null,
-  "alive": false,
+  "status": 200,
+  "alive": true,
   "dns_dead": false,
   "count": 1,
   "groups": [
@@ -10317,24 +10547,6 @@
   "count": 1,
   "groups": [
    "国际"
-  ]
- },
- "[2409:8087:8:21::18]:6610": {
-  "status": null,
-  "alive": false,
-  "dns_dead": false,
-  "count": 55,
-  "groups": [
-   "IPv6直播"
-  ]
- },
- "livestream-bt.nmtv.cn": {
-  "status": 403,
-  "alive": false,
-  "dns_dead": false,
-  "count": 13,
-  "groups": [
-   "IPv6直播"
   ]
  }
 }

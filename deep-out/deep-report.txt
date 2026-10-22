@@ -4,17 +4,23 @@ top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 site found: 量子
 shot 01-site-home
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 06:16 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.8
+home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 06:23 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.8
 === search chain ===
 tap "搜索" at 431,185
-tap "全局搜索" at 194,42
+input focused
+tap search button at 104,152
+results visible after 20s: 阿凡达：水之道 Avatar. The Way of Water | 完结 | 暴太郎战队DON BROTHERS | 完结 | 全职高手 第三季 | 完结
 shot 02-results
 top results: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
-result texts: 搜索数据源 | √ 全局搜索 | 默认源: 🅱️┃量子┃资源 | 📺︎┃电视┃点播 | 👽玩偶哥哥┃4K弹幕 | 🦋米搜┃搜索 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
+result texts: 全局搜索 | avatar | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D | E | F | G | H
 shot 03-detail
-top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
-detail texts: 搜索数据源 | √ 全局搜索 | 默认源: 🅱️┃量子┃资源 | 📺︎┃电视┃点播 | 👽玩偶哥哥┃4K弹幕 | 🦋米搜┃搜索 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线 | 📺┃热播┃多线 | 👻┃可可┃多线
-detail NOT opened; stop chain (no blind fallback)
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
+detail texts: 阿凡达：水之道 Avatar. The Way of Water | 💮┃文采┃秒播 | 年份: 2022 | 地区: 美国 | 类型: 动作,科幻,冒险 | 演员: 萨姆·沃辛顿,佐伊·索尔达娜,西格妮·韦弗,史蒂芬·朗,克利夫·柯蒂 | 导演: 詹姆斯·卡梅隆 | 🚀公众号【神秘的哥哥们】免费分享：影片设定在《阿凡达》的剧情落幕十余年后，讲述了萨利一家（杰克、奈蒂莉和孩子们）的故事：危机未曾消散，一家人拼尽全力彼此守护、奋力求生，并历经艰险磨难。杰克和奈蒂莉组建了家庭，他们的孩子也逐渐成长，为这个家庭带来了许多欢乐。然而危机未曾消散，萨利一家拼尽全力彼此守护、奋力求生，最终来到潘多拉星球临海的岛礁族寻求庇护。岛礁族首领特诺瓦里与罗娜尔为萨利一家提供了庇护所，这个部族的成员都是天生的潜水好手，也和海洋中的各种生物建立了密切联系。 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 本软件无广告免费使用，付费的请去退款 | 1-1
+tap "播放" at 319,267
+play tapped: True
+shot 04-player
+top player: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
+player texts: 阿凡达：水之道 Avatar. The Way of Water | 💮┃文采┃秒播 | 年份: 2022 | 地区: 美国 | 类型: 动作,科幻,冒险 | 演员: 萨姆·沃辛顿,佐伊·索尔达娜,西格妮·韦弗,史蒂芬·朗,克利夫·柯蒂 | 导演: 詹姆斯·卡梅隆 | 🚀公众号【神秘的哥哥们】免费分享：影片设定在《阿凡达》的剧情落幕十余年后，讲述了萨利一家（杰克、奈蒂莉和孩子们）的故事：危机未曾消散，一家人拼尽全力彼此守护、奋力求生，并历经艰险磨难。杰克和奈蒂莉组建了家庭，他们的孩子也逐渐成长，为这个家庭带来了许多欢乐。然而危机未曾消散，萨利一家拼尽全力彼此守护、奋力求生，最终来到潘多拉星球临海的岛礁族寻求庇护。岛礁族首领特诺瓦里与罗娜尔为萨利一家提供了庇护所，这个部族的成员都是天生的潜水好手，也和海洋中的各种生物建立了密切联系。 | 播放 | 快搜
 shouldInterceptRequest lines: 0
 crash buffer bytes: 0
 === DONE ===

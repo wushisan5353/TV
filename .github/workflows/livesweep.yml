@@ -1,0 +1,81 @@
+name: Live Sweep
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe live hosts
+        run: |
+          rm -f probe.b64
+          echo "aW1wb3J0IGpzb24sIHJlLCBzb2NrZXQsIHNzbCwgdGltZSwgdXJsbGliLnJlcXVlc3QsIHVybGxpYi5lcnJvciwgb3MKZnJvbSBj" >> probe.b64
+          echo "b25jdXJyZW50LmZ1dHVyZXMgaW1wb3J0IFRocmVhZFBvb2xFeGVjdXRvcgpmcm9tIHVybGxpYi5wYXJzZSBpbXBvcnQgdXJscGFy" >> probe.b64
+          echo "c2UKZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVmYXVsdGRpY3QsIENvdW50ZXIKCmN0eCA9IHNzbC5jcmVhdGVfZGVmYXVsdF9j" >> probe.b64
+          echo "b250ZXh0KCk7IGN0eC5jaGVja19ob3N0bmFtZSA9IEZhbHNlOyBjdHgudmVyaWZ5X21vZGUgPSBzc2wuQ0VSVF9OT05FClVBID0g" >> probe.b64
+          echo "eydVc2VyLUFnZW50JzogJ01vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4z" >> probe.b64
+          echo "Nid9Cgp0ZXh0ID0gb3BlbignbGl2ZXMtYWxsLm0zdScsIGVuY29kaW5nPSd1dGYtOCcpLnJlYWQoKQpjaGFubmVscyA9IFtdCmN1" >> probe.b64
+          echo "ciA9IE5vbmUKZm9yIGxpbmUgaW4gdGV4dC5zcGxpdGxpbmVzKCk6CiAgICBpZiBsaW5lLnN0YXJ0c3dpdGgoJyNFWFRJTkYnKToK" >> probe.b64
+          echo "ICAgICAgICBtID0gcmUuc2VhcmNoKHInZ3JvdXAtdGl0bGU9IihbXiJdKikiJywgbGluZSkKICAgICAgICBjdXIgPSB7J2dyb3Vw" >> probe.b64
+          echo "JzogbS5ncm91cCgxKSBpZiBtIGVsc2UgJz8nLCAnbmFtZSc6IGxpbmUuc3BsaXQoJywnKVstMV0uc3RyaXAoKX0KICAgIGVsaWYg" >> probe.b64
+          echo "bGluZS5zdGFydHN3aXRoKCdodHRwJykgYW5kIGN1ciBpcyBub3QgTm9uZToKICAgICAgICBjdXJbJ3VybCddID0gbGluZS5zdHJp" >> probe.b64
+          echo "cCgpCiAgICAgICAgY3VyWydob3N0J10gPSB1cmxwYXJzZShsaW5lLnN0cmlwKCkpLm5ldGxvYwogICAgICAgIGNoYW5uZWxzLmFw" >> probe.b64
+          echo "cGVuZChjdXIpOyBjdXIgPSBOb25lCnByaW50KCdjaGFubmVsczonLCBsZW4oY2hhbm5lbHMpLCBmbHVzaD1UcnVlKQoKZGVmIGZl" >> probe.b64
+          echo "dGNoKHVybCwgdGltZW91dD04KToKICAgIGhlYWRlcnMgPSBkaWN0KFVBKTsgaGVhZGVyc1snUmFuZ2UnXSA9ICdieXRlcz0wLTEw" >> probe.b64
+          echo "MjMnCiAgICBmb3IgYXR0ZW1wdCBpbiByYW5nZSgyKToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJlcSA9IHVybGxpYi5yZXF1" >> probe.b64
+          echo "ZXN0LlJlcXVlc3QodXJsLCBoZWFkZXJzPWhlYWRlcnMpCiAgICAgICAgICAgIHdpdGggdXJsbGliLnJlcXVlc3QudXJsb3Blbihy" >> probe.b64
+          echo "ZXEsIHRpbWVvdXQ9dGltZW91dCwgY29udGV4dD1jdHgpIGFzIHI6CiAgICAgICAgICAgICAgICByLnJlYWQoNTEyKQogICAgICAg" >> probe.b64
+          echo "ICAgICAgICAgcmV0dXJuIHIuc3RhdHVzCiAgICAgICAgZXhjZXB0IHVybGxpYi5lcnJvci5IVFRQRXJyb3IgYXMgZToKICAgICAg" >> probe.b64
+          echo "ICAgICAgcmV0dXJuIGUuY29kZQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgIGlmIGF0dGVtcHQgPT0gMDog" >> probe.b64
+          echo "dGltZS5zbGVlcCgxLjApCiAgICByZXR1cm4gTm9uZQoKZGVmIGRuc19kZWFkKGhvc3RuYW1lKToKICAgIGggPSBob3N0bmFtZS5z" >> probe.b64
+          echo "cGxpdCgnOicpWzBdLnN0cmlwKCdbXScpCiAgICBpZiByZS5tYXRjaChyJ15cZCtcLlxkK1wuXGQrXC5cZCskJywgaCk6IHJldHVy" >> probe.b64
+          echo "biBGYWxzZQogICAgaWYgJzonIGluIGg6IHJldHVybiBGYWxzZSAgIyBpcHY2IGxpdGVyYWwKICAgIHRyeToKICAgICAgICBzb2Nr" >> probe.b64
+          echo "ZXQuZ2V0YWRkcmluZm8oaCwgTm9uZSkKICAgICAgICByZXR1cm4gRmFsc2UKICAgIGV4Y2VwdCBzb2NrZXQuZ2FpZXJyb3I6CiAg" >> probe.b64
+          echo "ICAgICAgcmV0dXJuIFRydWUKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgcmV0dXJuIEZhbHNlCgpob3N0cyA9IGRlZmF1" >> probe.b64
+          echo "bHRkaWN0KGxpc3QpCmZvciBjIGluIGNoYW5uZWxzOiBob3N0c1tjWydob3N0J11dLmFwcGVuZChjKQpwcmludCgndW5pcXVlIGhv" >> probe.b64
+          echo "c3RzOicsIGxlbihob3N0cyksIGZsdXNoPVRydWUpCgpkZWYgcHJvYmVfaG9zdChpdGVtKToKICAgIGhvc3QsIGNocyA9IGl0ZW0K" >> probe.b64
+          echo "ICAgIHN0ID0gZmV0Y2goY2hzWzBdWyd1cmwnXSkKICAgIGFsaXZlID0gc3QgaXMgbm90IE5vbmUgYW5kIHN0IDwgNDAwCiAgICBk" >> probe.b64
+          echo "ZWFkID0gZG5zX2RlYWQoaG9zdCkgaWYgbm90IGFsaXZlIGVsc2UgRmFsc2UKICAgIHJldHVybiBob3N0LCB7J3N0YXR1cyc6IHN0" >> probe.b64
+          echo "LCAnYWxpdmUnOiBhbGl2ZSwgJ2Ruc19kZWFkJzogZGVhZCwKICAgICAgICAgICAgICAgICAgJ2NvdW50JzogbGVuKGNocyksICdn" >> probe.b64
+          echo "cm91cHMnOiBzb3J0ZWQoc2V0KGNbJ2dyb3VwJ10gZm9yIGMgaW4gY2hzKSl9Cgp3aXRoIFRocmVhZFBvb2xFeGVjdXRvcihtYXhf" >> probe.b64
+          echo "d29ya2Vycz0yNCkgYXMgZXg6CiAgICBob3N0X3Jlc3VsdHMgPSBkaWN0KGV4Lm1hcChwcm9iZV9ob3N0LCBob3N0cy5pdGVtcygp" >> probe.b64
+          echo "KSkKCnNhbXBsZXMgPSBbXQpmb3IgaCwgciBpbiBob3N0X3Jlc3VsdHMuaXRlbXMoKToKICAgIGlmIHJbJ2FsaXZlJ106IHNhbXBs" >> probe.b64
+          echo "ZXMgKz0gaG9zdHNbaF1bOjNdCmRlZiBwcm9iZV9jaChjKToKICAgIHN0ID0gZmV0Y2goY1sndXJsJ10pCiAgICByZXR1cm4gY1sn" >> probe.b64
+          echo "Z3JvdXAnXSwgKHN0IGlzIG5vdCBOb25lIGFuZCBzdCA8IDQwMCkKd2l0aCBUaHJlYWRQb29sRXhlY3V0b3IobWF4X3dvcmtlcnM9" >> probe.b64
+          echo "MjQpIGFzIGV4OgogICAgc3JlcyA9IGxpc3QoZXgubWFwKHByb2JlX2NoLCBzYW1wbGVzKSkKcGVyX2dyb3VwX3NhbXBsZSA9IGRl" >> probe.b64
+          echo "ZmF1bHRkaWN0KENvdW50ZXIpCmZvciBnLCBvayBpbiBzcmVzOiBwZXJfZ3JvdXBfc2FtcGxlW2ddWydvaycgaWYgb2sgZWxzZSAn" >> probe.b64
+          echo "ZmFpbCddICs9IDEKCm9zLm1ha2VkaXJzKCdsaXZlLW91dCcsIGV4aXN0X29rPVRydWUpCmpzb24uZHVtcChob3N0X3Jlc3VsdHMs" >> probe.b64
+          echo "IG9wZW4oJ2xpdmUtb3V0L2xpdmUtaG9zdHMuanNvbicsICd3JywgZW5jb2Rpbmc9J3V0Zi04JyksIGVuc3VyZV9hc2NpaT1GYWxz" >> probe.b64
+          echo "ZSwgaW5kZW50PTEsIGRlZmF1bHQ9c3RyKQoKZ3JvdXBfdG90YWwgPSBDb3VudGVyKGNbJ2dyb3VwJ10gZm9yIGMgaW4gY2hhbm5l" >> probe.b64
+          echo "bHMpCmdyb3VwX2FsaXZlID0gQ291bnRlcigpOyBncm91cF9kZWFkID0gQ291bnRlcigpCmZvciBoLCByIGluIGhvc3RfcmVzdWx0" >> probe.b64
+          echo "cy5pdGVtcygpOgogICAgZm9yIGMgaW4gaG9zdHNbaF06CiAgICAgICAgaWYgclsnYWxpdmUnXTogZ3JvdXBfYWxpdmVbY1snZ3Jv" >> probe.b64
+          echo "dXAnXV0gKz0gMQogICAgICAgIGVsaWYgclsnZG5zX2RlYWQnXTogZ3JvdXBfZGVhZFtjWydncm91cCddXSArPSAxCmxpbmVzID0g" >> probe.b64
+          echo "WycjIOebtOaSrea6kOS6keerr+ajgOa1i+e7k+aenCcsICcnXQpsaW5lcy5hcHBlbmQoZiLpopHpgZPmgLvmlbAge2xlbihjaGFu" >> probe.b64
+          echo "bmVscyl977yM5pyN5Yqh5ZmoIHtsZW4oaG9zdF9yZXN1bHRzKX0g5Y+wIikKbGluZXMuYXBwZW5kKCcnKQpsaW5lcy5hcHBlbmQo" >> probe.b64
+          echo "J3wg5YiG57uEIHwg6aKR6YGT5pWwIHwg5pyN5Yqh5Zmo5Zyo57q/IHwg5Z+f5ZCN5bey5rOo6ZSAKOmTgeatuykgfCDlhbbkvZko" >> probe.b64
+          echo "5a2Y55aRKSB8IOaKvea1i+mAmui/hyB8JykKbGluZXMuYXBwZW5kKCd8LS0tfC0tLXwtLS18LS0tfC0tLXwtLS18JykKZm9yIGcg" >> probe.b64
+          echo "aW4gc29ydGVkKGdyb3VwX3RvdGFsKToKICAgIHMgPSBwZXJfZ3JvdXBfc2FtcGxlLmdldChnLCBDb3VudGVyKCkpCiAgICBsaW5l" >> probe.b64
+          echo "cy5hcHBlbmQoZiJ8IHtnfSB8IHtncm91cF90b3RhbFtnXX0gfCB7Z3JvdXBfYWxpdmVbZ119IHwge2dyb3VwX2RlYWRbZ119IHwg" >> probe.b64
+          echo "e2dyb3VwX3RvdGFsW2ddLWdyb3VwX2FsaXZlW2ddLWdyb3VwX2RlYWRbZ119IHwge3MuZ2V0KCdvaycsMCl9L3tzLmdldCgnb2sn" >> probe.b64
+          echo "LDApK3MuZ2V0KCdmYWlsJywwKX0gfCIpCmxpbmVzLmFwcGVuZCgnJykKbGluZXMuYXBwZW5kKCcjIyDln5/lkI3lt7Lms6jplIDn" >> probe.b64
+          echo "moTmnI3liqHlmajvvIjpk4HmrbvvvIzlj6/liKDlhbblhajpg6jpopHpgZPvvIknKQpkZWFkX2hvc3RzID0gW2ggZm9yIGgsIHIg" >> probe.b64
+          echo "aW4gaG9zdF9yZXN1bHRzLml0ZW1zKCkgaWYgclsnZG5zX2RlYWQnXV0KaWYgZGVhZF9ob3N0czoKICAgIGZvciBoIGluIHNvcnRl" >> probe.b64
+          echo "ZChkZWFkX2hvc3RzKToKICAgICAgICBsaW5lcy5hcHBlbmQoZiItIHtofe+8iHtob3N0X3Jlc3VsdHNbaF1bJ2NvdW50J119IOS4" >> probe.b64
+          echo "qumikemBk++8jOWIhue7hO+8mnsnLCcuam9pbihob3N0X3Jlc3VsdHNbaF1bJ2dyb3VwcyddKX3vvIkiKQplbHNlOgogICAgbGlu" >> probe.b64
+          echo "ZXMuYXBwZW5kKCfvvIjml6DvvIknKQpvcGVuKCdsaXZlLW91dC9saXZlLXN1bW1hcnkubWQnLCAndycsIGVuY29kaW5nPSd1dGYt" >> probe.b64
+          echo "OCcpLndyaXRlKCdcbicuam9pbihsaW5lcykpCnByaW50KCdcbicuam9pbihsaW5lcykpCg==" >> probe.b64
+          base64 -d probe.b64 > probe.py
+          python3 probe.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add live-out
+          git commit -m "live sweep results" || echo "nothing to commit"
+          git push

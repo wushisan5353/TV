@@ -43,7 +43,7 @@ jobs:
           done
           if [ "$BOOT" != "ok" ]; then echo "BOOT_FAIL" > deep-out/PREFLIGHT_FAIL.txt; exit 1; fi
           adb -s localhost:5555 shell getprop ro.product.cpu.abilist
-          curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-box-2.4/TVMax-Box-2.4-armeabi_v7a.apk"
+          curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-box-3.0/TVMax-Box-3.0-armeabi_v7a.apk"
           adb -s localhost:5555 install -r tvmax.apk && echo INSTALL_OK || { echo "INSTALL_FAIL" > deep-out/PREFLIGHT_FAIL.txt; exit 1; }
           adb -s localhost:5555 logcat -c
           echo PREFLIGHT_OK
@@ -101,48 +101,53 @@ jobs:
           echo "ICAgICAgICBpZiAn6K+36L6T5YWlJyBpbiBuZFsndGV4dCddIG9yICfor7fovpPlhaUnIGluIG5kWydkZXNjJ106CiAgICAgICAg" >> deep.b64
           echo "ICAgIHRhcF94eShuZFsnY3gnXSwgbmRbJ2N5J10pOyBsb2coJ2lucHV0IGZvY3VzZWQnKTsgYnJlYWsKICAgIHRpbWUuc2xlZXAo" >> deep.b64
           echo "MSkKICAgIHNoKCdzaGVsbCcsICdpbnB1dCcsICd0ZXh0JywgJ2F2YXRhcicpCiAgICB0aW1lLnNsZWVwKDEpCiAgICB0YXBfc2Vh" >> deep.b64
-          echo "cmNoX2J1dHRvbigpCiAgICAjIHdhaXQgZm9yIHJlc3VsdHM6IGJhZGdlZCBjYXJkcyAodGV4dCBjb250YWlucyBhIHNvdXJjZSBi" >> deep.b64
-          echo "YWRnZSBvciBhIHJhdGluZykgdXAgdG8gNDBzCiAgICBmb3IgdyBpbiByYW5nZSg4KToKICAgICAgICB0aW1lLnNsZWVwKDUpCiAg" >> deep.b64
-          echo "ICAgICAgbnMgPSBub2RlcyhkdW1wKCkpCiAgICAgICAgYmFkZ2VkID0gW24gZm9yIG4gaW4gbnMgaWYgblsnY3gnXSA+IDQyMCBh" >> deep.b64
-          echo "bmQgblsnY3knXSA+IDEwMCBhbmQgblsndGV4dCddXQogICAgICAgIGlmIGxlbihiYWRnZWQpID49IDM6CiAgICAgICAgICAgIGxv" >> deep.b64
-          echo "ZyhmJ3Jlc3VsdHMgdmlzaWJsZSBhZnRlciB7KHcrMSkqNX1zOiAnICsgJyB8ICcuam9pbihbblsndGV4dCddIGZvciBuIGluIGJh" >> deep.b64
-          echo "ZGdlZF1bOjZdKSkKICAgICAgICAgICAgYnJlYWsKICAgIHNob3QoJzAyLXJlc3VsdHMnKQogICAgbG9nKCd0b3AgcmVzdWx0czog" >> deep.b64
-          echo "JyArIHRvcCgpKQogICAgbnMgPSBub2RlcyhkdW1wKCkpCiAgICBsb2coJ3Jlc3VsdCB0ZXh0czogJyArICcgfCAnLmpvaW4oW25b" >> deep.b64
-          echo "J3RleHQnXSBmb3IgbiBpbiBucyBpZiBuWyd0ZXh0J11dWzoxNF0pKQogICAgIyByZXN1bHQgY2FyZHMgbGl2ZSByaWdodCBvZiB0" >> deep.b64
-          echo "aGUga2V5Ym9hcmQgcGFuZWwgKHg+NDIwKTsgdGFwIHRoZSBmaXJzdCBwbGF1c2libGUgY2FyZCBjZW50ZXIKICAgIHRhcF94eSg1" >> deep.b64
-          echo "MjAsIDIwNSkKICAgIHRpbWUuc2xlZXAoOCkKICAgIHNob3QoJzAzLWRldGFpbCcpCiAgICBsb2coJ3RvcCBkZXRhaWw6ICcgKyB0" >> deep.b64
-          echo "b3AoKSkKICAgIGR0ID0gW25bJ3RleHQnXSBmb3IgbiBpbiBub2RlcyhkdW1wKCkpIGlmIG5bJ3RleHQnXV0KICAgIGxvZygnZGV0" >> deep.b64
-          echo "YWlsIHRleHRzOiAnICsgJyB8ICcuam9pbihkdFs6MTZdKSkKICAgIGRlZiB0cnlfcGxheSh0YWcpOgogICAgICAgIGlmICdEZXRh" >> deep.b64
-          echo "aWxBY3Rpdml0eScgbm90IGluIHRvcCgpOgogICAgICAgICAgICBsb2codGFnICsgJzogbm90IG9uIGRldGFpbCcpOyByZXR1cm4g" >> deep.b64
-          echo "RmFsc2UKICAgICAgICBwbGF5ZWQgPSB0YXBfdGV4dCgn5pKt5pS+JywgdHJpZXM9Mikgb3IgdGFwX3RleHQoJ+esrDAx6ZuGJywg" >> deep.b64
-          echo "dHJpZXM9Mikgb3IgdGFwX3RleHQoJ+esrDHpm4YnLCB0cmllcz0yKSBvciB0YXBfdGV4dCgn5q2j54mHJywgdHJpZXM9MikKICAg" >> deep.b64
-          echo "ICAgICBsb2codGFnICsgJyBwbGF5IHRhcHBlZDogJyArIHN0cihwbGF5ZWQpKQogICAgICAgIGlmIG5vdCBwbGF5ZWQ6IHJldHVy" >> deep.b64
-          echo "biBGYWxzZQogICAgICAgIHNlZW5fcGxheWVyLCBzdGFibGUgPSBGYWxzZSwgMAogICAgICAgIGZvciBpIGluIHJhbmdlKDEyKToK" >> deep.b64
-          echo "ICAgICAgICAgICAgdGltZS5zbGVlcCgzKQogICAgICAgICAgICB0cCA9IHRvcCgpCiAgICAgICAgICAgIGlmICdQbGF5QWN0aXZp" >> deep.b64
-          echo "dHknIGluIHRwOgogICAgICAgICAgICAgICAgc2Vlbl9wbGF5ZXIgPSBUcnVlOyBzdGFibGUgKz0gMQogICAgICAgICAgICAgICAg" >> deep.b64
-          echo "aWYgc3RhYmxlID49IDM6CiAgICAgICAgICAgICAgICAgICAgdGltZS5zbGVlcCgxMCkKICAgICAgICAgICAgICAgICAgICBzaG90" >> deep.b64
-          echo "KCcwNC1wbGF5ZXInKQogICAgICAgICAgICAgICAgICAgIHB0ID0gW25bJ3RleHQnXSBmb3IgbiBpbiBub2RlcyhkdW1wKCkpIGlm" >> deep.b64
-          echo "IG5bJ3RleHQnXV0KICAgICAgICAgICAgICAgICAgICB0aW1lZCA9IFt0IGZvciB0IGluIHB0IGlmIHJlLnNlYXJjaChyJ1xkezEs" >> deep.b64
-          echo "Mn06XGR7Mn0nLCB0KV0KICAgICAgICAgICAgICAgICAgICBsb2codGFnICsgJyBQTEFZRVIgU1RBQkxFOyB0ZXh0czogJyArICcg" >> deep.b64
-          echo "fCAnLmpvaW4oKHRpbWVkICsgcHQpWzoxMF0pKQogICAgICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIGVs" >> deep.b64
-          echo "c2U6CiAgICAgICAgICAgICAgICBpZiBzZWVuX3BsYXllcjoKICAgICAgICAgICAgICAgICAgICBsb2codGFnICsgZic6IHBsYXll" >> deep.b64
-          echo "ciBleGl0ZWQgYWZ0ZXIgfnsoaSsxKSozfXMsIGJhY2sgb24ge3RwfScpCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIEZhbHNl" >> deep.b64
-          echo "CiAgICAgICAgICAgICAgICBzdGFibGUgPSAwCiAgICAgICAgbG9nKHRhZyArICc6IHBsYXllciBuZXZlciBhcHBlYXJlZC9zdGFi" >> deep.b64
-          echo "aWxpemVkLCB0b3A9JyArIHRvcCgpKQogICAgICAgIHJldHVybiBGYWxzZQoKICAgIG9rID0gRmFsc2UKICAgIGlmICdEZXRhaWxB" >> deep.b64
-          echo "Y3Rpdml0eScgaW4gdG9wKCk6CiAgICAgICAgb2sgPSB0cnlfcGxheSgnYXR0ZW1wdDEnKQogICAgICAgIGlmIG5vdCBvazoKICAg" >> deep.b64
-          echo "ICAgICAgICAgIyBiYWNrIHRvIHJlc3VsdHMsIHRyeSB0aGUgbmV4dCByZXN1bHQgY2FyZAogICAgICAgICAgICBrZXkoNCk7IHRp" >> deep.b64
-          echo "bWUuc2xlZXAoMykKICAgICAgICAgICAgbG9nKCdiYWNrIG9uOiAnICsgdG9wKCkpCiAgICAgICAgICAgIHRhcF94eSg2OTAsIDIw" >> deep.b64
-          echo "NSkgICMgc2Vjb25kIHJlc3VsdCBjYXJkCiAgICAgICAgICAgIHRpbWUuc2xlZXAoOCkKICAgICAgICAgICAgc2hvdCgnMDUtZGV0" >> deep.b64
-          echo "YWlsMicpCiAgICAgICAgICAgIGxvZygndG9wIGRldGFpbDI6ICcgKyB0b3AoKSkKICAgICAgICAgICAgb2sgPSB0cnlfcGxheSgn" >> deep.b64
-          echo "YXR0ZW1wdDInKQogICAgICAgIGlmIG5vdCBvazoKICAgICAgICAgICAga2V5KDQpOyB0aW1lLnNsZWVwKDMpCiAgICAgICAgICAg" >> deep.b64
-          echo "IHRhcF94eSg4NjAsIDIwNSkgICMgdGhpcmQgcmVzdWx0IGNhcmQKICAgICAgICAgICAgdGltZS5zbGVlcCg4KQogICAgICAgICAg" >> deep.b64
-          echo "ICBzaG90KCcwNi1kZXRhaWwzJykKICAgICAgICAgICAgbG9nKCd0b3AgZGV0YWlsMzogJyArIHRvcCgpKQogICAgICAgICAgICBv" >> deep.b64
-          echo "ayA9IHRyeV9wbGF5KCdhdHRlbXB0MycpCiAgICBlbHNlOgogICAgICAgIGxvZygnZGV0YWlsIE5PVCBvcGVuZWQ7IHN0b3AgY2hh" >> deep.b64
-          echo "aW4gKG5vIGJsaW5kIGZhbGxiYWNrKScpCiAgICBsb2coJ1BMQVlCQUNLX0NIQUlOOiAnICsgKCdQQVNTJyBpZiBvayBlbHNlICdO" >> deep.b64
-          echo "T1QtWUVUJykpCgpsb2djYXQgPSBzaCgnbG9nY2F0JywgJy1kJywgdGltZW91dD02MCkKbG9nKCdzaG91bGRJbnRlcmNlcHRSZXF1" >> deep.b64
-          echo "ZXN0IGxpbmVzOiAnICsgc3RyKHN1bSgxIGZvciBsbiBpbiBsb2djYXQuc3BsaXRsaW5lcygpIGlmICdzaG91bGRJbnRlcmNlcHRS" >> deep.b64
-          echo "ZXF1ZXN0JyBpbiBsbikpKQpsb2coJ2NyYXNoIGJ1ZmZlciBieXRlczogJyArIHN0cihsZW4oc2goJ2xvZ2NhdCcsICctYicsICdj" >> deep.b64
-          echo "cmFzaCcsICctZCcpLnN0cmlwKCkpKSkKbG9nKCc9PT0gRE9ORSA9PT0nKQpwcmludCgnRE9ORScpCg==" >> deep.b64
+          echo "cmNoX2J1dHRvbigpCiAgICAjIDIuNSBhY2NlcHRhbmNlOiBzZWFyY2ggbXVzdCBsYW5kIG9uIEZhc3RTZWFyY2hBY3Rpdml0eSAo" >> deep.b64
+          echo "Y2F0ZWdvcml6ZWQgdmlldykKICAgIGZzID0gRmFsc2UKICAgIGZvciB3IGluIHJhbmdlKDgpOgogICAgICAgIHRpbWUuc2xlZXAo" >> deep.b64
+          echo "NSkKICAgICAgICBpZiAnRmFzdFNlYXJjaEFjdGl2aXR5JyBpbiB0b3AoKToKICAgICAgICAgICAgZnMgPSBUcnVlOyBicmVhawog" >> deep.b64
+          echo "ICAgbG9nKCdGQVNUX1NFQVJDSF9ERUZBVUxUOiAnICsgKCdQQVNTJyBpZiBmcyBlbHNlICdGQUlMIHRvcD0nICsgdG9wKCkpKQog" >> deep.b64
+          echo "ICAgIyB3YWl0IGZvciByZXN1bHRzIGluIHRoZSBjYXRlZ29yaXplZCB2aWV3ICh0aXRsZSBjb3VudGVyIC8gcmVzdWx0IHRleHRz" >> deep.b64
+          echo "KQogICAgZm9yIHcgaW4gcmFuZ2UoOCk6CiAgICAgICAgbnMgPSBub2RlcyhkdW1wKCkpCiAgICAgICAgdGV4dHMgPSBbblsndGV4" >> deep.b64
+          echo "dCddIGZvciBuIGluIG5zIGlmIG5bJ3RleHQnXV0KICAgICAgICBiYWRnZWQgPSBbbiBmb3IgbiBpbiBucyBpZiBuWydjeCddID4g" >> deep.b64
+          echo "NDIwIGFuZCBuWydjeSddID4gMTAwIGFuZCBuWyd0ZXh0J11dCiAgICAgICAgaWYgYW55KCfmkJzntKInIGluIHQgYW5kICgnKCcg" >> deep.b64
+          echo "aW4gdCBvciAn77yIJyBpbiB0KSBmb3IgdCBpbiB0ZXh0cykgb3IgbGVuKGJhZGdlZCkgPj0gMzoKICAgICAgICAgICAgbG9nKGYn" >> deep.b64
+          echo "ZmFzdCByZXN1bHRzIHZpc2libGU6ICcgKyAnIHwgJy5qb2luKHRleHRzWzoxMF0pKQogICAgICAgICAgICBicmVhawogICAgICAg" >> deep.b64
+          echo "IHRpbWUuc2xlZXAoNSkKICAgIHNob3QoJzAyLXJlc3VsdHMnKQogICAgbG9nKCd0b3AgcmVzdWx0czogJyArIHRvcCgpKQogICAg" >> deep.b64
+          echo "bnMgPSBub2RlcyhkdW1wKCkpCiAgICBsb2coJ3Jlc3VsdCB0ZXh0czogJyArICcgfCAnLmpvaW4oW25bJ3RleHQnXSBmb3IgbiBp" >> deep.b64
+          echo "biBucyBpZiBuWyd0ZXh0J11dWzoxNF0pKQogICAgIyByZXN1bHQgY2FyZHMgbGl2ZSByaWdodCBvZiB0aGUga2V5Ym9hcmQgcGFu" >> deep.b64
+          echo "ZWwgKHg+NDIwKTsgdGFwIHRoZSBmaXJzdCBwbGF1c2libGUgY2FyZCBjZW50ZXIKICAgIHRhcF94eSg1MjAsIDIwNSkKICAgIHRp" >> deep.b64
+          echo "bWUuc2xlZXAoOCkKICAgIHNob3QoJzAzLWRldGFpbCcpCiAgICBsb2coJ3RvcCBkZXRhaWw6ICcgKyB0b3AoKSkKICAgIGR0ID0g" >> deep.b64
+          echo "W25bJ3RleHQnXSBmb3IgbiBpbiBub2RlcyhkdW1wKCkpIGlmIG5bJ3RleHQnXV0KICAgIGxvZygnZGV0YWlsIHRleHRzOiAnICsg" >> deep.b64
+          echo "JyB8ICcuam9pbihkdFs6MTZdKSkKICAgIGRlZiB0cnlfcGxheSh0YWcpOgogICAgICAgIGlmICdEZXRhaWxBY3Rpdml0eScgbm90" >> deep.b64
+          echo "IGluIHRvcCgpOgogICAgICAgICAgICBsb2codGFnICsgJzogbm90IG9uIGRldGFpbCcpOyByZXR1cm4gRmFsc2UKICAgICAgICBw" >> deep.b64
+          echo "bGF5ZWQgPSB0YXBfdGV4dCgn5pKt5pS+JywgdHJpZXM9Mikgb3IgdGFwX3RleHQoJ+esrDAx6ZuGJywgdHJpZXM9Mikgb3IgdGFw" >> deep.b64
+          echo "X3RleHQoJ+esrDHpm4YnLCB0cmllcz0yKSBvciB0YXBfdGV4dCgn5q2j54mHJywgdHJpZXM9MikKICAgICAgICBsb2codGFnICsg" >> deep.b64
+          echo "JyBwbGF5IHRhcHBlZDogJyArIHN0cihwbGF5ZWQpKQogICAgICAgIGlmIG5vdCBwbGF5ZWQ6IHJldHVybiBGYWxzZQogICAgICAg" >> deep.b64
+          echo "IHNlZW5fcGxheWVyLCBzdGFibGUgPSBGYWxzZSwgMAogICAgICAgIGZvciBpIGluIHJhbmdlKDEyKToKICAgICAgICAgICAgdGlt" >> deep.b64
+          echo "ZS5zbGVlcCgzKQogICAgICAgICAgICB0cCA9IHRvcCgpCiAgICAgICAgICAgIGlmICdQbGF5QWN0aXZpdHknIGluIHRwOgogICAg" >> deep.b64
+          echo "ICAgICAgICAgICAgc2Vlbl9wbGF5ZXIgPSBUcnVlOyBzdGFibGUgKz0gMQogICAgICAgICAgICAgICAgaWYgc3RhYmxlID49IDM6" >> deep.b64
+          echo "CiAgICAgICAgICAgICAgICAgICAgdGltZS5zbGVlcCgxMCkKICAgICAgICAgICAgICAgICAgICBzaG90KCcwNC1wbGF5ZXInKQog" >> deep.b64
+          echo "ICAgICAgICAgICAgICAgICAgIHB0ID0gW25bJ3RleHQnXSBmb3IgbiBpbiBub2RlcyhkdW1wKCkpIGlmIG5bJ3RleHQnXV0KICAg" >> deep.b64
+          echo "ICAgICAgICAgICAgICAgICB0aW1lZCA9IFt0IGZvciB0IGluIHB0IGlmIHJlLnNlYXJjaChyJ1xkezEsMn06XGR7Mn0nLCB0KV0K" >> deep.b64
+          echo "ICAgICAgICAgICAgICAgICAgICBsb2codGFnICsgJyBQTEFZRVIgU1RBQkxFOyB0ZXh0czogJyArICcgfCAnLmpvaW4oKHRpbWVk" >> deep.b64
+          echo "ICsgcHQpWzoxMF0pKQogICAgICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAg" >> deep.b64
+          echo "ICAgICBpZiBzZWVuX3BsYXllcjoKICAgICAgICAgICAgICAgICAgICBsb2codGFnICsgZic6IHBsYXllciBleGl0ZWQgYWZ0ZXIg" >> deep.b64
+          echo "fnsoaSsxKSozfXMsIGJhY2sgb24ge3RwfScpCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIEZhbHNlCiAgICAgICAgICAgICAg" >> deep.b64
+          echo "ICBzdGFibGUgPSAwCiAgICAgICAgbG9nKHRhZyArICc6IHBsYXllciBuZXZlciBhcHBlYXJlZC9zdGFiaWxpemVkLCB0b3A9JyAr" >> deep.b64
+          echo "IHRvcCgpKQogICAgICAgIHJldHVybiBGYWxzZQoKICAgIG9rID0gRmFsc2UKICAgIGlmICdEZXRhaWxBY3Rpdml0eScgaW4gdG9w" >> deep.b64
+          echo "KCk6CiAgICAgICAgb2sgPSB0cnlfcGxheSgnYXR0ZW1wdDEnKQogICAgICAgIGlmIG5vdCBvazoKICAgICAgICAgICAgIyBiYWNr" >> deep.b64
+          echo "IHRvIHJlc3VsdHMsIHRyeSB0aGUgbmV4dCByZXN1bHQgY2FyZAogICAgICAgICAgICBrZXkoNCk7IHRpbWUuc2xlZXAoMykKICAg" >> deep.b64
+          echo "ICAgICAgICAgbG9nKCdiYWNrIG9uOiAnICsgdG9wKCkpCiAgICAgICAgICAgIHRhcF94eSg2OTAsIDIwNSkgICMgc2Vjb25kIHJl" >> deep.b64
+          echo "c3VsdCBjYXJkCiAgICAgICAgICAgIHRpbWUuc2xlZXAoOCkKICAgICAgICAgICAgc2hvdCgnMDUtZGV0YWlsMicpCiAgICAgICAg" >> deep.b64
+          echo "ICAgIGxvZygndG9wIGRldGFpbDI6ICcgKyB0b3AoKSkKICAgICAgICAgICAgb2sgPSB0cnlfcGxheSgnYXR0ZW1wdDInKQogICAg" >> deep.b64
+          echo "ICAgIGlmIG5vdCBvazoKICAgICAgICAgICAga2V5KDQpOyB0aW1lLnNsZWVwKDMpCiAgICAgICAgICAgIHRhcF94eSg4NjAsIDIw" >> deep.b64
+          echo "NSkgICMgdGhpcmQgcmVzdWx0IGNhcmQKICAgICAgICAgICAgdGltZS5zbGVlcCg4KQogICAgICAgICAgICBzaG90KCcwNi1kZXRh" >> deep.b64
+          echo "aWwzJykKICAgICAgICAgICAgbG9nKCd0b3AgZGV0YWlsMzogJyArIHRvcCgpKQogICAgICAgICAgICBvayA9IHRyeV9wbGF5KCdh" >> deep.b64
+          echo "dHRlbXB0MycpCiAgICBlbHNlOgogICAgICAgIGxvZygnZGV0YWlsIE5PVCBvcGVuZWQ7IHN0b3AgY2hhaW4gKG5vIGJsaW5kIGZh" >> deep.b64
+          echo "bGxiYWNrKScpCiAgICBsb2coJ1BMQVlCQUNLX0NIQUlOOiAnICsgKCdQQVNTJyBpZiBvayBlbHNlICdOT1QtWUVUJykpCgpsb2dj" >> deep.b64
+          echo "YXQgPSBzaCgnbG9nY2F0JywgJy1kJywgdGltZW91dD02MCkKbG9nKCdzaG91bGRJbnRlcmNlcHRSZXF1ZXN0IGxpbmVzOiAnICsg" >> deep.b64
+          echo "c3RyKHN1bSgxIGZvciBsbiBpbiBsb2djYXQuc3BsaXRsaW5lcygpIGlmICdzaG91bGRJbnRlcmNlcHRSZXF1ZXN0JyBpbiBsbikp" >> deep.b64
+          echo "KQpsb2coJ2NyYXNoIGJ1ZmZlciBieXRlczogJyArIHN0cihsZW4oc2goJ2xvZ2NhdCcsICctYicsICdjcmFzaCcsICctZCcpLnN0" >> deep.b64
+          echo "cmlwKCkpKSkKbG9nKCc9PT0gRE9ORSA9PT0nKQpwcmludCgnRE9ORScpCg==" >> deep.b64
           base64 -d deep.b64 > deep.py
           set -o pipefail
           python3 deep.py 2>&1 | tee deep-out/python.log

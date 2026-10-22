@@ -18,10 +18,19 @@ jobs:
           exec > >(tee -a deep-out/runlog.txt) 2>&1
           echo "=== uname ==="; uname -a
           sudo apt-get update -qq
-          sudo apt-get install -y linux-modules-extra-$(uname -r) android-tools-adb
+          sudo apt-get install -y android-tools-adb
           if ! command -v adb; then echo "ADB_MISSING" > deep-out/PREFLIGHT_FAIL.txt; exit 1; fi
           adb version
-          sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" && echo BINDER_OK || echo BINDER_FAIL
+          echo "=== binder ladder ==="
+          zgrep CONFIG_ANDROID_BINDER_IPC /proc/config.gz 2>/dev/null || grep CONFIG_ANDROID_BINDER_IPC /boot/config-$(uname -r) 2>/dev/null || echo "no kernel config visible"
+          BINDER=""
+          if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=direct; fi
+          if [ -z "$BINDER" ]; then
+            sudo apt-get install -y linux-modules-extra-$(uname -r) || sudo apt-get install -y linux-modules-extra-azure || sudo apt-get install -y linux-modules-extra || true
+            if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=after-install; fi
+          fi
+          if [ -n "$BINDER" ]; then echo "BINDER_OK via $BINDER"; else echo "BINDER_FAIL" > deep-out/PREFLIGHT_FAIL.txt; exit 1; fi
+          ls -l /dev/binder* 2>/dev/null || true
           docker run -d --privileged -p 5555:5555 --name redroid redroid/redroid:11.0.0-latest androidboot.redroid_gpu_mode=guest
           docker ps
           adb connect localhost:5555

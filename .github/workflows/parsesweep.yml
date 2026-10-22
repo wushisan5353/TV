@@ -1,0 +1,85 @@
+name: Parse Sweep
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe parse endpoints
+        run: |
+          rm -f parse.b64
+          echo "aW1wb3J0IGpzb24sIHJlLCBzc2wsIHRpbWUsIHVybGxpYi5yZXF1ZXN0LCB1cmxsaWIuZXJyb3IsIHVybGxpYi5wYXJzZSwgb3MK" >> parse.b64
+          echo "ZnJvbSBjb25jdXJyZW50LmZ1dHVyZXMgaW1wb3J0IFRocmVhZFBvb2xFeGVjdXRvcgoKY3R4ID0gc3NsLmNyZWF0ZV9kZWZhdWx0" >> parse.b64
+          echo "X2NvbnRleHQoKTsgY3R4LmNoZWNrX2hvc3RuYW1lID0gRmFsc2U7IGN0eC52ZXJpZnlfbW9kZSA9IHNzbC5DRVJUX05PTkUKVUEg" >> parse.b64
+          echo "PSB7J1VzZXItQWdlbnQnOiAnTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3" >> parse.b64
+          echo "LjM2IENocm9tZS8xMjUgU2FmYXJpLzUzNy4zNid9CgpkZWYgZmV0Y2godXJsLCB0aW1lb3V0PTE1KToKICAgIGZvciBhdHRlbXB0" >> parse.b64
+          echo "IGluIHJhbmdlKDIpOgogICAgICAgIHRyeToKICAgICAgICAgICAgcmVxID0gdXJsbGliLnJlcXVlc3QuUmVxdWVzdCh1cmwsIGhl" >> parse.b64
+          echo "YWRlcnM9VUEpCiAgICAgICAgICAgIHdpdGggdXJsbGliLnJlcXVlc3QudXJsb3BlbihyZXEsIHRpbWVvdXQ9dGltZW91dCwgY29u" >> parse.b64
+          echo "dGV4dD1jdHgpIGFzIHI6CiAgICAgICAgICAgICAgICByZXR1cm4gci5zdGF0dXMsIHIucmVhZCgzMDAwMDApCiAgICAgICAgZXhj" >> parse.b64
+          echo "ZXB0IHVybGxpYi5lcnJvci5IVFRQRXJyb3IgYXMgZToKICAgICAgICAgICAgdHJ5OiByZXR1cm4gZS5jb2RlLCBlLnJlYWQoNTAw" >> parse.b64
+          echo "MDApCiAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246IHJldHVybiBlLmNvZGUsIGInJwogICAgICAgIGV4Y2VwdCBFeGNlcHRp" >> parse.b64
+          echo "b246CiAgICAgICAgICAgIGlmIGF0dGVtcHQgPT0gMDogdGltZS5zbGVlcCgxLjUpCiAgICByZXR1cm4gTm9uZSwgYicnCgojIC0t" >> parse.b64
+          echo "LSBncmFiIGZyZXNoIG9mZmljaWFsIGVwaXNvZGUgVVJMcyBhcyBzYW1wbGVzIC0tLQpkZWYgc2NyYXBlKHBhdHRlcm4sIGhvbWUp" >> parse.b64
+          echo "OgogICAgc3QsIGJvZHkgPSBmZXRjaChob21lKQogICAgaWYgc3QgIT0gMjAwOiByZXR1cm4gTm9uZQogICAgbSA9IHJlLmZpbmRh" >> parse.b64
+          echo "bGwocGF0dGVybiwgYm9keS5kZWNvZGUoJ3V0Zi04JywgJ2lnbm9yZScpKQogICAgcmV0dXJuIG1bMF0gaWYgbSBlbHNlIE5vbmUK" >> parse.b64
+          echo "CnNhbXBsZXMgPSB7fQpzYW1wbGVzWydxcSddID0gc2NyYXBlKHInaHR0cHM6Ly92XC5xcVwuY29tL3gvY292ZXIvW2EtejAtOS9d" >> parse.b64
+          echo "K1wuaHRtbCcsICdodHRwczovL3YucXEuY29tLycpCnNhbXBsZXNbJ2lxaXlpJ10gPSBzY3JhcGUocidodHRwczovL3d3d1wuaXFp" >> parse.b64
+          echo "eWlcLmNvbS92X1thLXowLTldK1wuaHRtbCcsICdodHRwczovL3d3dy5pcWl5aS5jb20vJykKcHJpbnQoJ3NhbXBsZXM6Jywgc2Ft" >> parse.b64
+          echo "cGxlcywgZmx1c2g9VHJ1ZSkKCmNmZyA9IGpzb24ubG9hZChvcGVuKCd0dm1heC1jb25maWcuanNvbicsIGVuY29kaW5nPSd1dGYt" >> parse.b64
+          echo "OCcpKQpwYXJzZXMgPSBjZmcuZ2V0KCdwYXJzZXMnLCBbXSkKcHJpbnQoJ3BhcnNlczonLCBsZW4ocGFyc2VzKSwgZmx1c2g9VHJ1" >> parse.b64
+          echo "ZSkKCmRlZiBwcm9iZShwKToKICAgIG5hbWUsIHR5cCwgdXJsID0gcC5nZXQoJ25hbWUnLCAnPycpLCBwLmdldCgndHlwZScpLCAo" >> parse.b64
+          echo "cC5nZXQoJ3VybCcpIG9yICcnKQogICAgb3V0ID0geyduYW1lJzogbmFtZSwgJ3R5cGUnOiB0eXAsICd1cmwnOiB1cmxbOjExMF19" >> parse.b64
+          echo "CiAgICBpZiBub3QgdXJsLnN0YXJ0c3dpdGgoJ2h0dHAnKToKICAgICAgICBvdXQudXBkYXRlKHZlcmRpY3Q9J2FnZ3JlZ2F0ZScs" >> parse.b64
+          echo "IGRldGFpbD0n6IGa5ZCIL+WGhee9rizml6Dni6znq4vnq6/ngrknKQogICAgICAgIHJldHVybiBvdXQKICAgICMgcGljayBhIHNh" >> parse.b64
+          echo "bXBsZSB3aG9zZSBmbGFnIHRoaXMgcGFyc2UgY2xhaW1zIHRvIHN1cHBvcnQKICAgIGZsYWdzID0gW10KICAgIGV4dCA9IHAuZ2V0" >> parse.b64
+          echo "KCdleHQnKSBvciB7fQogICAgaWYgaXNpbnN0YW5jZShleHQsIGRpY3QpOiBmbGFncyA9IGV4dC5nZXQoJ2ZsYWcnKSBvciBbXQog" >> parse.b64
+          echo "ICAgc2FtcGxlID0gTm9uZQogICAgaWYgYW55KCdxcScgaW4gc3RyKGYpIG9yICfohb7orq8nIGluIHN0cihmKSBmb3IgZiBpbiBm" >> parse.b64
+          echo "bGFncykgYW5kIHNhbXBsZXMuZ2V0KCdxcScpOiBzYW1wbGUgPSBzYW1wbGVzWydxcSddCiAgICBlbGlmIHNhbXBsZXMuZ2V0KCdp" >> parse.b64
+          echo "cWl5aScpOiBzYW1wbGUgPSBzYW1wbGVzWydpcWl5aSddCiAgICBlbGlmIHNhbXBsZXMuZ2V0KCdxcScpOiBzYW1wbGUgPSBzYW1w" >> parse.b64
+          echo "bGVzWydxcSddCiAgICBpZiB0eXAgPT0gMToKICAgICAgICBpZiBub3Qgc2FtcGxlOgogICAgICAgICAgICBvdXQudXBkYXRlKHZl" >> parse.b64
+          echo "cmRpY3Q9J3VudGVzdGFibGUnLCBkZXRhaWw9J+aXoOWPr+eUqOagt+acrCcpCiAgICAgICAgICAgIHJldHVybiBvdXQKICAgICAg" >> parse.b64
+          echo "ICBzdCwgYm9keSA9IGZldGNoKHVybCArIHVybGxpYi5wYXJzZS5xdW90ZShzYW1wbGUsIHNhZmU9JycpKQogICAgICAgIHZlcmRp" >> parse.b64
+          echo "Y3QsIGRldGFpbCA9ICdkZWFkJywgZidodHRwPXtzdH0nCiAgICAgICAgaWYgc3QgPT0gMjAwOgogICAgICAgICAgICB0cnk6CiAg" >> parse.b64
+          echo "ICAgICAgICAgICAgICBkID0ganNvbi5sb2Fkcyhib2R5LmRlY29kZSgndXRmLTgnLCAnaWdub3JlJykpCiAgICAgICAgICAgICAg" >> parse.b64
+          echo "ICB1ID0gc3RyKGQuZ2V0KCd1cmwnKSBvciAnJykKICAgICAgICAgICAgICAgIGlmIHUuc3RhcnRzd2l0aCgnaHR0cCcpIGFuZCAo" >> parse.b64
+          echo "Jy5tM3U4JyBpbiB1IG9yICcubXA0JyBpbiB1IG9yICd1cmw9JyBpbiB1IG9yIGxlbih1KSA+IDMwKToKICAgICAgICAgICAgICAg" >> parse.b64
+          echo "ICAgICB2ZXJkaWN0LCBkZXRhaWwgPSAncmVzb2x2ZWQnLCBmIuino+WHujoge3VbOjgwXX0iCiAgICAgICAgICAgICAgICBlbGlm" >> parse.b64
+          echo "IGQ6CiAgICAgICAgICAgICAgICAgICAgdmVyZGljdCwgZGV0YWlsID0gJ2VuZHBvaW50LWFsaXZlJywgZiLmnIlKU09O5Zue5YyF" >> parse.b64
+          echo "5L2G5pyq6Kej5Ye6OiB7c3RyKGQpWzoxMDBdfSIKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgICAg" >> parse.b64
+          echo "IHZlcmRpY3QsIGRldGFpbCA9ICdlbmRwb2ludC1hbGl2ZScsICdodHRwMjAwIOmdnkpTT04nCiAgICAgICAgb3V0LnVwZGF0ZSh2" >> parse.b64
+          echo "ZXJkaWN0PXZlcmRpY3QsIGRldGFpbD1kZXRhaWwpCiAgICBlbGlmIHR5cCA9PSAwOgogICAgICAgIHN0LCBib2R5ID0gZmV0Y2go" >> parse.b64
+          echo "dXJsICsgdXJsbGliLnBhcnNlLnF1b3RlKHNhbXBsZSBvciAnaHR0cHM6Ly92LnFxLmNvbS8nLCBzYWZlPScnKSkKICAgICAgICBv" >> parse.b64
+          echo "ayA9IHN0ID09IDIwMCBhbmQgbGVuKGJvZHkpID4gMjAwMAogICAgICAgIG91dC51cGRhdGUodmVyZGljdD0ncGFnZS1hbGl2ZScg" >> parse.b64
+          echo "aWYgb2sgZWxzZSAnZGVhZCcsIGRldGFpbD1mJ2h0dHA9e3N0fSBieXRlcz17bGVuKGJvZHkpfScpCiAgICBlbHNlOgogICAgICAg" >> parse.b64
+          echo "IHN0LCBfID0gZmV0Y2godXJsKQogICAgICAgIG91dC51cGRhdGUodmVyZGljdD0nZW5kcG9pbnQtYWxpdmUnIGlmIHN0IGFuZCBz" >> parse.b64
+          echo "dCA8IDUwMCBlbHNlICdkZWFkJywgZGV0YWlsPWYnaHR0cD17c3R9JykKICAgIHJldHVybiBvdXQKCndpdGggVGhyZWFkUG9vbEV4" >> parse.b64
+          echo "ZWN1dG9yKG1heF93b3JrZXJzPTYpIGFzIGV4OgogICAgcmVzdWx0cyA9IGxpc3QoZXgubWFwKHByb2JlLCBwYXJzZXMpKQpvcy5t" >> parse.b64
+          echo "YWtlZGlycygncGFyc2Utb3V0JywgZXhpc3Rfb2s9VHJ1ZSkKanNvbi5kdW1wKHJlc3VsdHMsIG9wZW4oJ3BhcnNlLW91dC9wYXJz" >> parse.b64
+          echo "ZS1yZXN1bHRzLmpzb24nLCAndycsIGVuY29kaW5nPSd1dGYtOCcpLCBlbnN1cmVfYXNjaWk9RmFsc2UsIGluZGVudD0xKQpsaW5l" >> parse.b64
+          echo "cyA9IFsnIyDop6PmnpDmupDkupHnq6/pqozmtLsnLCAnJywgZiLmoLfmnKwg6IW+6K6vOiB7c2FtcGxlcy5nZXQoJ3FxJyl9IHwg" >> parse.b64
+          echo "54ix5aWH6Im6OiB7c2FtcGxlcy5nZXQoJ2lxaXlpJyl9IiwgJyddCmZvciByIGluIHJlc3VsdHM6CiAgICBsaW5lcy5hcHBlbmQo" >> parse.b64
+          echo "ZiItIFt7clsndmVyZGljdCddfV0ge3JbJ25hbWUnXX0gKHR5cGUge3JbJ3R5cGUnXX0pIOKAlCB7clsnZGV0YWlsJ119IikKb3Bl" >> parse.b64
+          echo "bigncGFyc2Utb3V0L3BhcnNlLXN1bW1hcnkubWQnLCAndycsIGVuY29kaW5nPSd1dGYtOCcpLndyaXRlKCdcbicuam9pbihsaW5l" >> parse.b64
+          echo "cykpCnByaW50KCdcbicuam9pbihsaW5lcykpCg==" >> parse.b64
+          base64 -d parse.b64 > parsesweep.py
+          python3 parsesweep.py
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add parse-out
+          git commit -m "parse sweep results" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin fongmi || true
+            git push origin HEAD:fongmi && break
+            echo "push retry $i"
+            sleep 5
+          done

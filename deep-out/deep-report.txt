@@ -1,27 +1,14 @@
-=== launch ===
-top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== site switch ===
-site found: 量子
-shot 01-site-home
-top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 09:03 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.8
-=== search chain ===
-tap "搜索" at 431,185
-input focused
-tap search button at 104,152
-FAST_SEARCH_DEFAULT: PASS
-fast results visible: 搜索结果 : 24 | 全部显示 | 🚌┃动漫┃巴士 | 🐌夸搜┃搜索 | 🏵️盘Se┃搜索 | 🚌┃动漫┃巴士 | 完结 | 暴太郎战队DON BROTHERS | 🚌┃动漫┃巴士 | 完结
-shot 02-results
-top results: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.FastSearchActivity
-result texts: 搜索结果 : 24 | 全部显示 | 🚌┃动漫┃巴士 | 🐌夸搜┃搜索 | 🏵️盘Se┃搜索 | 🚌┃动漫┃巴士 | 完结 | 暴太郎战队DON BROTHERS | 🚌┃动漫┃巴士 | 完结 | 全职高手 第三季 | 🚌┃动漫┃巴士 | 完结 | 降世神通 第三季
-shot 03-detail
-top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
-detail texts: 暴太郎战队DON BROTHERS | 🚌┃动漫┃巴士 | 年份: 2022 | 地区: 日本 | 类型: 科幻 | 演员: 樋口幸平,别府由来,志田琥珀,柊太朗,铃木浩文,驹木根葵汰,富永勇也,高桥慎之介,宮崎あみさ,和田聪宏 | 导演: 田崎龙太 | 本作是东映首次采用日本民间传说“桃太郎”作为主题的战队。最初编组主要成员则为超级战队系列早期的四男一女组合，颜色依序为红 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 线路1 | 线路2
-tap "播放" at 319,267
-attempt1 play tapped: True
-shot 04-player
-attempt1 PLAYER STABLE; texts: Viewing full screen | To exit, swipe down from the top. | GOT IT
-PLAYBACK_CHAIN: PASS
-shouldInterceptRequest lines: 8
+=== phase 1: online first launch ===
+online home ready: True after 7s
+shot 01-online-home
+=== phase 2: offline cold start ===
+airplane cmd: 
+connectivity check: NetworkProviders for: WifiNetworkFactory Ethernet TelephonyNetworkFactory[0] Unt
+offline home shell ready: True after 7s
+shot 02-offline-home
+offline texts: 🌕┃豆瓣┃热播 | 10月22日 | 周四 12:27 | 首页 | 热门电影 | 热播剧集 | 热播综艺 | 电影筛选 | 电视筛选 | 电影榜单 | 历史 | 直播 | 搜索 | 收藏 | 推送
+CACHE_FIRST_OFFLINE: PASS
+back online top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+shot 03-back-online
 crash buffer bytes: 0
 === DONE ===

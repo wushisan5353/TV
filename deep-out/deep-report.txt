@@ -4,15 +4,33 @@ top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === Test A: category -> poster -> detail ===
 tap "热门电影" at 235,95
 shot 02-category
-card candidates: 27
-tap card at 592,360 text=""
+tap poster at 375,230
 shot 03-detail
-top after open card: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-detail texts: 首页 | 热门电影 | 热播剧集 | 热播综艺 | 电影筛选 | 电视筛选 | 电影榜单 | 评分：5.5 | 希望 | 评分：7.4 | 杯雪·一战成名 | 评分：6.8 | 眩晕 | 评分：7.6 | 登峰传奇：丹增诺盖 | 评分：6.3
+top after open card: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
+detail texts: 全局搜索 | 请输入要搜索的内容 | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D | E | F | G | H | I | J
 back to: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === Test B: MENU site switch + playback ===
 shot 04-sitedialog
-api site found: None
+dialog batch 0 done
+dialog batch 1 done
+dialog batch 2 done
+dialog batch 3 done
+api site found: 量子
+shot 05-site-home
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+site home texts: 🅱️┃量子┃资源 | 10月22日 | 周四 06:05 | 首页 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 7.5 | 兰香如故
+tap category tab "🅱️┃量子┃资源"
+shot 06-site-category
+tap site poster at 375,300
+shot 07-detail
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+tap_text MISS: 播放
+tap_text MISS: 第01集
+tap_text MISS: 第1集
+play attempted: True
+shot 08-player
+top player: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.SearchActivity
+player texts: 全局搜索 | 请输入要搜索的内容 | 搜索 | 清空 | 远程搜索 | 删除 | A | B | C | D
 shouldInterceptRequest lines: 0
 crash buffer bytes: 0
 === DONE ===

@@ -1,14 +1,25 @@
-=== phase 1: online first launch ===
-online home ready: True after 7s
-shot 01-online-home
-=== phase 2: offline cold start ===
-airplane cmd: 
-connectivity check: NetworkProviders for: WifiNetworkFactory Ethernet TelephonyNetworkFactory[0] Unt
-offline home shell ready: True after 7s
-shot 02-offline-home
-offline texts: 🌕┃豆瓣┃热播 | 10月22日 | 周四 12:27 | 首页 | 热门电影 | 热播剧集 | 热播综艺 | 电影筛选 | 电视筛选 | 电影榜单 | 历史 | 直播 | 搜索 | 收藏 | 推送
-CACHE_FIRST_OFFLINE: PASS
-back online top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-shot 03-back-online
+=== launch ===
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+=== site switch ===
+site found: 量子
+shot 01-site-home
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+=== search official drama ===
+tap "搜索" at 431,185
+input focused
+tap search button
+after search top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.FastSearchActivity
+shot 02-results
+result texts: 搜索结果 : 15 | 全部显示 | 💮┃文采┃秒播 | 🐌夸搜┃搜索 | 🏵️盘Se┃搜索 | 💮┃文采┃秒播 | 乔伊 Joy | 💮┃文采┃秒播 | (06全) | Dear Life | 💮┃文采┃秒播 | 新生 New Life | 💮┃文采┃秒播 | (12全)
+shot 03-detail
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
+detail texts: 乔伊 Joy | 💮┃文采┃秒播 | 年份: 2024 | 地区: 英国 | 类型: 剧情,传记,历史 | 演员: 托马辛·麦肯齐,里什·沙阿,詹姆斯·诺顿,NikolayShulik,艾德里安·鲁基 | 导演: 本·泰勒 | 🚀公众号【神秘的哥哥们】免费分享：影片讲述了1978年世界上第一个“”试管婴儿”LouiseJoyBrown诞生背后的非凡真实故事，以及为实现这一目标而不懈奋斗的十年历程。故事从年轻护士兼胚胎学家JeanPurdy的视角出发，她与科学家RobertEdwards、外科医生PatrickSteptoe合作，开创了体外受精（IVF）领域的先路，解开了不孕不育之谜。电影跟随这三位特立独行的愿景家，展现了他们是如何排除万难、实现梦想，并为数百万人播下了圆梦的种子，歌颂了不屈不挠的力量和科学带来的奇迹。 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 本软件无广告免费使用，付费的请去退款 | 1-1 | 蓝光
+line tabs found: []
+--- try line: 播放 ---
+tap "播放" at 319,267
+play tapped: True
+line 播放: player seen=False stable_polls=0
+OFFICIAL_SNIFF_ENGAGED: NO
+OFFICIAL_STREAM_PLAYING: NO
 crash buffer bytes: 0
 === DONE ===

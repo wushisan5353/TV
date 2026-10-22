@@ -95,6 +95,28 @@ jobs:
                 'putDefault(HawkConfig.HOME_NUM, 4);',
                 'putDefault(HawkConfig.HOME_NUM, 4);\n        putDefault(HawkConfig.FAST_SEARCH_MODE, true);')
 
+          # 2g) 3.0 UI (Alger-inspired): detail poster ambience + neutral focus surfaces
+          patch('app/src/main/res/layout/activity_detail.xml',
+                '    <LinearLayout\n        android:id="@+id/llLayout"',
+                '    <ImageView\n        android:id="@+id/ivBackdrop"\n        android:layout_width="match_parent"\n        android:layout_height="match_parent"\n        android:alpha="0.85"\n        android:scaleType="centerCrop" />\n\n    <LinearLayout\n        android:id="@+id/llLayout"')
+          patch('app/src/main/res/layout/activity_detail.xml',
+                'android:id="@+id/llLayout"',
+                'android:id="@+id/llLayout"\n        android:background="@drawable/detail_scrim"')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java',
+                '    private ImageView ivThumb;',
+                '    private ImageView ivThumb;\n    private ImageView ivBackdrop;')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java',
+                '        ivThumb = findViewById(R.id.ivThumb);',
+                '        ivThumb = findViewById(R.id.ivThumb);\n        ivBackdrop = findViewById(R.id.ivBackdrop);')
+          patch('app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java',
+                '                        ImgUtil.load(mVideo.pic, ivThumb, 14);',
+                '                        ImgUtil.load(mVideo.pic, ivThumb, 14);\n                        if (ivBackdrop != null) ImgUtil.load(mVideo.pic, ivBackdrop, 0);')
+          patch('app/src/main/res/drawable/button_detail_all.xml',
+                '<solid android:color="?attr/color_theme_40" />',
+                '<solid android:color="#8A2D2D2D" />', 2)
+          (root / 'app/src/main/res/drawable/detail_scrim.xml').write_text('<?xml version="1.0" encoding="utf-8"?>\n<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">\n    <gradient android:angle="270" android:startColor="#A6000000" android:centerColor="#C2000000" android:endColor="#F2000000" />\n</shape>\n', encoding='utf-8')
+          print('patched detail_scrim.xml (new file)')
+
           # 2c) Apple TV theme (index 7): accent ramp in styles.xml + wiring in BaseActivity/settings/App seed
           patch('app/src/main/res/values/styles.xml',
                 '</style>\n\n    <!-- 自定义dialog样式 -->',
@@ -171,7 +193,7 @@ jobs:
                 'itemView.animate().scaleX(1.08f).scaleY(1.08f).setDuration(220).setInterpolator(new DecelerateInterpolator()).start();')
           patch('app/src/main/res/drawable/shape_thumb_radius.xml',
                 '?attr/color_theme_40',
-                '?attr/color_theme_50')
+                '#47FFFFFF')
           print('all patches applied, buildPython =', pybin)
           PY
 

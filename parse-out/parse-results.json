@@ -1,0 +1,191 @@
+[
+ {
+  "name": "Json聚合",
+  "type": 3,
+  "url": "Demo",
+  "verdict": "aggregate",
+  "detail": "聚合/内置,无独立端点"
+ },
+ {
+  "name": "Web聚合",
+  "type": 3,
+  "url": "Web",
+  "verdict": "aggregate",
+  "detail": "聚合/内置,无独立端点"
+ },
+ {
+  "name": "公众号：肥猫宝贝",
+  "type": 1,
+  "url": "http://json.84jia.com/home/api?type=ys&uid=335253&key=demprsyzBMQRVY0234&url=",
+  "verdict": "dead",
+  "detail": "http=404"
+ },
+ {
+  "name": "肥猫最可爱",
+  "type": 1,
+  "url": "http://xn--ihqu10cn4c.xn--z7x900a.live/jx.php?id=2&url=",
+  "verdict": "dead",
+  "detail": "http=502"
+ },
+ {
+  "name": "神秘的哥哥们",
+  "type": 1,
+  "url": "http://api.888484.xyz/神秘哥哥/super.php?v=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "免费分享",
+  "type": 0,
+  "url": "https://jx.xmflv.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=3201"
+ },
+ {
+  "name": "789",
+  "type": 0,
+  "url": "https://m.789bh.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=300000"
+ },
+ {
+  "name": "VIP",
+  "type": 0,
+  "url": "https://6.789bh.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=7248"
+ },
+ {
+  "name": "米饭",
+  "type": 1,
+  "url": "https://api.json.icu/api/?key=b1f3b1a9e1c0a42ae969db10bd315a95&url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "虾米",
+  "type": 0,
+  "url": "https://jx.xmflv.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=3201"
+ },
+ {
+  "name": "稻香",
+  "type": 0,
+  "url": "https://jx.xmflv.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=3201"
+ },
+ {
+  "name": "YuMi-vip🥭",
+  "type": 0,
+  "url": "https://jx.xmflv.com/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=3201"
+ },
+ {
+  "name": "PM",
+  "type": 0,
+  "url": "https://www.playm3u8.cn/jiexi.php?url=",
+  "verdict": "dead",
+  "detail": "http=200 bytes=900"
+ },
+ {
+  "name": "全民",
+  "type": 0,
+  "url": "http://api.wpsseo.cn/?v=",
+  "verdict": "dead",
+  "detail": "http=526 bytes=16"
+ },
+ {
+  "name": "m3u8",
+  "type": 0,
+  "url": "https://jx.m3u8.tv/jiexi/?url=",
+  "verdict": "dead",
+  "detail": "http=200 bytes=897"
+ },
+ {
+  "name": "8090",
+  "type": 0,
+  "url": "https://www.8090.la/8090/?url=",
+  "verdict": "dead",
+  "detail": "http=None bytes=0"
+ },
+ {
+  "name": "看看",
+  "type": 0,
+  "url": "https://jx.m3u8.pw/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=13514"
+ },
+ {
+  "name": "巧技",
+  "type": 1,
+  "url": "http://pandown.pro/app/kkdy.php?url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "腾云",
+  "type": 1,
+  "url": "https://api.tyun77.cn/api.php/provide/parseDicturl?url=",
+  "verdict": "dead",
+  "detail": "http=403"
+ },
+ {
+  "name": "世界",
+  "type": 1,
+  "url": "http://175.178.183.192:84/api/?key=f3913eb3f85a8298b3e6e427b8712b2e&url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "咸鱼",
+  "type": 0,
+  "url": "https://jx.xyflv.cc/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=7807"
+ },
+ {
+  "name": "云解析",
+  "type": 0,
+  "url": "https://jx.yparse.com/index.php?url=",
+  "verdict": "dead",
+  "detail": "http=None bytes=0"
+ },
+ {
+  "name": "飞云",
+  "type": 1,
+  "url": "http://122.228.84.103:7777/api/?key=o9fQb0Jvz0qZzY19Jq&url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "亮亮",
+  "type": 1,
+  "url": "http://xiutan.shiyifacai.com/json/qingfeng.php?url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "赞赞",
+  "type": 1,
+  "url": "https://vip.yybjs.top/home/api?type=ys&uid=2691400&key=bcmqsvwyzACFIPY368&url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "左岸",
+  "type": 1,
+  "url": "http://122.228.84.103:5829/jx/?url=",
+  "verdict": "dead",
+  "detail": "http=None"
+ },
+ {
+  "name": "爱豆",
+  "type": 0,
+  "url": "https://jx.aidouer.net/?url=",
+  "verdict": "page-alive",
+  "detail": "http=200 bytes=7807"
+ }
+]

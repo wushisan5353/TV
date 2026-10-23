@@ -1,7 +1,7 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === jar site route (qiyou HCCX) ===
-=== config path fix verify v18 ===
+=== config path fix verify v19 ===
 shot 01-dialog
 dpad batch 0: 19 texts, sample_tail=🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
 dpad batch 5: 22 texts, sample_tail=⛈┃素白白┃影视 | 🍖┃电影牛┃影院 | 🎀┃异界┃动漫 | 🚌┃动漫┃巴士
@@ -10,10 +10,27 @@ site visible after batch 9: 🍩┃奇优┃影视 at 591,494
 site switch target: 🍩┃奇优┃影视
 shot 02-site-home
 top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-site home texts: 🍩┃奇优┃影视 | 10月23日 | 周五 03:25 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
-tap poster: 豆瓣热播 at 105,284
+site home texts: 🍩┃奇优┃影视 | 10月23日 | 周五 03:48 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
+tap "电视剧" at 335,95
+shot 02b-category
+category texts: 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 已完结 | 醉梦 | 更新至第15集 | 嫁金钗 | 更新至第09集 | 璀璨之城国语 | 更新至第23集 | 伟大的长征 | 更新至第6集 | 小城良方 | 更新至第21集 | 玉簟秋 | 更新至第08集 | 非常营救 | 已完结 | 美人余2026 | 已完结 | 把黑夜点燃 | 已完结
+tap poster: 醉梦 at 156,338
 shot 03-detail
-top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-JAR_SITE_DETAIL: NOT REACHED
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
+JAR_SITE_DETAIL: OK
+detail texts: 醉梦 | 🍩┃奇优┃影视 | 类型: 电视剧中国大陆2026 | 演员: 刘诗诗,李乃文,胡先煦,黄小蕾,陈永胜,李沁,林家川,柳小海,郝平,姚安濂,胡明,姜超,焦刚,管云鹏,颖儿,张翔,胡宇轩,宿宇杰,余梦寒,陈震,赵瑞承,楚煦 | 导演: 杨阳 | 多年前，记者沈乐水用摄像机记录了老松江啤酒厂的厂工生活，这里的故事，像一杯久藏的啤酒,酝酿着复杂的情感，也氤氲着一个名叫刘雪梅的女人的死亡之谜。啤酒厂曾是这座城市的骄傲，没落多年后，却成为众多命案…详情 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 播放源1 | 播放源2 | 播放源3 | 播放源4 | 播放源5 | 1-18 | 第01集 | 第02集 | 第03集 | 第04集 | 第05集 | 第06集
+line tabs found: []
+--- try line: 播放 ---
+tapped episode chip: 第01集
+play tapped: True
+line 播放: player seen=True stable_polls=3
+shot 04-player
+player texts: Viewing full screen | To exit, swipe down from the top. | GOT IT
+sniff markers: {'shouldInterceptRequest': 31, 'VideoParseRuler': 0, 'Sniff': 0, 'sniff': 1}
+parse log: 10-23 03:48:28.453  1833  2717 I TVBox   : QuJs{"title":"奇优影院","host":"http://www.326tv.com","url":"http://www.326tv.com/list/fyclass_fypage.html?order=fyfilter","searchUrl":"http:
+parse log: 10-23 03:49:09.446  1833  2717 I TVBox   : QuJs{"parse":1,"url":"http://www.326tv.com/play/49781-0-0.html","jx":0}
+progress samples: None -> None
+OFFICIAL_SNIFF_ENGAGED: YES
+OFFICIAL_STREAM_PLAYING: NO
 crash buffer bytes: 0
 === DONE ===

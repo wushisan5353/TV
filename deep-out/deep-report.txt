@@ -1,19 +1,16 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== site switch ===
-site found: 量子
-shot 01-site-home
-top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === search official drama ===
 tap "搜索" at 431,185
 input focused
 tap search button
 after search top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.FastSearchActivity
 shot 02-results
-result texts: 搜索结果 : 15 | 全部显示 | 💮┃文采┃秒播 | 🐌夸搜┃搜索 | 🏵️盘Se┃搜索 | 💮┃文采┃秒播 | 乔伊 Joy | 💮┃文采┃秒播 | (06全) | Dear Life | 💮┃文采┃秒播 | 新生 New Life | 💮┃文采┃秒播 | (12全)
+result texts: 搜索结果 : 5 | 全部显示 | 💮┃文采┃秒播 | 🏵️盘Se┃搜索 | 💮┃文采┃秒播 | (50全) | 陈情令 | 🏵️盘Se┃搜索 | 2023-09-11T08:03:36+08:00 | 中文片名：陈情令 (2019) 4K | 🏵️盘Se┃搜索 | 2022-06-13T09:23:08+08:00 | ◎译　　名  #The Untamed / 魔道祖师之陈情令 | 🏵️盘Se┃搜索
+filtered texts: 搜索结果 : 5 | 全部显示 | 💮┃文采┃秒播 | 🏵️盘Se┃搜索 | 💮┃文采┃秒播 | (50全) | 陈情令 | 🏵️盘Se┃搜索 | 2023-09-11T08:03:36+08:00 | 中文片名：陈情令 (2019) 4K | 🏵️盘Se┃搜索 | 2022-06-13T09:23:08+08:00 | ◎译　　名  #The Untamed / 魔道祖师之陈情令 | 🏵️盘Se┃搜索
 shot 03-detail
 top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.DetailActivity
-detail texts: 乔伊 Joy | 💮┃文采┃秒播 | 年份: 2024 | 地区: 英国 | 类型: 剧情,传记,历史 | 演员: 托马辛·麦肯齐,里什·沙阿,詹姆斯·诺顿,NikolayShulik,艾德里安·鲁基 | 导演: 本·泰勒 | 🚀公众号【神秘的哥哥们】免费分享：影片讲述了1978年世界上第一个“”试管婴儿”LouiseJoyBrown诞生背后的非凡真实故事，以及为实现这一目标而不懈奋斗的十年历程。故事从年轻护士兼胚胎学家JeanPurdy的视角出发，她与科学家RobertEdwards、外科医生PatrickSteptoe合作，开创了体外受精（IVF）领域的先路，解开了不孕不育之谜。电影跟随这三位特立独行的愿景家，展现了他们是如何排除万难、实现梦想，并为数百万人播下了圆梦的种子，歌颂了不屈不挠的力量和科学带来的奇迹。 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 本软件无广告免费使用，付费的请去退款 | 1-1 | 蓝光
+detail texts: 陈情令 | 💮┃文采┃秒播 | 年份: 2019 | 地区: 中国大陆 | 类型: 剧情,古装 | 演员: 肖战,王一博,孟子义,宣璐,于斌 | 导演: 郑伟文,陈家霖 | 🚀公众号【神秘的哥哥们】免费分享：十六年前，天下五分，姑苏蓝氏，云梦江氏，清河聂氏，岐山温氏，兰陵金氏共治天下。温氏一家独大，其余四家均受其苦。众家青年中，江氏故人之子魏无羡性格开朗，和以雅正闻名的姑苏蓝氏弟子蓝忘机相识并引为知己。一次偶然的机会，二人发现了蓝氏一直以来守护的秘密，二人继承遗志，为苍生消除隐患。但没想到一切的幕后黑手正是温氏家主温若寒。众家不堪其辱，合力讨伐温氏。温氏覆灭后，魏无羡却为保护温氏无辜之人不惜与众家对立，最终被奸人所害酿成大祸，误害师姐江厌离，自己也不知所踪。十六年后，消失已久的魏无羡出现在莫家庄，偶遇故人蓝忘机。莫家庄一桩桩诡异的凶案显得扑朔迷离。随着真相一步步揭开，身处幕后的金光瑶渐渐难以隐藏。最后金光瑶身死，蓝忘机承担起了匡扶天下的使命，而魏无羡不忘初心，最终潇洒世间。 | 播放 | 快搜 | 倒序 | 推送 | 简介 | ☆ 收藏 | 本软件无广告免费使用，付费的请去退款 | 1-20 | 21-40 | 41-50 | 1 | 2 | 3 | 4 | 5 | 6
 line tabs found: []
 --- try line: 播放 ---
 tap "播放" at 319,267

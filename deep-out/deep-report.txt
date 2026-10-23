@@ -1,15 +1,16 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== douban drama route ===
-tap "热播剧集" at 405,95
-shot 01-drama-grid
-grid texts: 首页 | 热门电影 | 热播剧集 | 热播综艺 | 电影筛选 | 电视筛选 | 电影榜单 | 评分：0 | 醉梦 | 评分：0 | 小城良方 | 评分：0 | 嫁金钗 | 评分：5.5
-after poster tap top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.FastSearchActivity
-shot 02-results
-result texts: 搜索结果 : 0 | 全部显示
-pinned: None
-filtered texts: 搜索结果 : 0 | 全部显示
+=== jar site route (qiyou HCCX) ===
+=== config path fix verify v16 ===
+shot 01-dialog
+dialog texts sample: 请选择数据源 | √ 🌕┃豆瓣┃热播 | 🔥┃设置Token | 🎰┃蜂蜜┃商店 | 📺︎┃电视┃点播 | 🐯┃虎牙┃直播 | 🐟┃斗鱼┃直播 | 👽玩偶哥哥┃4K弹幕 | 🚀┃叨观┃新片 | 📽️┃一直播┃LIVE | 🦋┃米盘┃搜搜 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线
+site switch target: NOT FOUND
+shot 02-site-home
+top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+site home texts: 请选择数据源 | √ 🌕┃豆瓣┃热播 | 🔥┃设置Token | 🎰┃蜂蜜┃商店 | 📺︎┃电视┃点播 | 🐯┃虎牙┃直播 | 🐟┃斗鱼┃直播 | 👽玩偶哥哥┃4K弹幕 | 🚀┃叨观┃新片 | 📽️┃一直播┃LIVE | 🦋┃米盘┃搜搜 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
+tap poster: 📺︎┃电视┃点播 at 324,304
 shot 03-detail
-top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.FastSearchActivity
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+JAR_SITE_DETAIL: NOT REACHED
 crash buffer bytes: 0
 === DONE ===

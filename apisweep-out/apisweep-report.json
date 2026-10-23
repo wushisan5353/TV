@@ -4,7 +4,7 @@
   "name": "🐉┃索尼┃高清",
   "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
   "verdict": "ALIVE",
-  "detail": "classes=61 total=147279"
+  "detail": "classes=61 total=147306"
  },
  {
   "key": "csp_非凡资源",
@@ -32,14 +32,14 @@
   "name": "🐯虎牙采集",
   "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
   "verdict": "ALIVE",
-  "detail": "classes=44 total=115087"
+  "detail": "classes=44 total=115089"
  },
  {
   "key": "火狐",
   "name": "🦊火狐采集",
   "api": "https://hhzyapi.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=48 total=115233"
+  "detail": "classes=48 total=115235"
  },
  {
   "key": "百度",
@@ -60,14 +60,14 @@
   "name": "🚀┃极速┃资源",
   "api": "https://jszyapi.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=48 total=114474"
+  "detail": "classes=48 total=114476"
  },
  {
   "key": "光速资源",
   "name": "💡┃光速┃资源",
   "api": "https://api.guangsuapi.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=44 total=116140"
+  "detail": "classes=44 total=116142"
  },
  {
   "key": "iKun资源",
@@ -81,28 +81,28 @@
   "name": "⏩┃速播┃资源",
   "api": "https://subocaiji.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=44 total=116065"
+  "detail": "classes=44 total=116067"
  },
  {
   "key": "金鹰资源",
   "name": "🦅┃金鹰┃资源",
   "api": "https://jinyingzy.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=44 total=116151"
+  "detail": "classes=44 total=116153"
  },
  {
   "key": "最大资源",
   "name": "🏆┃最大┃资源",
   "api": "https://api.zuidapi.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=59 total=124713"
+  "detail": "classes=59 total=124758"
  },
  {
   "key": "樱花资源",
   "name": "🌸┃樱花┃资源",
   "api": "https://m3u8.apiyhzy.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=33 total=104419"
+  "detail": "classes=33 total=104463"
  },
  {
   "key": "三六零资源",
@@ -116,7 +116,7 @@
   "name": "🌅┃天涯┃资源",
   "api": "https://tyyszy.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=39 total=72976"
+  "detail": "classes=39 total=72980"
  },
  {
   "key": "魔都资源",
@@ -130,6 +130,6 @@
   "name": "🌪️暴风影音",
   "api": "https://bfzyapi.com/api.php/provide/vod/",
   "verdict": "ALIVE",
-  "detail": "classes=49 total=166086"
+  "detail": "classes=49 total=166087"
  }
 ]

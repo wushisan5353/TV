@@ -1,0 +1,482 @@
+[
+ {
+  "name": "👒┃小胡┃资源┃",
+  "api": "http://c.小胡.icu/api.php/provide/vod/",
+  "host": "c.小胡.icu",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "🐉┃索尼┃高清",
+  "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
+  "host": "suoniapi.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=61"
+ },
+ {
+  "name": "🕹️淘片┃采集",
+  "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+  "host": "taopianapi.com",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "🥗┃非凡┃资源",
+  "api": "http://ffzy1.tv/api.php/provide/vod/",
+  "host": "ffzy1.tv",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "🥑┃量子┃资源",
+  "api": "https://lzizy1.com/api.php/provide/vod/",
+  "host": "lzizy1.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "🦁┃四九┃资源",
+  "api": "https://49zy1.com/api.php/provide/vod/?ac=list",
+  "host": "49zy1.com",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "🛰️飞速┃采集",
+  "api": "https://www.feisuzyapi.com/api.php/provide/vod/?ac=list",
+  "host": "www.feisuzyapi.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "🐯┃奇虎┃采集",
+  "api": "https://caiji.qhzyapi.com/api.php/provide/vod/",
+  "host": "caiji.qhzyapi.com",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "⛱┃可可┃采集",
+  "api": "https://kekezy1.com/api.php/provide/vod/?ac=list",
+  "host": "kekezy1.com",
+  "pre_dead": true,
+  "source": "老刘备",
+  "cloud": "PRE_DEAD_BOCE",
+  "doh": "SKIP",
+  "detail": "今早国内拨测已证死，不再复验"
+ },
+ {
+  "name": "🐯虎牙采集",
+  "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
+  "host": "www.huyaapi.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "🦊火狐采集",
+  "api": "https://hhzyapi.com/api.php/provide/vod/",
+  "host": "hhzyapi.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=48"
+ },
+ {
+  "name": "🌪️暴风影音",
+  "api": "https://app.bfzyapi.com/api.php/provide/vod/",
+  "host": "app.bfzyapi.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "http 404"
+ },
+ {
+  "name": "🎏百度┃采集",
+  "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list",
+  "host": "api.apibdzy.com",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "http 403"
+ },
+ {
+  "name": "🎶明星┃MV",
+  "api": "https://mv.wogg.link/mv/vod",
+  "host": "mv.wogg.link",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "🎹┃MTV┃合集",
+  "api": "https://mv.wogg.link/mv/vod",
+  "host": "mv.wogg.link",
+  "pre_dead": false,
+  "source": "老刘备",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "🌟 创享影视",
+  "api": "http://ys.cxkjg.cn/api/provide/vod",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=9"
+ },
+ {
+  "name": "📡 金鹰",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=2680151544",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "📡 闪电",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=3848762792",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "📡 非凡",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=1840804598",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "📡 量子",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=1470828922",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "📡 WS",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=4118858385",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "📡 速博",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=1016684692",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "📡 HD(SN)",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=1208629981",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=61"
+ },
+ {
+  "name": "📡 红牛",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=2761253814",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "📡 U酷",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=4194624554",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=29"
+ },
+ {
+  "name": "📡 光速",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=4247318859",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "📡 樱花",
+  "api": "http://ys.cxkjg.cn/api/provide/vod?source=531717376",
+  "host": "ys.cxkjg.cn",
+  "pre_dead": false,
+  "source": "创享影视",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=33"
+ },
+ {
+  "name": "🧿艾旦┃蓝光",
+  "api": "https://lovedan.net/api.php/provide/vod/",
+  "host": "lovedan.net",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "http 403"
+ },
+ {
+  "name": "🧿乐播┃资源",
+  "api": "https://lbapi9.com/api.php/provide/vod/at/json/?ac=list",
+  "host": "lbapi9.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=17"
+ },
+ {
+  "name": "🧿量子┃资源",
+  "api": "https://cj.lziapi.com/api.php/provide/vod/?ac=list",
+  "host": "cj.lziapi.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "🧿gay┃资源",
+  "api": "https://slapibf.com/api.php/provide/vod/?ac=list",
+  "host": "slapibf.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=56"
+ },
+ {
+  "name": "🧿桃花┃资源",
+  "api": "https://thzy1.me/api.php/provide/vod/?ac=list",
+  "host": "thzy1.me",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=15"
+ },
+ {
+  "name": "🧿正品┃影视",
+  "api": "https://lbapi9.com/api.php/provide/vod/",
+  "host": "lbapi9.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=17"
+ },
+ {
+  "name": "🧿大地┃采集",
+  "api": "https://dadiapi.com/api.php",
+  "host": "dadiapi.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "WEAK",
+  "doh": "RESOLVES",
+  "detail": "http200非json"
+ },
+ {
+  "name": "🧿凤凰┃影视",
+  "api": "http://fhapi9.com/api.php/provide/vod/",
+  "host": "fhapi9.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=32"
+ },
+ {
+  "name": "🧿番外┃采集",
+  "api": "http://fhapi9.com/api.php/provide/vod/",
+  "host": "fhapi9.com",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=32"
+ },
+ {
+  "name": "🧿妞妞┃影视",
+  "api": "https://api.niuniuzy.me/api.php/provide/vod/",
+  "host": "api.niuniuzy.me",
+  "pre_dead": false,
+  "source": "伦理接口",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=59"
+ },
+ {
+  "name": "49Z｜影视",
+  "api": "https://49zyw.com/api.php/provide/vod/?ac=list",
+  "host": "49zyw.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "ERR ConnectionError"
+ },
+ {
+  "name": "红牛｜资源",
+  "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+  "host": "www.hongniuzy2.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "光速｜资源",
+  "api": "http://api.guangsuapi.com/api.php/provide/vod/",
+  "host": "api.guangsuapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "极速｜资源",
+  "api": "https://jszyapi.com/api.php/provide/vod/",
+  "host": "jszyapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=48"
+ },
+ {
+  "name": "快车｜资源",
+  "api": "https://caiji.kczyapi.com/api.php/provide/vod/",
+  "host": "caiji.kczyapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "ERR SSLError"
+ },
+ {
+  "name": "索尼｜资源",
+  "api": "https://suoniapi.com/api.php/provide/vod/",
+  "host": "suoniapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=61"
+ },
+ {
+  "name": "量子｜资源",
+  "api": "https://cj.lziapi.com/api.php/provide/vod/",
+  "host": "cj.lziapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=44"
+ },
+ {
+  "name": "非凡｜资源",
+  "api": "http://cj.ffzyapi.com/api.php/provide/vod/",
+  "host": "cj.ffzyapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=31"
+ },
+ {
+  "name": "暴风",
+  "api": "https://bfzyapi.com/api.php/provide/vod",
+  "host": "bfzyapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://dxawi.github.io/0/0.json",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=49"
+ },
+ {
+  "name": "IK",
+  "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/",
+  "host": "ikunzyapi.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://dxawi.github.io/0/0.json",
+  "cloud": "ALIVE",
+  "doh": "RESOLVES",
+  "detail": "classes=53"
+ },
+ {
+  "name": "海外看(墙外)",
+  "api": "https://haiwaikan.com/api.php/provide/vod",
+  "host": "haiwaikan.com",
+  "pre_dead": false,
+  "source": "小盒子多仓 > 小盒子多仓 > https://dxawi.github.io/0/0.json",
+  "cloud": "FAIL",
+  "doh": "RESOLVES",
+  "detail": "ERR SSLError"
+ }
+]

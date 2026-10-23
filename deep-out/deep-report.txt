@@ -1,16 +1,17 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === jar site route (qiyou HCCX) ===
-=== config path fix verify v17 ===
+=== config path fix verify v18 ===
 shot 01-dialog
-dialog screen 0: 19 texts, first=请选择数据源, last=🎃┃南瓜┃多线
-dialog screen 1: 19 texts, first=请选择数据源, last=🎃┃南瓜┃多线
-dialog bottom reached, no more items
-site switch target: NOT FOUND
+dpad batch 0: 19 texts, sample_tail=🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
+dpad batch 5: 22 texts, sample_tail=⛈┃素白白┃影视 | 🍖┃电影牛┃影院 | 🎀┃异界┃动漫 | 🚌┃动漫┃巴士
+dpad batch 9: 22 texts, sample_tail=🎃┃南瓜┃影视 | 🔥┃骚火┃影视 | ⏳┃荐片┃Js | 🍲┃Lib┃影视
+site visible after batch 9: 🍩┃奇优┃影视 at 591,494
+site switch target: 🍩┃奇优┃影视
 shot 02-site-home
 top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-site home texts: 请选择数据源 | √ 🌕┃豆瓣┃热播 | 🔥┃设置Token | 🎰┃蜂蜜┃商店 | 📺︎┃电视┃点播 | 🐯┃虎牙┃直播 | 🐟┃斗鱼┃直播 | 👽玩偶哥哥┃4K弹幕 | 🚀┃叨观┃新片 | 📽️┃一直播┃LIVE | 🦋┃米盘┃搜搜 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
-tap poster: 📺︎┃电视┃点播 at 324,304
+site home texts: 🍩┃奇优┃影视 | 10月23日 | 周五 03:25 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
+tap poster: 豆瓣热播 at 105,284
 shot 03-detail
 top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 JAR_SITE_DETAIL: NOT REACHED

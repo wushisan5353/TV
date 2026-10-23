@@ -1,14 +1,33 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== positive control + HCCX jar route v20 ===
+=== positive control + HCCX jar route v21 ===
 positive control target (exact): 🌕┃豆瓣┃热播
 formal target (exact): 🧼┃奇优┃影院
 shot dialog-first-screen
+dialog exact match "√ 🌕┃豆瓣┃热播" at batch 0, at 324,248
+shot 01-positive-control-home
+positive control home texts: 请选择数据源 | √ 🌕┃豆瓣┃热播 | 🔥┃设置Token | 🎰┃蜂蜜┃商店 | 📺︎┃电视┃点播 | 🐯┃虎牙┃直播 | 🐟┃斗鱼┃直播 | 👽玩偶哥哥┃4K弹幕 | 🚀┃叨观┃新片 | 📽️┃一直播┃LIVE | 🦋┃米盘┃搜搜 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
+POSITIVE_CONTROL: PASS
+shot 02-dialog-reopened
 dialog scan batch 0: 19 texts, tail=👀┃萌米┃多线 | 👓┃欢视┃多线 | 🎃┃南瓜┃多线
-POSITIVE_CONTROL: FAIL
-DRIVER_CALIBRATION: FAILED - target search not attempted, no NOT FOUND verdict allowed
-HCCX_JAR_LOADED: NO
+dialog scan batch 10: 22 texts, tail=🌟┃三五┃影视 | 🥝┃爱奇异(官) | 🥔┃优酷(官)
+dialog exact match "🧼┃奇优┃影院" at batch 13, at 859,532
+site switch target: 🧼┃奇优┃影院
+shot 03-target-home
+top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+target home texts: 🧼┃奇优┃影院 | 10月23日 | 周五 04:29 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
+target site home confirmed: True
+jar log: 10-23 04:28:53.336  1824  3046 I JarLoader: echo-getSpider 加载spider: csp_奇优
+jar evidence lines: 1
+HCCX_JAR_LOADED: YES
+tap "电视剧" at 335,95
+shot 04-category
+category texts: 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 没找到数据
+tap poster: 没找到数据 at 591,455
+shot 05-detail
+top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 DETAIL_REACHED: NO
 PLAY_ATTEMPTED: NO
+evidence files: deep-out/deep-report.txt, deep-out/logcat-full.txt, deep-out/runlog.txt, deep-out/python.log, deep-out/*.png (01-positive-control-home, 03-target-home, 04-category, 05-detail, 06-player)
 crash buffer bytes: 0
 === DONE ===

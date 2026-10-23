@@ -1,0 +1,19 @@
+- ALIVE | 🐉┃索尼┃高清 | https://suoniapi.com/api.php/provide/vod/?ac=list | classes=61 total=147278
+- ALIVE | 🥗┃非凡┃资源 | https://api.ffzyapi.com/api.php/provide/vod/ | classes=31 total=98730
+- ALIVE | 🥑┃量子┃资源 | https://lzizy1.com/api.php/provide/vod/ | classes=44 total=160566
+- WEAK | 🛰️飞速┃采集 | https://www.feisuzyapi.com/api.php/provide/vod/?ac=list | http200 non-json <!DOCTYPE html><html><head><script>window.onload=function(){
+- ALIVE | 🐯虎牙采集 | https://www.huyaapi.com/api.php/provide/vod/from/hym3u8 | classes=44 total=115067
+- ALIVE | 🦊火狐采集 | https://hhzyapi.com/api.php/provide/vod/ | classes=48 total=115213
+- FAIL | 🎏百度┃采集 | https://api.apibdzy.com/api.php/provide/vod/?ac=list | http 403
+- WEAK | 🎶明星┃MV | https://mv.wogg.link/mv/vod | http200 non-json <html><head><title>Loading...</title></head><body><script ty
+- ALIVE | 🚀┃极速┃资源 | https://jszyapi.com/api.php/provide/vod/ | classes=48 total=114454
+- ALIVE | 💡┃光速┃资源 | https://api.guangsuapi.com/api.php/provide/vod/ | classes=44 total=116120
+- ALIVE | 🏀┃iKun┃资源 | https://ikunzyapi.com/api.php/provide/vod/ | classes=53 total=67428
+- ALIVE | ⏩┃速播┃资源 | https://subocaiji.com/api.php/provide/vod/ | classes=44 total=116045
+- ALIVE | 🦅┃金鹰┃资源 | https://jinyingzy.com/api.php/provide/vod/ | classes=44 total=116131
+- ALIVE | 🏆┃最大┃资源 | https://api.zuidapi.com/api.php/provide/vod/ | classes=59 total=124713
+- ALIVE | 🌸┃樱花┃资源 | https://m3u8.apiyhzy.com/api.php/provide/vod/ | classes=33 total=104419
+- ALIVE | 🔄┃三六零┃资源 | https://360zy.com/api.php/provide/vod/ | classes=51 total=73519
+- ALIVE | 🌅┃天涯┃资源 | https://tyyszy.com/api.php/provide/vod/ | classes=39 total=72976
+- ALIVE | 🏙️┃魔都┃资源 | https://www.mdzyapi.com/api.php/provide/vod/ | classes=42 total=90669
+- ALIVE | 🌪️暴风影音 | https://bfzyapi.com/api.php/provide/vod/ | classes=49 total=166085

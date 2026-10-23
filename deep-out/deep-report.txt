@@ -1,9 +1,11 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 === jar site route (qiyou HCCX) ===
-=== config path fix verify v16 ===
+=== config path fix verify v17 ===
 shot 01-dialog
-dialog texts sample: 请选择数据源 | √ 🌕┃豆瓣┃热播 | 🔥┃设置Token | 🎰┃蜂蜜┃商店 | 📺︎┃电视┃点播 | 🐯┃虎牙┃直播 | 🐟┃斗鱼┃直播 | 👽玩偶哥哥┃4K弹幕 | 🚀┃叨观┃新片 | 📽️┃一直播┃LIVE | 🦋┃米盘┃搜搜 | 🍄┃抠抠┃搜搜 | 🌟┃Lib┃秒播 | 💮┃文采┃秒播 | 🍓┃糯米┃秒播 | 🍎┃苹果┃IJK | 👀┃萌米┃多线 | 👓┃欢视┃多线
+dialog screen 0: 19 texts, first=请选择数据源, last=🎃┃南瓜┃多线
+dialog screen 1: 19 texts, first=请选择数据源, last=🎃┃南瓜┃多线
+dialog bottom reached, no more items
 site switch target: NOT FOUND
 shot 02-site-home
 top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity

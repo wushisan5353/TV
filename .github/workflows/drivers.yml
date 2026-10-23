@@ -1,0 +1,85 @@
+name: Driver Runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      driver:
+        description: "driver path in repo"
+        required: true
+        default: "tvmax-drivers/audit.py"
+      outdir:
+        description: "output dir in repo"
+        required: true
+        default: "audit-out"
+
+permissions:
+  contents: write
+
+jobs:
+  drive:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fongmi
+      - name: Preflight, boot redroid, install
+        env:
+          OUTDIR: ${{ inputs.outdir }}
+        run: |
+          mkdir -p "$OUTDIR"
+          exec > >(tee -a "$OUTDIR/runlog.txt") 2>&1
+          echo "=== uname ==="; uname -a
+          sudo apt-get update -qq
+          sudo apt-get install -y android-tools-adb
+          if ! command -v adb; then echo "ADB_MISSING" > "$OUTDIR/PREFLIGHT_FAIL.txt"; exit 1; fi
+          adb version
+          echo "=== binder ladder ==="
+          BINDER=""
+          if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=direct; fi
+          if [ -z "$BINDER" ]; then
+            sudo apt-get install -y linux-modules-extra-$(uname -r) || sudo apt-get install -y linux-modules-extra-azure || sudo apt-get install -y linux-modules-extra || true
+            if sudo modprobe binder_linux devices="binder,hwbinder,vndbinder" 2>/dev/null; then BINDER=after-install; fi
+          fi
+          if [ -n "$BINDER" ]; then echo "BINDER_OK via $BINDER"; else echo "BINDER_FAIL" > "$OUTDIR/PREFLIGHT_FAIL.txt"; exit 1; fi
+          docker run -d --privileged -p 5555:5555 --name redroid redroid/redroid:11.0.0-latest androidboot.redroid_gpu_mode=guest
+          docker ps
+          adb connect localhost:5555
+          BOOT=""
+          for i in $(seq 1 40); do
+            B=$(adb -s localhost:5555 shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+            echo "boot try $i: $B"
+            if [ "$B" = "1" ]; then BOOT=ok; break; fi
+            sleep 10
+          done
+          if [ "$BOOT" != "ok" ]; then echo "BOOT_FAIL" > "$OUTDIR/PREFLIGHT_FAIL.txt"; exit 1; fi
+          adb -s localhost:5555 shell getprop ro.product.cpu.abilist
+          curl -sL -o tvmax.apk "https://github.com/wushisan5353/TV/releases/download/tvmax-box-3.1/TVMax-Box-3.1-armeabi_v7a.apk"
+          adb -s localhost:5555 install -r tvmax.apk && echo INSTALL_OK || { echo "INSTALL_FAIL" > "$OUTDIR/PREFLIGHT_FAIL.txt"; exit 1; }
+          adb -s localhost:5555 logcat -c
+          echo PREFLIGHT_OK
+      - name: Drive (screenshots + report)
+        env:
+          OUTDIR: ${{ inputs.outdir }}
+          DRIVER: ${{ inputs.driver }}
+        run: |
+          set -o pipefail
+          python3 "$DRIVER" 2>&1 | tee "$OUTDIR/python.log"
+          echo "python finished"
+          adb -s localhost:5555 logcat -d > "$OUTDIR/logcat-full.txt" 2>&1 || true
+          ls -lh "$OUTDIR"/
+      - name: Commit driver output
+        if: always()
+        env:
+          OUTDIR: ${{ inputs.outdir }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add "$OUTDIR"
+          git commit -m "driver run results" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin fongmi || true
+            git push origin HEAD:fongmi && break
+            echo "push retry $i"
+            sleep 5
+          done

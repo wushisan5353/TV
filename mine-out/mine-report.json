@@ -1,0 +1,1070 @@
+{
+ "configs": [
+  {
+   "name": "饭太硬",
+   "url": "http://www.饭太硬.net/tv",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "饭太硬 > http://cdn.qiaoji8.com/tvbox.json",
+     "url": "http://cdn.qiaoji8.com/tvbox.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "饭太硬 > https://gh-proxy.net/https://raw.githubu",
+     "url": "https://gh-proxy.net/https://raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/XC.json",
+     "http": 200,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "肥猫",
+   "url": "http://肥猫.net/",
+   "http": 200,
+   "kind": "unparsed",
+   "note": "{   \"spider\": \"http://è¥ç«.net/spider.php;md5;2d842238d97d949fef5c679cb876f81d\",   \"danmaku\": \"http://xn--z7x900a.net/"
+  },
+  {
+   "name": "老刘备",
+   "url": "https://raw.liucn.cc/box/m.json",
+   "http": 200,
+   "kind": "config",
+   "site_count": 234,
+   "apis": [
+    {
+     "key": "csp_小胡",
+     "name": "👒┃小胡┃资源┃",
+     "type": 1,
+     "api": "http://c.小胡.icu/api.php/provide/vod/"
+    },
+    {
+     "key": "csp_SNzy",
+     "name": "🐉┃索尼┃高清",
+     "type": 1,
+     "api": "https://suoniapi.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "taopian",
+     "name": "🕹️淘片┃采集",
+     "type": 1,
+     "api": "https://taopianapi.com/cjapi/mc/vod/json.html"
+    },
+    {
+     "key": "csp_非凡资源",
+     "name": "🥗┃非凡┃资源",
+     "type": 1,
+     "api": "http://ffzy1.tv/api.php/provide/vod/"
+    },
+    {
+     "key": "量子资源",
+     "name": "🥑┃量子┃资源",
+     "type": 1,
+     "api": "https://lzizy1.com/api.php/provide/vod/"
+    },
+    {
+     "key": "49zy",
+     "name": "🦁┃四九┃资源",
+     "type": 1,
+     "api": "https://49zy1.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "feisu",
+     "name": "🛰️飞速┃采集",
+     "type": 1,
+     "api": "https://www.feisuzyapi.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "奇虎资源",
+     "name": "🐯┃奇虎┃采集",
+     "type": 1,
+     "api": "https://caiji.qhzyapi.com/api.php/provide/vod/"
+    },
+    {
+     "key": "可可资源",
+     "name": "⛱┃可可┃采集",
+     "type": 1,
+     "api": "https://kekezy1.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "虎牙",
+     "name": "🐯虎牙采集",
+     "type": 1,
+     "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8"
+    },
+    {
+     "key": "火狐",
+     "name": "🦊火狐采集",
+     "type": 1,
+     "api": "https://hhzyapi.com/api.php/provide/vod/"
+    },
+    {
+     "key": "暴风采集",
+     "name": "🌪️暴风影音",
+     "type": 1,
+     "api": "https://app.bfzyapi.com/api.php/provide/vod/"
+    },
+    {
+     "key": "百度",
+     "name": "🎏百度┃采集",
+     "type": 1,
+     "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "MV_vod",
+     "name": "🎶明星┃MV",
+     "type": 1,
+     "api": "https://mv.wogg.link/mv/vod"
+    },
+    {
+     "key": "MV_vod",
+     "name": "🎹┃MTV┃合集",
+     "type": 1,
+     "api": "https://mv.wogg.link/mv/vod"
+    }
+   ],
+   "other_sites": 219
+  },
+  {
+   "name": "小马",
+   "url": "https://szyyds.cn/tv/x.json",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "小马 > https://szyyds.cn/js/app.json",
+     "url": "https://szyyds.cn/js/app.json",
+     "http": 200,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "摸鱼儿",
+   "url": "http://www.y456y.com",
+   "http": 200,
+   "kind": "unparsed",
+   "note": "<!DOCTYPE html>\r <html lang=\"zh-CN\" data-theme=\"dark\">\r <head>\r     <meta charset=\"UTF-8\">\r     <meta name=\"viewport\" co"
+  },
+  {
+   "name": "王二小",
+   "url": "http://new.王二小放牛娃.top",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "王二小 > https://9280.kstore.vip/aiwex.json",
+     "url": "https://9280.kstore.vip/aiwex.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 99,
+     "apis": [],
+     "other_sites": 99
+    },
+    {
+     "name": "王二小 > https://9280.kstore.space/aiwex.json",
+     "url": "https://9280.kstore.space/aiwex.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 99,
+     "apis": [],
+     "other_sites": 99
+    },
+    {
+     "name": "王二小 > https://9280.kstore.vip/newwex.json",
+     "url": "https://9280.kstore.vip/newwex.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 99,
+     "apis": [],
+     "other_sites": 99
+    },
+    {
+     "name": "王二小 > https://9280.kstore.vip/wex.json",
+     "url": "https://9280.kstore.vip/wex.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 63,
+     "apis": [],
+     "other_sites": 63
+    }
+   ]
+  },
+  {
+   "name": "小盒子4K",
+   "url": "http://xhztv.top/4k.json",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "小盒子4K > https://tv.lan2wan.top/candymuj1.json",
+     "url": "https://tv.lan2wan.top/candymuj1.json",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > http://rihou.vip:88/hccx/七新影视.json",
+     "url": "http://rihou.vip:88/hccx/七新影视.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > http://rihou.vip:88/hccx/央视大全.json",
+     "url": "http://rihou.vip:88/hccx/央视大全.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > http://rihou.vip:88/hccx/哔哩经典.json",
+     "url": "http://rihou.vip:88/hccx/哔哩经典.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > http://qrh.yimkj.cn/ym/壹梦.json",
+     "url": "http://qrh.yimkj.cn/ym/壹梦.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > https://神器每日推送.tk/pz.json",
+     "url": "https://神器每日推送.tk/pz.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > http://xiaohu.xzam.cn/XBPQ/nk.json",
+     "url": "http://xiaohu.xzam.cn/XBPQ/nk.json",
+     "http": 404,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子4K > https://agit.ai/fantaiying/fty/raw/branc",
+     "url": "https://agit.ai/fantaiying/fty/raw/branch/master/ext/nmys.json",
+     "http": 200,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "创享影视",
+   "url": "https://ys.cxkjg.cn/api/provide/tvbox",
+   "http": 200,
+   "kind": "config",
+   "site_count": 12,
+   "apis": [
+    {
+     "key": "创享影视",
+     "name": "🌟 创享影视",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod"
+    },
+    {
+     "key": "source_2680151544",
+     "name": "📡 金鹰",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=2680151544"
+    },
+    {
+     "key": "source_3848762792",
+     "name": "📡 闪电",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=3848762792"
+    },
+    {
+     "key": "source_1840804598",
+     "name": "📡 非凡",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=1840804598"
+    },
+    {
+     "key": "source_1470828922",
+     "name": "📡 量子",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=1470828922"
+    },
+    {
+     "key": "source_4118858385",
+     "name": "📡 WS",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=4118858385"
+    },
+    {
+     "key": "source_1016684692",
+     "name": "📡 速博",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=1016684692"
+    },
+    {
+     "key": "source_1208629981",
+     "name": "📡 HD(SN)",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=1208629981"
+    },
+    {
+     "key": "source_2761253814",
+     "name": "📡 红牛",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=2761253814"
+    },
+    {
+     "key": "source_4194624554",
+     "name": "📡 U酷",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=4194624554"
+    },
+    {
+     "key": "source_4247318859",
+     "name": "📡 光速",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=4247318859"
+    },
+    {
+     "key": "source_531717376",
+     "name": "📡 樱花",
+     "type": 1,
+     "api": "http://ys.cxkjg.cn/api/provide/vod?source=531717376"
+    }
+   ],
+   "other_sites": 0
+  },
+  {
+   "name": "影仓",
+   "url": "http://124.71.19.220/c/1",
+   "http": 200,
+   "kind": "unparsed",
+   "note": "<!DOCTYPE html>  <html lang=\"zh-CN\"> <head>     <meta charset=\"UTF-8\">     <meta name=\"viewport\" content=\"width=device-w"
+  },
+  {
+   "name": "伦理接口",
+   "url": "http://47.96.82.41:5188/rose/18/xgg.json",
+   "http": 200,
+   "kind": "config",
+   "site_count": 43,
+   "apis": [
+    {
+     "key": "艾旦影视",
+     "name": "🧿艾旦┃蓝光",
+     "type": 1,
+     "api": "https://lovedan.net/api.php/provide/vod/"
+    },
+    {
+     "key": "lebo",
+     "name": "🧿乐播┃资源",
+     "type": 1,
+     "api": "https://lbapi9.com/api.php/provide/vod/at/json/?ac=list"
+    },
+    {
+     "key": "dadi",
+     "name": "🧿量子┃资源",
+     "type": 1,
+     "api": "https://cj.lziapi.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "gay",
+     "name": "🧿gay┃资源",
+     "type": 1,
+     "api": "https://slapibf.com/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "taohua",
+     "name": "🧿桃花┃资源",
+     "type": 1,
+     "api": "https://thzy1.me/api.php/provide/vod/?ac=list"
+    },
+    {
+     "key": "zp011",
+     "name": "🧿正品┃影视",
+     "type": 1,
+     "api": "https://lbapi9.com/api.php/provide/vod/"
+    },
+    {
+     "key": "大地专场",
+     "name": "🧿大地┃采集",
+     "type": 0,
+     "api": "https://dadiapi.com/api.php"
+    },
+    {
+     "key": "fh资源",
+     "name": "🧿凤凰┃影视",
+     "type": 1,
+     "api": "http://fhapi9.com/api.php/provide/vod/"
+    },
+    {
+     "key": "番外",
+     "name": "🧿番外┃采集",
+     "type": 1,
+     "api": "http://fhapi9.com/api.php/provide/vod/"
+    },
+    {
+     "key": "牛Y",
+     "name": "🧿妞妞┃影视",
+     "type": 1,
+     "api": "https://api.niuniuzy.me/api.php/provide/vod/"
+    }
+   ],
+   "other_sites": 33
+  },
+  {
+   "name": "小盒子单仓",
+   "url": "http://xhztv.top/xhz",
+   "http": 200,
+   "kind": "config",
+   "site_count": 54,
+   "apis": [],
+   "other_sites": 54
+  },
+  {
+   "name": "嗷呜",
+   "url": "http://itv666.cc/aowu/config.webp",
+   "http": 200,
+   "kind": "unparsed",
+   "note": "<!doctype html>\r <html lang=\"zh-CN\">\r <head>\r   <meta charset=\"UTF-8\">\r   <meta name=\"viewport\" content=\"width=device-wi"
+  },
+  {
+   "name": "无名",
+   "url": "https://6800.kstore.vip/fish.json",
+   "http": 200,
+   "kind": "config",
+   "site_count": 99,
+   "apis": [],
+   "other_sites": 99
+  },
+  {
+   "name": "小盒子多仓",
+   "url": "http://xhztv.top/dc",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "小盒子多仓 > https://git.acwing.com/iduoduo/orange/-/",
+     "url": "https://git.acwing.com/iduoduo/orange/-/raw/main/jsm.json",
+     "http": 403,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子多仓 > https://download.kstore.space/download/2",
+     "url": "https://download.kstore.space/download/2883/nzk/nzk0722.json",
+     "http": 401,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子多仓 > http://home.jundie.top:81/top98.json",
+     "url": "http://home.jundie.top:81/top98.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 24,
+     "apis": [],
+     "other_sites": 24
+    },
+    {
+     "name": "小盒子多仓 > https://jihulab.com/xuanzhuapp/xzys/-/ra",
+     "url": "https://jihulab.com/xuanzhuapp/xzys/-/raw/main/xzvip.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 126,
+     "apis": [
+      {
+       "key": "49zy",
+       "name": "49Z｜影视",
+       "type": 1,
+       "api": "https://49zyw.com/api.php/provide/vod/?ac=list"
+      },
+      {
+       "key": "红牛资源",
+       "name": "红牛｜资源",
+       "type": 1,
+       "api": "https://www.hongniuzy2.com/api.php/provide/vod/"
+      },
+      {
+       "key": "光速资源",
+       "name": "光速｜资源",
+       "type": 1,
+       "api": "http://api.guangsuapi.com/api.php/provide/vod/"
+      },
+      {
+       "key": "极速资源",
+       "name": "极速｜资源",
+       "type": 1,
+       "api": "https://jszyapi.com/api.php/provide/vod/"
+      },
+      {
+       "key": "快车资源",
+       "name": "快车｜资源",
+       "type": 1,
+       "api": "https://caiji.kczyapi.com/api.php/provide/vod/"
+      },
+      {
+       "key": "索尼资源",
+       "name": "索尼｜资源",
+       "type": 1,
+       "api": "https://suoniapi.com/api.php/provide/vod/"
+      },
+      {
+       "key": "量子资源",
+       "name": "量子｜资源",
+       "type": 1,
+       "api": "https://cj.lziapi.com/api.php/provide/vod/"
+      },
+      {
+       "key": "非凡资源",
+       "name": "非凡｜资源",
+       "type": 1,
+       "api": "http://cj.ffzyapi.com/api.php/provide/vod/"
+      }
+     ],
+     "other_sites": 118
+    },
+    {
+     "name": "小盒子多仓 > https://www.yingm.cc/dm/dm.json",
+     "url": "https://www.yingm.cc/dm/dm.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 27,
+     "apis": [],
+     "other_sites": 27
+    },
+    {
+     "name": "小盒子多仓 > https://szyyds.cn/tv/x.json",
+     "url": "https://szyyds.cn/tv/x.json",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "小盒子多仓 > https://dxawi.github.io/0/0.json",
+     "url": "https://dxawi.github.io/0/0.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 48,
+     "apis": [
+      {
+       "key": "暴风",
+       "name": "暴风",
+       "type": 1,
+       "api": "https://bfzyapi.com/api.php/provide/vod"
+      },
+      {
+       "key": "IK",
+       "name": "IK",
+       "type": 1,
+       "api": "https://ikunzyapi.com/api.php/provide/vod/from/ikm3u8/"
+      },
+      {
+       "key": "haiwaikan",
+       "name": "海外看(墙外)",
+       "type": 1,
+       "api": "https://haiwaikan.com/api.php/provide/vod"
+      }
+     ],
+     "other_sites": 45
+    },
+    {
+     "name": "小盒子多仓 > https://api.hgyx.vip/hgyx.json",
+     "url": "https://api.hgyx.vip/hgyx.json",
+     "http": 200,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "拾光多仓",
+   "url": "http://xmbjm.fh4u.org/dc.txt",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "拾光多仓 > https://gh-proxy.com/https://raw.githubu",
+     "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xmbjm/svip/refs/heads/main/svip.json",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > https://gh.jasonzeng.dev/https://raw.git",
+     "url": "https://gh.jasonzeng.dev/https://raw.githubusercontent.com/xmbjm/svip/refs/heads/main/svip.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > https://jiekou.netlify.app/svip.json",
+     "url": "https://jiekou.netlify.app/svip.json",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > http://miqk.cc/小米/DEMO.json",
+     "url": "http://miqk.cc/小米/DEMO.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > https://www.yingm.cc/dm/dm.json",
+     "url": "https://www.yingm.cc/dm/dm.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 27,
+     "apis": [],
+     "other_sites": 27
+    },
+    {
+     "name": "拾光多仓 > https://bitbucket.org/xduo/duoapi/raw/ma",
+     "url": "https://bitbucket.org/xduo/duoapi/raw/master/xpg.json",
+     "http": 404,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > https://6492.kstore.space/xnf/xnf.json",
+     "url": "https://6492.kstore.space/xnf/xnf.json",
+     "http": 401,
+     "kind": "unparsed"
+    },
+    {
+     "name": "拾光多仓 > https://9877.kstore.space/AnotherD/api.j",
+     "url": "https://9877.kstore.space/AnotherD/api.json",
+     "http": 404,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "挺好分享多仓",
+   "url": "http://ztha.top/TVBox/GYCK.json",
+   "http": 200,
+   "kind": "multirepo",
+   "nested": [
+    {
+     "name": "挺好分享多仓 > https://ztha.top/TVBox/thdjk.json",
+     "url": "https://ztha.top/TVBox/thdjk.json",
+     "http": 200,
+     "kind": "config",
+     "site_count": 46,
+     "apis": [],
+     "other_sites": 46
+    },
+    {
+     "name": "挺好分享多仓 > http://tv.nxog.top/m",
+     "url": "http://tv.nxog.top/m",
+     "http": 403,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > http://hb.小虎斑.site:25252/仅供测试",
+     "url": "http://hb.小虎斑.site:25252/仅供测试",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > https://ghproxy.cn/https://raw.githubuse",
+     "url": "https://ghproxy.cn/https://raw.githubusercontent.com/leevi0709/one/main/jsm.json",
+     "http": 200,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > https://github.moeyy.xyz/https://raw.git",
+     "url": "https://github.moeyy.xyz/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
+     "http": null,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > https://git.acwing.com/lw0704/66/-/raw/m",
+     "url": "https://git.acwing.com/lw0704/66/-/raw/master/jjzx.json",
+     "http": 403,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > https://git.acwing.com/lkq0379/zjys/-/ra",
+     "url": "https://git.acwing.com/lkq0379/zjys/-/raw/main/zjys.json",
+     "http": 403,
+     "kind": "unparsed"
+    },
+    {
+     "name": "挺好分享多仓 > http://tv.nxog.top/m/111.php?ou=公众号欧歌",
+     "url": "http://tv.nxog.top/m/111.php?ou=公众号欧歌",
+     "http": 200,
+     "kind": "unparsed"
+    }
+   ]
+  },
+  {
+   "name": "小盒子",
+   "url": "https://www.xhztv.pro/",
+   "http": 200,
+   "kind": "unparsed",
+   "note": "<!DOCTYPE html><html  data-capo=\"\"><head><meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initi"
+  }
+ ],
+ "online": [
+  {
+   "name": "No影视",
+   "url": "https://novipnoad.org/",
+   "probe": "https://novipnoad.org/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "注视影视",
+   "url": "https://gaze.red/",
+   "probe": "https://gaze.red/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "搜TV啦",
+   "url": "https://www.sotvla.cc/",
+   "probe": "https://www.sotvla.cc/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "雪落影视",
+   "url": "https://xlys.me/",
+   "probe": "https://xlys.me/api.php/provide/vod/?ac=list",
+   "http": null,
+   "verdict": "MISS"
+  },
+  {
+   "name": "多瑙影视",
+   "url": "https://www.duonaovod.com",
+   "probe": "https://www.duonaovod.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "白嫖者联盟",
+   "url": "https://www.tdgo.shop",
+   "probe": "https://www.tdgo.shop/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "蛋蛋魔法",
+   "url": "https://ddmf.net",
+   "probe": "https://ddmf.net/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "青空次元",
+   "url": "https://www.sorani.net",
+   "probe": "https://www.sorani.net/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "APP影院",
+   "url": "https://www.appmovie.art",
+   "probe": "https://www.appmovie.art/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "爱电影",
+   "url": "https://kuhh4jo.com",
+   "probe": "https://kuhh4jo.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "金牌影视",
+   "url": "https://www.vv3nwjk.com",
+   "probe": "https://www.vv3nwjk.com/api.php/provide/vod/?ac=list",
+   "http": 521,
+   "verdict": "MISS"
+  },
+  {
+   "name": "937影视",
+   "url": "https://www.937tv.vip",
+   "probe": "https://www.937tv.vip/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "爱壹帆",
+   "url": "https://iyf.tv",
+   "probe": "https://iyf.tv/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "厂长资源",
+   "url": "https://www.czzymovie.com",
+   "probe": "https://www.czzymovie.com/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "LIBVIO",
+   "url": "https://libviobd.com",
+   "probe": "https://libviobd.com/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "Auete影视",
+   "url": "https://www.aeete.com",
+   "probe": "https://www.aeete.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "电影人生",
+   "url": "https://dyrs.tv",
+   "probe": "https://dyrs.tv/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "奈飞工厂",
+   "url": "https://www.netflixgc.com",
+   "probe": "https://www.netflixgc.com/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "奈菲影视",
+   "url": "https://www.nfyingshi.com",
+   "probe": "https://www.nfyingshi.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "泥视频",
+   "url": "https://www.nivod.vip",
+   "probe": "https://www.nivod.vip/api.php/provide/vod/?ac=list",
+   "http": 523,
+   "verdict": "MISS"
+  },
+  {
+   "name": "PPnix",
+   "url": "https://www.ppnix.com/cn/",
+   "probe": "https://www.ppnix.com/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "独播库",
+   "url": "https://www.dbku.tv",
+   "probe": "https://www.dbku.tv/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "布布追剧",
+   "url": "https://bubuzhuiju.com",
+   "probe": "https://bubuzhuiju.com/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "影猫仓库",
+   "url": "https://www.ymck.pro",
+   "probe": "https://www.ymck.pro/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "爱看机器人",
+   "url": "https://www1.aikanbot.com",
+   "probe": "https://www1.aikanbot.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "91毒舌",
+   "url": "https://www.duse0.com/",
+   "probe": "https://www.duse0.com/api.php/provide/vod/?ac=list",
+   "http": 850,
+   "verdict": "MISS"
+  },
+  {
+   "name": "光速影视",
+   "url": "https://www.yingshiso.link/",
+   "probe": "https://www.yingshiso.link/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "好好看",
+   "url": "https://www.hhkan2.com/",
+   "probe": "https://www.hhkan2.com/api.php/provide/vod/?ac=list",
+   "http": 850,
+   "verdict": "MISS"
+  },
+  {
+   "name": "IFN",
+   "url": "https://ifn.watch/register?code=8B1EF6",
+   "probe": "https://ifn.watch/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "4k影视",
+   "url": "https://www.4kvm.cc/",
+   "probe": "https://www.4kvm.cc/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "饭搭子影视",
+   "url": "https://fdzys.com",
+   "probe": "https://fdzys.com/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "SA视频",
+   "url": "https://www.lsjys11.com/",
+   "probe": "https://www.lsjys11.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "奈飞工厂",
+   "url": "https://naifei.fyi/",
+   "probe": "https://naifei.fyi/api.php/provide/vod/?ac=list",
+   "http": null,
+   "verdict": "MISS"
+  },
+  {
+   "name": "剧OK",
+   "url": "https://juok3.top/",
+   "probe": "https://juok3.top/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "蛋蛋奇",
+   "url": "https://www.dandanqi.cc/",
+   "probe": "https://www.dandanqi.cc/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "宅男影视",
+   "url": "https://zndy.top/",
+   "probe": "https://zndy.top/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "影视大全",
+   "url": "https://yingshidaquan.top/",
+   "probe": "https://yingshidaquan.top/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "剧踪影院",
+   "url": "https://www.juzong01.me/",
+   "probe": "https://www.juzong01.me/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "简云影视",
+   "url": "https://jianyunys.com/",
+   "probe": "https://jianyunys.com/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "片库",
+   "url": "https://4k01.pianku.online/",
+   "probe": "https://4k01.pianku.online/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "66 大片网",
+   "url": "https://www.77dpw.vip/",
+   "probe": "https://www.77dpw.vip/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "嘀嗒影视",
+   "url": "https://www.didahd.xyz/",
+   "probe": "https://www.didahd.xyz/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "追影",
+   "url": "https://zhuiying3.cc/",
+   "probe": "https://zhuiying3.cc/api.php/provide/vod/?ac=list",
+   "http": 200,
+   "verdict": "MISS"
+  },
+  {
+   "name": "歪比巴卜",
+   "url": "https://wbbb1.com/",
+   "probe": "https://wbbb1.com/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "开心影院",
+   "url": "https://www.kxyy1.cc/",
+   "probe": "https://www.kxyy1.cc/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "豆花电影网",
+   "url": "https://dhvideo.cc/",
+   "probe": "https://dhvideo.cc/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "ZIP0",
+   "url": "https://zip0.com/?r=KBDIG8",
+   "probe": "https://zip0.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "爱盼",
+   "url": "https://www.aipan.me/",
+   "probe": "https://www.aipan.me/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "可可影视",
+   "url": "https://www.kkys14.com/",
+   "probe": "https://www.kkys14.com/api.php/provide/vod/?ac=list",
+   "http": 850,
+   "verdict": "MISS"
+  },
+  {
+   "name": "樱之空",
+   "url": "https://skr.skr1.cc:666/",
+   "probe": "https://skr.skr1.cc:666/api.php/provide/vod/?ac=list",
+   "http": 403,
+   "verdict": "MISS"
+  },
+  {
+   "name": "洛雪TV",
+   "url": "https://tv.lxyy.club/",
+   "probe": "https://tv.lxyy.club/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "西瓜影视",
+   "url": "https://www.kanmovie.com/",
+   "probe": "https://www.kanmovie.com/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  },
+  {
+   "name": "创享影视",
+   "url": "https://ys.cxkjg.cn/",
+   "probe": "https://ys.cxkjg.cn/api.php/provide/vod/?ac=list",
+   "http": 404,
+   "verdict": "MISS"
+  }
+ ]
+}

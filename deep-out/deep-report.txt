@@ -1,6 +1,6 @@
 === launch ===
 top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-=== positive control + HCCX jar route v21 ===
+=== positive control + HCCX jar route v22 (data-layer-first) ===
 positive control target (exact): 🌕┃豆瓣┃热播
 formal target (exact): 🧼┃奇优┃影院
 shot dialog-first-screen
@@ -15,15 +15,29 @@ dialog exact match "🧼┃奇优┃影院" at batch 13, at 859,532
 site switch target: 🧼┃奇优┃影院
 shot 03-target-home
 top after switch: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
-target home texts: 🧼┃奇优┃影院 | 10月23日 | 周五 04:29 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
+target home texts: 🧼┃奇优┃影院 | 10月23日 | 周五 05:26 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
 target site home confirmed: True
-jar log: 10-23 04:28:53.336  1824  3046 I JarLoader: echo-getSpider 加载spider: csp_奇优
+jar log: 10-23 05:26:36.564  1840  3062 I JarLoader: echo-getSpider 加载spider: csp_奇优
 jar evidence lines: 1
 HCCX_JAR_LOADED: YES
-tap "电视剧" at 335,95
+=== step 4: spider category census ===
+shot 04a-census-screen
+spider category-ish log lines: 3
+cat log: 10-23 05:24:25.788  1840  1840 I TVBox   : echo--getSort-start
+cat log: 10-23 05:26:36.372  1840  1840 I TVBox   : echo--getSort-start
+cat log: 10-23 05:26:36.564  1840  3062 I JarLoader: echo-getSpider 加载spider: csp_奇优
+category census parsed: 0 entries
+category to tap (real, from census): None
+census empty -> open search UI once to coax spider, then re-census
+tap "搜索" at 431,185
+shot 04b-search-coax
+search UI opened; adb input cannot type CJK keywords on this box, no keyword entered (logged honestly, not attempted)
+category census after search coax: 0 entries
 shot 04-category
-category texts: 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 没找到数据
-tap poster: 没找到数据 at 591,455
+category texts: 🧼┃奇优┃影院 | 10月23日 | 周五 05:27 | 首页 | 电影 | 电视剧 | 动漫 | 综艺 | 历史 | 直播 | 搜索 | 收藏 | 推送 | 文件 | 豆瓣热播 | 醉梦 | 豆瓣热播 | 嫁金钗 | 豆瓣热播 | 7.5 | 兰香如故 | 豆瓣热播 | 7.8 | 余红旧事 | 豆瓣热播
+poster fallback: home row (v19 path)
+home posters found: 9
+tap poster: 醉梦 at 156,505
 shot 05-detail
 top detail: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
 DETAIL_REACHED: NO

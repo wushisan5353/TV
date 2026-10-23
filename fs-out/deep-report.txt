@@ -1,0 +1,117 @@
+=== launch ===
+top: com.wushisan.tvmax/com.github.tvbox.osc.ui.activity.HomeActivity
+=== fastsearch measurement: 234 sites ===
+tap "热播剧集" at 405,95
+fs 热播剧集#0 poll 0: count=-1 sites=0
+fs 热播剧集#0 poll 1: count=-1 sites=0
+fs 热播剧集#0 poll 2: count=-1 sites=0
+fs 热播剧集#0 poll 3: count=-1 sites=0
+fs 热播剧集#0 poll 4: count=-1 sites=0
+fs 热播剧集#0 poll 5: count=-1 sites=0
+fs 热播剧集#0 poll 6: count=-1 sites=0
+fs 热播剧集#0 poll 7: count=-1 sites=0
+fs 热播剧集#0 poll 8: count=-1 sites=0
+fs 热播剧集#0 poll 9: count=-1 sites=0
+fs 热播剧集#0 poll 10: count=-1 sites=0
+fs 热播剧集#0 poll 11: count=-1 sites=0
+fs 热播剧集#0 poll 12: count=-1 sites=0
+fs 热播剧集#0 poll 13: count=-1 sites=0
+fs 热播剧集#0 poll 14: count=-1 sites=0
+fs 热播剧集#0 poll 15: count=-1 sites=0
+fs 热播剧集#0 poll 16: count=-1 sites=0
+fs 热播剧集#0 poll 17: count=-1 sites=0
+fs 热播剧集#0 poll 18: count=-1 sites=0
+fs 热播剧集#0 poll 19: count=-1 sites=0
+FSQUERY | 热播剧集#0 | title=unknown | sites=0 | keys=
+tap "热播剧集" at 403,31
+fs 热播剧集#1 poll 0: count=-1 sites=0
+fs 热播剧集#1 poll 1: count=-1 sites=0
+fs 热播剧集#1 poll 2: count=-1 sites=0
+fs 热播剧集#1 poll 3: count=-1 sites=0
+fs 热播剧集#1 poll 4: count=-1 sites=0
+fs 热播剧集#1 poll 5: count=-1 sites=0
+fs 热播剧集#1 poll 6: count=-1 sites=0
+fs 热播剧集#1 poll 7: count=-1 sites=0
+fs 热播剧集#1 poll 8: count=-1 sites=0
+fs 热播剧集#1 poll 9: count=-1 sites=0
+fs 热播剧集#1 poll 10: count=-1 sites=0
+fs 热播剧集#1 poll 11: count=-1 sites=0
+fs 热播剧集#1 poll 12: count=-1 sites=0
+fs 热播剧集#1 poll 13: count=-1 sites=0
+fs 热播剧集#1 poll 14: count=-1 sites=0
+fs 热播剧集#1 poll 15: count=-1 sites=0
+fs 热播剧集#1 poll 16: count=-1 sites=0
+fs 热播剧集#1 poll 17: count=-1 sites=0
+fs 热播剧集#1 poll 18: count=-1 sites=0
+fs 热播剧集#1 poll 19: count=-1 sites=0
+FSQUERY | 热播剧集#1 | title=unknown | sites=0 | keys=
+tap_text MISS 热播剧集
+fs 热播剧集#2 poll 0: count=-1 sites=0
+fs 热播剧集#2 poll 1: count=-1 sites=0
+fs 热播剧集#2 poll 2: count=-1 sites=0
+fs 热播剧集#2 poll 3: count=-1 sites=0
+fs 热播剧集#2 poll 4: count=-1 sites=0
+fs 热播剧集#2 poll 5: count=-1 sites=0
+fs 热播剧集#2 poll 6: count=-1 sites=0
+fs 热播剧集#2 poll 7: count=-1 sites=0
+fs 热播剧集#2 poll 8: count=-1 sites=0
+fs 热播剧集#2 poll 9: count=-1 sites=0
+fs 热播剧集#2 poll 10: count=-1 sites=0
+fs 热播剧集#2 poll 11: count=-1 sites=0
+fs 热播剧集#2 poll 12: count=-1 sites=0
+fs 热播剧集#2 poll 13: count=-1 sites=0
+fs 热播剧集#2 poll 14: count=-1 sites=0
+fs 热播剧集#2 poll 15: count=-1 sites=0
+fs 热播剧集#2 poll 16: count=-1 sites=0
+fs 热播剧集#2 poll 17: count=-1 sites=0
+fs 热播剧集#2 poll 18: count=-1 sites=0
+fs 热播剧集#2 poll 19: count=-1 sites=0
+FSQUERY | 热播剧集#2 | title=unknown | sites=0 | keys=
+tap_text MISS 热播电影
+fs 热播电影#0 poll 0: count=-1 sites=0
+fs 热播电影#0 poll 1: count=-1 sites=0
+fs 热播电影#0 poll 2: count=-1 sites=0
+fs 热播电影#0 poll 3: count=-1 sites=0
+fs 热播电影#0 poll 4: count=-1 sites=0
+fs 热播电影#0 poll 5: count=-1 sites=0
+fs 热播电影#0 poll 6: count=-1 sites=0
+fs 热播电影#0 poll 7: count=-1 sites=0
+fs 热播电影#0 poll 8: count=-1 sites=0
+fs 热播电影#0 poll 9: count=-1 sites=0
+fs 热播电影#0 poll 10: count=-1 sites=0
+fs 热播电影#0 poll 11: count=-1 sites=0
+fs 热播电影#0 poll 12: count=-1 sites=0
+fs 热播电影#0 poll 13: count=-1 sites=0
+fs 热播电影#0 poll 14: count=-1 sites=0
+fs 热播电影#0 poll 15: count=-1 sites=0
+fs 热播电影#0 poll 16: count=-1 sites=0
+fs 热播电影#0 poll 17: count=-1 sites=0
+fs 热播电影#0 poll 18: count=-1 sites=0
+fs 热播电影#0 poll 19: count=-1 sites=0
+FSQUERY | 热播电影#0 | title=unknown | sites=0 | keys=
+tap_text MISS 热播电影
+fs 热播电影#1 poll 0: count=-1 sites=0
+fs 热播电影#1 poll 1: count=-1 sites=0
+fs 热播电影#1 poll 2: count=-1 sites=0
+fs 热播电影#1 poll 3: count=-1 sites=0
+fs 热播电影#1 poll 4: count=-1 sites=0
+fs 热播电影#1 poll 5: count=-1 sites=0
+fs 热播电影#1 poll 6: count=-1 sites=0
+fs 热播电影#1 poll 7: count=-1 sites=0
+fs 热播电影#1 poll 8: count=-1 sites=0
+fs 热播电影#1 poll 9: count=-1 sites=0
+fs 热播电影#1 poll 10: count=-1 sites=0
+fs 热播电影#1 poll 11: count=-1 sites=0
+fs 热播电影#1 poll 12: count=-1 sites=0
+fs 热播电影#1 poll 13: count=-1 sites=0
+fs 热播电影#1 poll 14: count=-1 sites=0
+fs 热播电影#1 poll 15: count=-1 sites=0
+fs 热播电影#1 poll 16: count=-1 sites=0
+fs 热播电影#1 poll 17: count=-1 sites=0
+fs 热播电影#1 poll 18: count=-1 sites=0
+fs 热播电影#1 poll 19: count=-1 sites=0
+FSQUERY | 热播电影#1 | title=unknown | sites=0 | keys=
+FS_UNION_KEYS: 
+FS_UNION_COUNT: 0
+crash buffer bytes: 0
+=== DONE ===

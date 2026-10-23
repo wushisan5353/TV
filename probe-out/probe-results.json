@@ -1,0 +1,4162 @@
+[
+ {
+  "key": "aiyifan_api",
+  "name": "爱壹帆(海外)",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://zoe.im/tvbox/sites/aiyifan/spider.js HTTP 200, 28440 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "ddys",
+  "name": "低端影视",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://zoe.im/tvbox/sites/ddys/spider.js HTTP 200, 9155 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "ffzy",
+  "name": "非凡资源",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=31 list=20 total=98735"
+ },
+ {
+  "key": "haohua",
+  "name": "豪华",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=48 list=20 total=115292"
+ },
+ {
+  "key": "hongniu",
+  "name": "红牛",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=44 list=20 total=115607"
+ },
+ {
+  "key": "liangzi",
+  "name": "量子",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=44 list=20 total=160600"
+ },
+ {
+  "key": "yinghua",
+  "name": "樱花",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=33 list=20 total=104463"
+ },
+ {
+  "key": "星星",
+  "name": "星星",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "獨播",
+  "name": "獨播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "haiwaikan",
+  "name": "海外看",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "overseas_unreachable",
+  "evidence": "ac=list network error: ssl"
+ },
+ {
+  "key": "快帆",
+  "name": "快帆",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "overseas_unreachable",
+  "evidence": "ac=list network error: dns"
+ },
+ {
+  "key": "量子",
+  "name": "量子",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=44 list=20 total=160600"
+ },
+ {
+  "key": "酷狗",
+  "name": "酷狗",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "紙條搜",
+  "name": "紙條搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "bili_open",
+  "name": "哔哩貓",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "JustLive",
+  "name": "JustLive",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "荐片",
+  "name": "荐片P2P",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js HTTP 200, 67381 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "haiwaikan",
+  "name": "海外看(墙外)",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "overseas_unreachable",
+  "evidence": "ac=list network error: ssl"
+ },
+ {
+  "key": "UC",
+  "name": "UC优汐搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Czsapp",
+  "name": "厂长",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_YQKan",
+  "name": "一起看",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "酷看",
+  "name": "酷看",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "率率",
+  "name": "率率",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "星奇",
+  "name": "星奇",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_MLYS",
+  "name": "毛驴",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Xinsj",
+  "name": "新视觉",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Kunyu77",
+  "name": "酷云七七",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "360",
+  "name": "360",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Duanju",
+  "name": "短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Kanqiu",
+  "name": "88看球",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "living",
+  "name": "游戏直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://api.muxia.fun -> dns"
+ },
+ {
+  "key": "csp_Panda_玩偶哥哥",
+  "name": "玩偶影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.wogg.one/ -> ssl"
+ },
+ {
+  "key": "潮流",
+  "name": "潮流APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://v.rbotv.cn -> conn"
+ },
+ {
+  "key": "梦回",
+  "name": "梦回APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://v.lkuys.cn -> conn"
+ },
+ {
+  "key": "星辉",
+  "name": "星辉APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://tt.ysdqjs.cn -> dns"
+ },
+ {
+  "key": "肥猫",
+  "name": "肥猫APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://bind.315999.xyz/89.txt HTTP 200, 23 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "干饭",
+  "name": "干饭APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://staraugust123456.oss-cn-hangzhou.aliyuncs.com/2.txt HTTP 200, 22 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "光盘",
+  "name": "光盘APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://appcms.rx4k.top -> dns"
+ },
+ {
+  "key": "行动",
+  "name": "行动APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt -> HTTP 404"
+ },
+ {
+  "key": "再来",
+  "name": "再来APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt -> timeout"
+ },
+ {
+  "key": "一碗",
+  "name": "一碗APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://www.zjcvod.com HTTP 200, 614 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "猫抓",
+  "name": "猫抓APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://dy.8ttv.cn -> conn"
+ },
+ {
+  "key": "仓鼠",
+  "name": "仓鼠APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://lanyinghz.oss-cn-hangzhou.aliyuncs.com/lanyingxmy.txt HTTP 200, 25 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "蔬菜",
+  "name": "蔬菜APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://huohu.yihn.cc -> timeout"
+ },
+ {
+  "key": "黑猫",
+  "name": "黑猫APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://c8k2n5l0i9s8b2m1jj8k2x2l9ff68.ydysapi.cfd:27899 -> dns"
+ },
+ {
+  "key": "优优",
+  "name": "优优APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://apiapplbys.lbys.app:5678 -> timeout"
+ },
+ {
+  "key": "兔子",
+  "name": "兔子APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://laiget-1313189639.cos.ap-guangzhou.myqcloud.com/laimi.txt HTTP 200, 22 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "永永",
+  "name": "永永APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://ys.qist.top -> conn"
+ },
+ {
+  "key": "云云",
+  "name": "云云APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt -> ssl"
+ },
+ {
+  "key": "冷心",
+  "name": "冷心APP",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://app.789dd.cn HTTP 200, 13525 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Wwys",
+  "name": "农民影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.wwgz.cn -> dns"
+ },
+ {
+  "key": "csp_Xlys",
+  "name": "修罗磁力",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://xl01.com.de HTTP 200, 67158 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Tvyb",
+  "name": "云播影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Qiyou",
+  "name": "奇优影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Quanwk",
+  "name": "全看影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://www.91qkw.com -> HTTP 444"
+ },
+ {
+  "key": "csp_J",
+  "name": "饺子外剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_SaoHuo",
+  "name": "火火影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://shdy5.us -> HTTP 522"
+ },
+ {
+  "key": "csp_Gz360",
+  "name": "瓜子影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_FourK",
+  "name": "绝对影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.4kvm.tv HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "猎手影视",
+  "name": "猎手影视",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "零度",
+  "name": "零度影视",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "csp_AppXY",
+  "name": "星牙短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "河马短剧",
+  "name": "河马短剧",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "csp_SP360",
+  "name": "360官源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "二小",
+  "name": "二小4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "双星",
+  "name": "双星4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "蜡笔",
+  "name": "蜡笔4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "木偶",
+  "name": "木偶4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "多多",
+  "name": "多多4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "小飒",
+  "name": "小飒4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "至臻",
+  "name": "至臻4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "虎斑",
+  "name": "虎斑4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SeedHub",
+  "name": "种子4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "光影",
+  "name": "光影4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "云集",
+  "name": "云集4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "极狐",
+  "name": "极狐4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "盘他",
+  "name": "盘他4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "海绵",
+  "name": "海绵4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "雷鲸",
+  "name": "雷鲸4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "123分享",
+  "name": "123分享",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "瓜子",
+  "name": "瓜子App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "浪酷版",
+  "name": "浪酷秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "小苹果",
+  "name": "小苹果直连",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "云云",
+  "name": "云云App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "雄鹰",
+  "name": "雄鹰App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "咖啡",
+  "name": "咖啡App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "一起",
+  "name": "一起秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "仓鼠",
+  "name": "仓鼠App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Btt",
+  "name": "比特在线",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "韩圈",
+  "name": "韩圈App",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "电影天堂",
+  "name": "电影天堂采集",
+  "kind": "candidate",
+  "probe_class": "cms",
+  "verdict": "alive",
+  "evidence": "ac=list JSON ok: class=32 list=20 total=84724"
+ },
+ {
+  "key": "锦鲤短剧",
+  "name": "锦鲤短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "星芽短剧",
+  "name": "星芽短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "甜圈短剧",
+  "name": "甜圈短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "yhdm",
+  "name": "樱花动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "bilimd",
+  "name": "哔哩影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "世界听书",
+  "name": "世界听书",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "聚合直播",
+  "name": "聚合直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "快手直播",
+  "name": "快手直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "虎牙直播",
+  "name": "虎牙直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "瓜子看球",
+  "name": "瓜子看球",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "88看球",
+  "name": "88看球",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_QuPanSouGuard",
+  "name": "趣盘搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "太极",
+  "name": "太极搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "糖果搜",
+  "name": "糖果搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "音海",
+  "name": "音海搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "爱盘",
+  "name": "爱盘搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "云搜",
+  "name": "云搜搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "度搜",
+  "name": "度搜搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "找盘",
+  "name": "找盘搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "huban",
+  "name": "虎斑弹幕",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "醉挽清风",
+  "name": "醉挽清风4K",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "overseas_unreachable",
+  "evidence": "rule file network errors only: http://我不是.摸鱼儿.com/api/yyutx.php -> conn"
+ },
+ {
+  "key": "seed",
+  "name": "霜雪笼花4K聚合",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "玩偶哥哥",
+  "name": "玩偶备用PanWebShare",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "MoggV2",
+  "name": "优汐木偶",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "UcXmV2",
+  "name": "小二资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "QuarkLaBiV2",
+  "name": "蜡笔资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "QuarkzzV2",
+  "name": "夸克至臻",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "YYDSYS",
+  "name": "多多网盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "QuarkTZ",
+  "name": "团长网盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "cloudLJ",
+  "name": "天翼雷鲸",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "海绵",
+  "name": "海绵资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "123",
+  "name": "数字资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "趣盘",
+  "name": "百度趣盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.qupanshe.com HTTP 200, 147 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "盘库",
+  "name": "盘库资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://panku8.com,https://yipanso.com -> dns"
+ },
+ {
+  "key": "夸父",
+  "name": "夸父资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "金牌",
+  "name": "金牌超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://muouapp.oss-cn-hangzhou.aliyuncs.com/MUOUAPP/godbbq.txt HTTP 200, 458 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "瓜子影视",
+  "name": "瓜子超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "秒看",
+  "name": "秒看超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://mk1080.top/get.txt HTTP 200, 3 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "咖啡",
+  "name": "咖啡超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt -> timeout"
+ },
+ {
+  "key": "蓝鹰",
+  "name": "蓝鹰超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://lanyinghz.oss-cn-hangzhou.aliyuncs.com/lanyingxmy.txt HTTP 200, 25 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "开心",
+  "name": "开心超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/gw.txt HTTP 200, 25 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "仓鼠",
+  "name": "仓鼠超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt -> HTTP 404"
+ },
+ {
+  "key": "鲸鱼",
+  "name": "鲸鱼超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://jingyu4k-1312635929.cos.ap-nanjing.myqcloud.com/1.json HTTP 200, 26 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "热剧",
+  "name": "热剧超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.rebovod.com HTTP 200, 80084 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "影视",
+  "name": "若雪超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://aysappto.oss-cn-chengdu.aliyuncs.com/qj2.txt HTTP 200, 19 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "小猪",
+  "name": "小猪超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://tiantangyoulu.oss-cn-beijing.aliyuncs.com/tengxunyun.txt HTTP 200, 26 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "数字",
+  "name": "数字超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://app1-0-0.87333.cc HTTP 200, 4582 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "火锅",
+  "name": "火锅超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://ios.hgyx.vip HTTP 200, 167695 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "爱看",
+  "name": "爱看超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.appdm.akandm.com -> dns"
+ },
+ {
+  "key": "紫金",
+  "name": "紫金超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://www.zjcvod.com HTTP 200, 614 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "星星",
+  "name": "星星超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://starani.qcanime.xyz -> dns"
+ },
+ {
+  "key": "五八",
+  "name": "五八超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://dy.58ys.vip -> HTTP 502"
+ },
+ {
+  "key": "驿站",
+  "name": "驿站超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt -> ssl"
+ },
+ {
+  "key": "莱米",
+  "name": "莱米超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://laiget-1313189639.cos.ap-guangzhou.myqcloud.com/laimi.txt HTTP 200, 22 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "旗星",
+  "name": "旗星超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://ys.qist.top -> conn"
+ },
+ {
+  "key": "丫丫",
+  "name": "丫丫超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://tv.yy-fun.cc -> dns"
+ },
+ {
+  "key": "萝卜",
+  "name": "萝卜超清",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://apiapplbys.lbys.app:5678 -> timeout"
+ },
+ {
+  "key": "移动",
+  "name": "移动急速4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "鲸鱼2",
+  "name": "鲸鱼多线",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "下饭",
+  "name": "下饭多线",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "926看球",
+  "name": "926看球",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "88",
+  "name": "88看球直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "有声小说",
+  "name": "有声小说",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "PanSso",
+  "name": "盘他盘他三盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "YpanSo",
+  "name": "盘她盘她三盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "xzso",
+  "name": "盘它盘它三盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "漫国",
+  "name": "漫国动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://dm-1255775577.cos.ap-guangzhou.myqcloud.com/dmg/api.txt -> HTTP 404"
+ },
+ {
+  "key": "冬日",
+  "name": "冬日动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://www.drdm.fun -> dns"
+ },
+ {
+  "key": "方舟",
+  "name": "方舟动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.cyfz.vip -> ssl"
+ },
+ {
+  "key": "番薯",
+  "name": "番薯动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://new.app.bytegooty.com HTTP 200, 917 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "曼波动漫",
+  "name": "曼波动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://app.omofun1.top -> dns"
+ },
+ {
+  "key": "稀饭动漫",
+  "name": "稀饭动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://xfapp-1305390065.cos.ap-guangzhou.myqcloud.com/getapp.txt HTTP 200, 28 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "咕咕动漫",
+  "name": "咕咕动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.gugu3.com HTTP 200, 14644 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "米饭动漫",
+  "name": "米饭动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://get.mymifun.com -> ssl"
+ },
+ {
+  "key": "次元动漫",
+  "name": "次元动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://jjjj.nilinili.org -> dns"
+ },
+ {
+  "key": "duanju",
+  "name": "星芽短剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "甜圈短剧",
+  "name": "甜圈短剧",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "剧王短剧",
+  "name": "剧王短剧",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "河马短剧",
+  "name": "河马短剧",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "花卷",
+  "name": "花卷4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewGuanYing",
+  "name": "观影4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiQwMkv",
+  "name": "七味4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewPianKu",
+  "name": "盘库4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewHuBan",
+  "name": "虎斑4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewMuOu",
+  "name": "木偶4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewDuoDuo",
+  "name": "多多4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewKuaiYing",
+  "name": "快影4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewLaBi",
+  "name": "蜡笔4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewShanDian",
+  "name": "闪电4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewJuTou",
+  "name": "剧透4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewLibvio",
+  "name": "立播4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "原盘",
+  "name": "原盘4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "蜗牛",
+  "name": "蜗牛4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiPan1Me",
+  "name": "盘迷4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AiNewYiDong4K",
+  "name": "逸动4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexHanXiaoQuan",
+  "name": "韩剧秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiGuaZi",
+  "name": "瓜子秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiDuBoKu",
+  "name": "独播秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiYueYue",
+  "name": "闪电秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiWenCai",
+  "name": "文才秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexFengYe4K",
+  "name": "小枫秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "賤賤",
+  "name": "贱片秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiYiYs",
+  "name": "伊影秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiReBo",
+  "name": "热播秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiBoBo",
+  "name": "伯伯秒播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "WexAiIkanBot",
+  "name": "爱看采集",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7大师兄",
+  "name": "大师兄(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7粉猪",
+  "name": "粉猪追剧(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7咸鱼",
+  "name": "咸鱼(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7追剧达人",
+  "name": "追剧达人(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7小柚子",
+  "name": "小柚子(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7小柠檬",
+  "name": "小柠檬(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7蒙太奇",
+  "name": "蒙太奇(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7零零七",
+  "name": "零零七影视(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7小柿子",
+  "name": "小柿子(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AppV7小黄人",
+  "name": "小黄人(AppV7)",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "LiveAiHuYa",
+  "name": "虎牙直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "LiveAiDouYu",
+  "name": "斗鱼直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "LiveAiBiLi",
+  "name": "哔哩直播",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ManJuAiHongGuo",
+  "name": "漫短小红",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ManJuAiHuoLong",
+  "name": "漫剧小龙",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ManJuAiQiMao",
+  "name": "漫剧小猫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ManJuAiXiFan",
+  "name": "漫短小喜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ManJuAiHeMa",
+  "name": "漫短小马",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "DuanJuAiHaoKan",
+  "name": "短剧好看",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "DuanJuAiQiMiao",
+  "name": "短剧小猫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "DuanJuAiXingYa",
+  "name": "短剧星星",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "DuanJuAiWeiGuan",
+  "name": "短剧小薇",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AnimeXiFan",
+  "name": "稀饭动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AnimeCiYuanCheng",
+  "name": "次元动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "AnimeAiMoDu",
+  "name": "魔都动漫",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "BookHongGuo",
+  "name": "听书小红",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "BookHeMa",
+  "name": "听书小马",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "BookAiShiJie",
+  "name": "听书极品",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "BookAiYueTing",
+  "name": "听书悦庭",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "BookAi23TingShu",
+  "name": "听书爱上",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiFeiQiu",
+  "name": "飞球体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiGuaZi",
+  "name": "瓜子体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiKanQiuTong",
+  "name": "球通体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiKanqiu",
+  "name": "八八体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiKaFei",
+  "name": "咖啡体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SportAiWwe",
+  "name": "WWE体育",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "FakeAi115Share",
+  "name": "115分享",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Emby",
+  "name": "Emby4K",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Emby001",
+  "name": "Emby001",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SoAiHaiYin",
+  "name": "盘搜综合",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SoAiPanSoo",
+  "name": "九七综合",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SoAiQuPanShe",
+  "name": "趣搜百度",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SoAiAiPanSo",
+  "name": "爱盘综合",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SoKaKa",
+  "name": "卡卡综合",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "biliys",
+  "name": "哔哩影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "TGYunPanLocal",
+  "name": "TG搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Youtube",
+  "name": "Youtube",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Bdys_spider",
+  "name": "哔滴",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://www.bdys03.com/ -> HTTP 444"
+ },
+ {
+  "key": "天天",
+  "name": "天天",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://op.ysdqjs.cn -> dns"
+ },
+ {
+  "key": "追剧",
+  "name": "追剧",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://app.kzjtv.com -> conn"
+ },
+ {
+  "key": "Wogg",
+  "name": "玩偶",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://www.wogg.net/ -> HTTP 403"
+ },
+ {
+  "key": "Wobg",
+  "name": "表哥",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://wobge.run.goorm.io -> HTTP 404"
+ },
+ {
+  "key": "yydsys",
+  "name": "老哥",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://tv.yydsys.top/ -> conn"
+ },
+ {
+  "key": "蜡笔网盘",
+  "name": "蜡笔网盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://duopan.fun/ -> dns"
+ },
+ {
+  "key": "Mogg",
+  "name": "木偶哥哥",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://mogg.top/ HTTP 200, 13516 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "土豆",
+  "name": "土豆",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://tudou.lvdoui.top/ HTTP 200, 13516 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "小米网盘",
+  "name": "小米网盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://mihdr.top/ -> conn"
+ },
+ {
+  "key": "Xinshijue",
+  "name": "新视觉",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.80yy3.com/ -> ssl"
+ },
+ {
+  "key": "Moli",
+  "name": "HDmoli",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.hdmoli.pro/ HTTP 200, 43889 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "Bt0",
+  "name": "不太灵",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ddys",
+  "name": "低端",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://ddys.pro/ -> conn"
+ },
+ {
+  "key": "美剧迷",
+  "name": "美剧迷",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.meijumi.xyz/ HTTP 200, 477 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "Ppxzy",
+  "name": "皮皮虾",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://ppxzy.net/ HTTP 200, 41363 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "4KHDR",
+  "name": "4KHDR",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "校长影视",
+  "name": "校长影视",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "团长资源",
+  "name": "团长资源",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Hdhive",
+  "name": "影巢",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://hdhive.online HTTP 200, 5220 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "Panta",
+  "name": "盘Ta",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://www.91panta.cn/ -> dns"
+ },
+ {
+  "key": "YunPan",
+  "name": "云盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Wo4k",
+  "name": "玩偶4k",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://www.wo4k.com/ -> HTTP 403"
+ },
+ {
+  "key": "Xpanpan",
+  "name": "小盘盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://xpanpan.site -> dns"
+ },
+ {
+  "key": "Gaoqing",
+  "name": "高清网",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://gaoqing.la/ -> timeout"
+ },
+ {
+  "key": "音范丝",
+  "name": "音范丝",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.yinfans.me/ HTTP 200, 3380 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "TGYunPan",
+  "name": "TG网盘搜索",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://144.126.217.226:8000/ -> timeout"
+ },
+ {
+  "key": "YingSo",
+  "name": "影搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "盘友圈",
+  "name": "盘友圈",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "88Pan",
+  "name": "88网盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://662688.xyz -> conn"
+ },
+ {
+  "key": "PikaSo",
+  "name": "皮卡搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "dead",
+  "evidence": "jar/ext URLs answered but not 200/non-empty: https://www.pikaso.top/ -> HTTP 444"
+ },
+ {
+  "key": "csp_HunHePan",
+  "name": "混合盘",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "秒搜",
+  "name": "秒搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "DaPanSo",
+  "name": "大盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://dapanso.com HTTP 200, 70781 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "Qianfan",
+  "name": "千帆",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://pan.qianfan.app HTTP 200, 11156 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "YunSo",
+  "name": "小云",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "YunPanOne",
+  "name": "云盘One",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "Funletu",
+  "name": "趣盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "QuarkPanso",
+  "name": "夸克盘搜",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "PikPakShare",
+  "name": "PikPak分享",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "ThunderShare",
+  "name": "迅雷分享",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "SambaShare",
+  "name": "Samba分享",
+  "kind": "candidate",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "lf_js_p2p",
+  "name": "路飞磁力",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "lf_js_search",
+  "name": "路飞搜索",
+  "kind": "candidate",
+  "probe_class": "relative",
+  "verdict": "overseas_unreachable",
+  "evidence": "api is a relative path with no base URL in the candidate record; inconclusive, not probed"
+ },
+ {
+  "key": "drpy_js_荐片",
+  "name": "荐片[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_磁力熊搜索",
+  "name": "磁力熊搜索[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_酷云77",
+  "name": "酷云77[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_快看",
+  "name": "快看[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱看",
+  "name": "爱看[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_低端",
+  "name": "低端[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_南瓜影视",
+  "name": "南瓜影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_Auete",
+  "name": "Auete[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_cokemv",
+  "name": "cokemv[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_LIBVIO",
+  "name": "LIBVIO[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_voflix",
+  "name": "voflix[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_两个BT",
+  "name": "两个BT[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_量子影视",
+  "name": "量子影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_农民影视",
+  "name": "农民影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_在线之家",
+  "name": "在线之家[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_量子资源",
+  "name": "量子资源[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_369影视",
+  "name": "369影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_热播库",
+  "name": "热播库[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_蛋蛋剧",
+  "name": "蛋蛋剧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_B站影视",
+  "name": "B站影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_凌云影视",
+  "name": "凌云影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_孜然影视",
+  "name": "孜然影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_我爱跟剧",
+  "name": "我爱跟剧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_干饭影视",
+  "name": "干饭影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_秋霞影视",
+  "name": "秋霞影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_阿布影院",
+  "name": "阿布影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_电影先生",
+  "name": "电影先生[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_落攻阁影视",
+  "name": "落攻阁影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_69美剧",
+  "name": "69美剧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_兄弟影视",
+  "name": "兄弟影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_4k剧院",
+  "name": "4k剧院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱迪影视",
+  "name": "爱迪影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_539影视",
+  "name": "539影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_333影视",
+  "name": "333影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_996影视",
+  "name": "996影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_188影视",
+  "name": "188影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_哔嘀影视",
+  "name": "哔嘀影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_7喜影院",
+  "name": "7喜影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_18哈",
+  "name": "18哈[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_567电影院",
+  "name": "567电影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_Fun4K",
+  "name": "Fun4K[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_KOK影院",
+  "name": "KOK影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_TVB云播",
+  "name": "TVB云播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_UrleBird[飞]",
+  "name": "UrleBird[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱看影院",
+  "name": "爱看影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_北川影视",
+  "name": "北川影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_尘落影视",
+  "name": "尘落影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_达达龟",
+  "name": "达达龟[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_蛋蛋赞",
+  "name": "蛋蛋赞[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_多瑙影视",
+  "name": "多瑙影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_剧迷su",
+  "name": "剧迷su[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_看韩剧",
+  "name": "看韩剧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_看了么",
+  "name": "看了么[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_蓝光影院",
+  "name": "蓝光影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_首播影院",
+  "name": "首播影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_小白菜电影",
+  "name": "小白菜电影[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_影视工场",
+  "name": "影视工场[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_影视之家[V2]",
+  "name": "影视之家[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_悠久影院",
+  "name": "悠久影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_中国人线上看",
+  "name": "中国人线上看[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_555电影[V2]",
+  "name": "555电影[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_69美剧[V2]",
+  "name": "69美剧[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_cokemv[V2]",
+  "name": "cokemv[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_UM电影[V2]",
+  "name": "UM电影[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱迪[V2]",
+  "name": "爱迪[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_宝片[V2]",
+  "name": "宝片[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_刺桐[V2]",
+  "name": "刺桐[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_咕噜[V2]",
+  "name": "咕噜[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_吼吼[V2]",
+  "name": "吼吼[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_曲奇影视[V2]",
+  "name": "曲奇影视[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_影探[V2]",
+  "name": "影探[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_北极狐[V2]",
+  "name": "北极狐[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_大米星球[V2]",
+  "name": "大米星球[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_奈飞狗[V2]",
+  "name": "奈飞狗[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_思古影视[V2]",
+  "name": "思古影视[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_映迷[V2]",
+  "name": "映迷[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_美益达[V2]",
+  "name": "美益达[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_落攻阁影视[V2]",
+  "name": "落攻阁影视[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_西门[V2]",
+  "name": "西门[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_路人甲[V2]",
+  "name": "路人甲[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_鑫鑫[V2]",
+  "name": "鑫鑫[V2][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_360影视",
+  "name": "360影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_百忙无果",
+  "name": "百忙无果[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_腾云驾雾",
+  "name": "腾云驾雾[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_奇珍异兽",
+  "name": "奇珍异兽[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_菜狗",
+  "name": "菜狗[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_优酷",
+  "name": "优酷[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_4KHDR",
+  "name": "4KHDR[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_极影网",
+  "name": "极影网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_MP4US",
+  "name": "MP4US[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_电影港",
+  "name": "电影港[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_kuba",
+  "name": "kuba[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_xb6v",
+  "name": "xb6v[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_美剧迷",
+  "name": "美剧迷[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_ddys",
+  "name": "ddys[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_libvio",
+  "name": "libvio[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_tzfile",
+  "name": "tzfile[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_dydhhy",
+  "name": "dydhhy[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_97tvs",
+  "name": "97tvs[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_rrdyw",
+  "name": "rrdyw[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_校长影视",
+  "name": "校长影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_yyets",
+  "name": "yyets[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_奇妙搜[夸]",
+  "name": "奇妙搜[夸][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_愛盤搜",
+  "name": "愛盤搜[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_趣盤搜",
+  "name": "趣盤搜[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_meow",
+  "name": "meow[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_磁力熊[磁]",
+  "name": "磁力熊[磁][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_6V新版[磁]",
+  "name": "6V新版[磁][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_童趣",
+  "name": "童趣[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_兔小贝",
+  "name": "兔小贝[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_有声绘本网",
+  "name": "有声绘本网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_我的哔哩",
+  "name": "我的哔哩[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_哔哩直播",
+  "name": "哔哩直播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_哔哩影视",
+  "name": "哔哩影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_JustLive",
+  "name": "JustLive[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_斗鱼直播",
+  "name": "斗鱼直播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_虎牙直播",
+  "name": "虎牙直播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_310直播",
+  "name": "310直播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_88看球",
+  "name": "88看球[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_JRKAN直播",
+  "name": "JRKAN直播[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_抓饭体育",
+  "name": "抓饭体育[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_好趣网",
+  "name": "好趣网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_相声随身听",
+  "name": "相声随身听[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_评书随身听",
+  "name": "评书随身听[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_武享吧",
+  "name": "武享吧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_58动漫",
+  "name": "58动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_AGE动漫",
+  "name": "AGE动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_AnFuns",
+  "name": "AnFuns[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_Anime1动畫",
+  "name": "Anime1动畫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_NT动漫",
+  "name": "NT动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_NyaFun",
+  "name": "NyaFun[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱弹幕",
+  "name": "爱弹幕[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_动漫岛",
+  "name": "动漫岛[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_路漫漫",
+  "name": "路漫漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_喵次元",
+  "name": "喵次元[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_奇米动漫",
+  "name": "奇米动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_去看吧",
+  "name": "去看吧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_曲奇动漫",
+  "name": "曲奇动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_异世界动漫",
+  "name": "异世界动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_怡萱动漫",
+  "name": "怡萱动漫[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_A8音乐",
+  "name": "A8音乐[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_DJ音乐",
+  "name": "DJ音乐[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_啦啦DJ",
+  "name": "啦啦DJ[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_清风DJ",
+  "name": "清风DJ[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_广播迷FM",
+  "name": "广播迷FM[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_蜻蜓FM",
+  "name": "蜻蜓FM[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_i275听书",
+  "name": "i275听书[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱上你听书网",
+  "name": "爱上你听书网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_博看听书",
+  "name": "博看听书[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_海洋听书",
+  "name": "海洋听书[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_六月听书",
+  "name": "六月听书[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_有声小说吧",
+  "name": "有声小说吧[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_播客",
+  "name": "播客[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_短视频",
+  "name": "短视频[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_酷6网",
+  "name": "酷6网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_网易公版影像",
+  "name": "网易公版影像[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱车MV",
+  "name": "爱车MV[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_酷奇MV",
+  "name": "酷奇MV[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱看机器人",
+  "name": "爱看机器人[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_ikanbot2",
+  "name": "ikanbot2[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_ikanbot3",
+  "name": "ikanbot3[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_jsapi2",
+  "name": "jsapi2[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_139影视",
+  "name": "139影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_348电影网",
+  "name": "348电影网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_4K电影网",
+  "name": "4K电影网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_8号影院",
+  "name": "8号影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_JangoIndex",
+  "name": "JangoIndex[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_NY影院",
+  "name": "NY影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_被窝电影",
+  "name": "被窝电影[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_厂长资源",
+  "name": "厂长资源[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_楚门影院",
+  "name": "楚门影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_大米星球",
+  "name": "大米星球[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_飞兔影视",
+  "name": "飞兔影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_海兔影院",
+  "name": "海兔影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_花猫TV",
+  "name": "花猫TV[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_花屋影院",
+  "name": "花屋影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_开眼视频",
+  "name": "开眼视频[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_徕米TV",
+  "name": "徕米TV[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_乐鱼影视",
+  "name": "乐鱼影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_美剧网",
+  "name": "美剧网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_美视网",
+  "name": "美视网[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_米爱影视",
+  "name": "米爱影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_免费看",
+  "name": "免费看[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_奈飞中文",
+  "name": "奈飞中文[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_欧帝影院",
+  "name": "欧帝影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_皮皮鸭",
+  "name": "皮皮鸭[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_朴樱影视",
+  "name": "朴樱影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_秋霞",
+  "name": "秋霞[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_热播之家",
+  "name": "热播之家[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_人人影视",
+  "name": "人人影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_骚火电影",
+  "name": "骚火电影[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_时光影视",
+  "name": "时光影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_思古影视",
+  "name": "思古影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_私人影院",
+  "name": "私人影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_素白白",
+  "name": "素白白[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_网飞.TV",
+  "name": "网飞.TV[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_西瓜影院",
+  "name": "西瓜影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_蜥蜴影视",
+  "name": "蜥蜴影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_小狗影院",
+  "name": "小狗影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_新视觉影视",
+  "name": "新视觉影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_星辰",
+  "name": "星辰[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_玄天",
+  "name": "玄天[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_映迷影院",
+  "name": "映迷影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_中国人",
+  "name": "中国人[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_追剧迷",
+  "name": "追剧迷[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_子子影视",
+  "name": "子子影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_大师兄影视",
+  "name": "大师兄影视[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_华乐影院",
+  "name": "华乐影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_天天视频",
+  "name": "天天视频[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_起飞影院",
+  "name": "起飞影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_兰花影院",
+  "name": "兰花影院[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_胖虎",
+  "name": "胖虎[js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_555影视[飞]",
+  "name": "555影视[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_if101[飞]",
+  "name": "if101[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_KUBO影视[飞]",
+  "name": "KUBO影视[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_爱壹帆[飞]",
+  "name": "爱壹帆[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_独播库[飞]",
+  "name": "独播库[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_欧乐影院[飞]",
+  "name": "欧乐影院[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "drpy_js_小宝影院[飞]",
+  "name": "小宝影院[飞][js]",
+  "kind": "candidate",
+  "probe_class": "rule",
+  "verdict": "reach_ok",
+  "evidence": "rule file reachable: https://raw.githubusercontent.com/qist/tvbox/master/lib/drpy2.min.js HTTP 200, 111826 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "厂长",
+  "name": "厂长",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.czzyvideo.com/ HTTP 200, 2355 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "腐剧",
+  "name": "腐剧",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: http://www.fuju2024.cc:8013/ruifenglb_api.php/v1.vod -> conn"
+ },
+ {
+  "key": "Bili",
+  "name": "哔哔合集",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://ghp.ci/raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/bilibili.json -> dns"
+ },
+ {
+  "key": "csp_Lib",
+  "name": "LibVio",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "农民",
+  "name": "农民",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "骚火",
+  "name": "骚火",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_Bili",
+  "name": "哔哩哔哩",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: http://xhztv.top/xhz/Yoursmile.jar HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "csp_FeiMaoUC",
+  "name": "闪电优汐",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Duopan",
+  "name": "蜡笔影视",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "csp_Netfixtv",
+  "name": "至臻影视",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "no probeable jar/ext URL in record (inconclusive)"
+ },
+ {
+  "key": "荐片",
+  "name": "荐片影视",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "overseas_unreachable",
+  "evidence": "jar/ext network errors only: https://ev2089.zxbwv.com -> dns"
+ },
+ {
+  "key": "玩偶",
+  "name": "玩偶智能4K",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.wogg.com/ HTTP 200, 300000 bytes (reach-only, behavior not verified)"
+ },
+ {
+  "key": "Libvio",
+  "name": "LIBVIO",
+  "kind": "variant",
+  "probe_class": "csp",
+  "verdict": "reach_ok",
+  "evidence": "jar/ext reachable: https://www.libvio.fun HTTP 200, 12477 bytes (reach-only, behavior not verified)"
+ }
+]
